@@ -1,0 +1,1773 @@
+https://react.dev/errors/
+Minified React error #
+ for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+react.transitional.element
+react.debug_trace_mode
+react.memo_cache_sentinel
+react.client.reference
+DetermineComponentFrameRoot
+ Error generating stack: 
+\\]/g;function mt(e){return e.replace(ft,function(e){return
++e.charCodeAt(0).toString(16)+
+})}function gt(e,t,n,r,i,a,o,s){e.name=
+!==typeof o?e.type=o:e.removeAttribute(
+===e.value||e.value!=t)&&(e.value=
+!==o||e.removeAttribute(
+),null!=t?yt(e,o,ct(t)):null!=n?yt(e,o,ct(n)):null!=r&&e.removeAttribute(
+),null==i&&null!=a&&(e.defaultChecked=!!a),null!=i&&(e.checked=i&&
+!==typeof i),null!=s&&
++ct(s):e.removeAttribute(
+)}function vt(e,t,n,r,i,a,o,s){if(null!=a&&
+!==typeof a&&(e.type=a),null!=t||null!=n){if(!(
+!==a||void 0!==t&&null!==t))return;n=null!=n?
++ct(t):n,s||t===e.value||(e.value=t),e.defaultValue=t}r=
+!==typeof(r=null!=r?r:i)&&
+!==typeof r&&!!r,e.checked=s?e.checked:!!r,e.defaultChecked=!!r,null!=o&&
+!==typeof o&&(e.name=o)}function yt(e,t,n){
+===t&&pt(e.ownerDocument)===e||e.defaultValue===
++n)}function xt(e,t,n,r){if(e=e.options,t){t={};for(var i=0;i<n.length;i++)t[
++n[i]]=!0;for(n=0;n<e.length;n++)i=t.hasOwnProperty(
++e[n].value),e[n].selected!==i&&(e[n].selected=i),i&&r&&(e[n].defaultSelected=!0)}else{for(n=
++ct(n),t=null,i=0;i<e.length;i++){if(e[i].value===n)return e[i].selected=!0,void(r&&(e[i].defaultSelected=!0));null!==t||e[i].disabled||(t=e[i])}null!==t&&(t.selected=!0)}}function bt(e,t,n){null==t||((t=
++ct(t))!==e.value&&(e.value=t),null!=n)?e.defaultValue=null!=n?
+:e.defaultValue!==t&&(e.defaultValue=t)}function wt(e,t,n,r){if(null==t){if(null!=r){if(null!=n)throw Error(o(92));if(V(r)){if(1<r.length)throw Error(o(93));r=r[0]}n=r}null==n&&(n=
+),t=n}n=ct(t),e.defaultValue=n,(r=e.textContent)===n&&
+!==r&&null!==r&&(e.value=r)}function kt(e,t){if(t){var n=e.firstChild;if(n&&n===e.lastChild&&3===n.nodeType)return void(n.nodeValue=t)}e.textContent=t}var St=new Set(
+));function Et(e,t,n){var r=0===t.indexOf(
+===n?r?e.setProperty(t,
+:r?e.setProperty(t,n):
+!==typeof n||0===n||St.has(t)?
+===t?e.cssFloat=n:e[t]=(
+}function jt(e,t,n){if(null!=t&&
+!==typeof t)throw Error(o(62));if(e=e.style,null!=n){for(var r in n)!n.hasOwnProperty(r)||null!=t&&t.hasOwnProperty(r)||(0===r.indexOf(
+);for(var i in t)r=t[i],t.hasOwnProperty(i)&&n[i]!==r&&Et(e,i,r)}else for(var a in t)t.hasOwnProperty(a)&&Et(e,a,t[a])}function Ct(e){if(-1===e.indexOf(
+))return!1;switch(e){case
+:return!1;default:return!0}}var Nt=new Map([[
+:e}var Tt=null;function Rt(e){return(e=e.target||e.srcElement||window).correspondingUseElement&&(e=e.correspondingUseElement),3===e.nodeType?e.parentNode:e}var _t=null,Mt=null;function Ot(e){var t=Ke(e);if(t&&(e=t.stateNode)){var n=e[Ie]||null;e:switch(e=t.stateNode,t.type){case
+:if(gt(e,n.value,n.defaultValue,n.defaultValue,n.checked,n.defaultChecked,n.type,n.name),t=n.name,
+===n.type&&null!=t){for(n=e;n.parentNode;)n=n.parentNode;for(n=n.querySelectorAll('input[name=
+]'),t=0;t<n.length;t++){var r=n[t];if(r!==e&&r.form===e.form){var i=r[Ie]||null;if(!i)throw Error(o(90));gt(r,i.value,i.defaultValue,i.defaultValue,i.checked,i.defaultChecked,i.type,i.name)}}for(t=0;t<n.length;t++)(r=n[t]).form===e.form&&ht(r)}break e;case
+:bt(e,n.value,n.defaultValue);break e;case
+:(r=!r.disabled)||(r=!(
+===e)),e=!r;break e;default:e=!1}if(e)return null;if(n&&
+!==typeof n)throw Error(o(231,t,typeof n));return n}var zt=!1;if(nt)try{var It={};Object.defineProperty(It,
+,{get:function(){zt=!0}}),window.addEventListener(
+,It,It),window.removeEventListener(
+,It,It)}catch(wh){zt=!1}var Bt=null,Vt=null,Ut=null;function Wt(){if(Ut)return Ut;var e,t,n=Vt,r=n.length,i=
+in Bt?Bt.value:Bt.textContent,a=i.length;for(e=0;e<r&&n[e]===i[e];e++);var o=r-e;for(t=1;t<=o&&n[r-t]===i[a-t];t++);return Ut=i.slice(e,1<t?1-t:void 0)}function Ht(e){var t=e.keyCode;return
+!==typeof e.returnValue&&(e.returnValue=!1),this.isDefaultPrevented=qt)},stopPropagation:function(){var e=this.nativeEvent;e&&(e.stopPropagation?e.stopPropagation():
+in e?e.movementX:(e!==Qt&&(Qt&&
+===e.type?(Kt=e.screenX-Qt.screenX,$t=e.screenY-Qt.screenY):$t=Kt=0,Qt=e),Kt)},movementY:function(e){return
+in e?e.movementY:$t}}),nn=Gt(tn),rn=Gt(R({},tn,{dataTransfer:0})),an=Gt(R({},Zt,{relatedTarget:0})),on=Gt(R({},Xt,{animationName:0,elapsedTime:0,pseudoElement:0})),sn=Gt(R({},Xt,{clipboardData:function(e){return
+};function hn(e){var t=this.nativeEvent;return t.getModifierState?t.getModifierState(e):!!(e=dn[e])&&!!t[e]}function pn(){return hn}var fn=Gt(R({},Zt,{key:function(e){if(e.key){var t=cn[e.key]||e.key;if(
+===e.type?13===(e=Ht(e))?
+:String.fromCharCode(e):
+===e.type?un[e.keyCode]||
+},code:0,location:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,repeat:0,locale:0,getModifierState:pn,charCode:function(e){return
+===e.type?Ht(e):0},keyCode:function(e){return
+===e.type?e.keyCode:0},which:function(e){return
+in e?-e.wheelDeltaX:0},deltaY:function(e){return
+in e?-e.wheelDelta:0},deltaZ:0,deltaMode:0})),xn=Gt(R({},Xt,{newState:0,oldState:0})),bn=[9,13,27,32],wn=nt&&
+in window,kn=null;nt&&
+in document&&(kn=document.documentMode);var Sn=nt&&
+in window&&!kn,En=nt&&(!wn||kn&&8<kn&&11>=kn),jn=String.fromCharCode(32),Cn=!1;function Nn(e,t){switch(e){case
+:return-1!==bn.indexOf(t.keyCode);case
+:return 229!==t.keyCode;case
+:return!0;default:return!1}}function Pn(e){return
+===typeof(e=e.detail)&&
+:!0,email:!0,month:!0,number:!0,password:!0,range:!0,search:!0,tel:!0,text:!0,time:!0,url:!0,week:!0};function Rn(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return
+===t}function _n(e,t,n,r){_t?Mt?Mt.push(r):Mt=[r]:_t=r,0<(t=Du(t,
+)).length&&(n=new Jt(
+,null,n,r),e.push({event:n,listeners:t}))}var Mn=null,On=null;function Fn(e){Pu(e,0)}function Dn(e){if(ht($e(e)))return e}function Ln(e,t){if(
+===e)return t}var zn=!1;if(nt){var In;if(nt){var Bn=
+in document;if(!Bn){var Vn=document.createElement(
+===typeof Vn.oninput}In=Bn}else In=!1;zn=In&&(!document.documentMode||9<document.documentMode)}function Un(){Mn&&(Mn.detachEvent(
+,Wn),On=Mn=null)}function Wn(e){if(
+===e.propertyName&&Dn(On)){var t=[];_n(t,On,e,Rt(e)),Dt(Fn,t)}}function Hn(e,t,n){
+===e?(Un(),On=n,(Mn=t).attachEvent(
+===e&&Un()}function qn(e){if(
+===e)return Dn(On)}function Yn(e,t){if(
+===e)return Dn(t)}function Gn(e,t){if(
+===e)return Dn(t)}var Kn=
+===typeof Object.is?Object.is:function(e,t){return e===t&&(0!==e||1/e===1/t)||e!==e&&t!==t};function $n(e,t){if(Kn(e,t))return!0;if(
+!==typeof e||null===e||
+in e?e.contains(t):!!e.compareDocumentPosition&&!!(16&e.compareDocumentPosition(t))))}function Zn(e){for(var t=pt((e=null!=e&&null!=e.ownerDocument&&null!=e.ownerDocument.defaultView?e.ownerDocument.defaultView:window).document);t instanceof e.HTMLIFrameElement;){try{var n=
+===typeof t.contentWindow.location.href}catch(r){n=!1}if(!n)break;t=pt((e=t.contentWindow).document)}return t}function er(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t&&(
+===e.contentEditable)}function tr(e,t){var n=Zn(t);t=e.focusedElem;var r=e.selectionRange;if(n!==t&&t&&t.ownerDocument&&Jn(t.ownerDocument.documentElement,t)){if(null!==r&&er(t))if(e=r.start,void 0===(n=r.end)&&(n=e),
+===typeof t.focus&&t.focus(),t=0;t<e.length;t++)(n=e[t]).element.scrollLeft=n.left,n.element.scrollTop=n.top}}var nr=nt&&
+in document&&11>=document.documentMode,rr=null,ir=null,ar=null,or=!1;function sr(e,t,n){var r=n.window===n?n.document:9===n.nodeType?n:n.ownerDocument;or||null==rr||rr!==pt(r)||(
+in(r=rr)&&er(r)?r={start:r.selectionStart,end:r.selectionEnd}:r={anchorNode:(r=(r.ownerDocument&&r.ownerDocument.defaultView||window).getSelection()).anchorNode,anchorOffset:r.anchorOffset,focusNode:r.focusNode,focusOffset:r.focusOffset},ar&&$n(ar,r)||(ar=r,0<(r=Du(ir,
+)).length&&(t=new Jt(
+,null,t,n),e.push({event:t,listeners:r}),t.target=rr)))}function lr(e,t){var n={};return n[e.toLowerCase()]=t.toLowerCase(),n[
++t,n}var cr={animationend:lr(
+),animationiteration:lr(
+),transitionstart:lr(
+),transitioncancel:lr(
+)},ur={},dr={};function hr(e){if(ur[e])return ur[e];if(!cr[e])return e;var t,n=cr[e];for(t in n)if(n.hasOwnProperty(t)&&t in dr)return ur[e]=n[t];return e}nt&&(dr=document.createElement(
+in window||(delete cr.animationend.animation,delete cr.animationiteration.animation,delete cr.animationstart.animation),
+in window||delete cr.transitionend.transition);var pr=hr(
+===typeof e&&null!==e){var n=Mr.get(e);return void 0!==n?n:(t={value:e,source:t,stack:D(t)},Mr.set(e,t),t)}return{value:e,source:t,stack:D(t)}}var Fr=[],Dr=0,Lr=null,zr=0,Ir=[],Br=0,Vr=null,Ur=1,Wr=
+)),e)),Zr}function ti(e){var t=e.stateNode,n=e.type,r=e.memoizedProps;switch(t[ze]=e,t[Ie]=r,n){case
+:for(n=0;n<Cu.length;n++)Au(Cu[n],t);break;case
+,t),vt(t,r.value,r.defaultValue,r.checked,r.defaultChecked,r.type,r.name,!0),dt(t);break;case
+,t),wt(t,r.value,r.defaultValue,r.children),dt(t)}
+!==typeof(n=r.children)&&
+!==typeof n||t.textContent===
++n||!0===r.suppressHydrationWarning||Uu(t.textContent,n)?(null!=r.popover&&(Au(
+,t)),null!=r.onScroll&&Au(
+,t),null!=r.onScrollEnd&&Au(
+!==t)||Ju(e.type,e.memoizedProps)),t=!t),t&&(n=!0),n&&$r&&ei(e),ni(e),13===e.tag){if(!(e=null!==(e=e.memoizedState)?e.dehydrated:null))throw Error(o(317));e:{for(e=e.nextSibling,n=0;e;){if(8===e.nodeType)if(
+===(t=e.data)){if(0===n){$r=sd(e.nextSibling);break e}n--}else
+!==t||n++;e=e.nextSibling}$r=null}}else $r=Kr?sd(e.stateNode.nextSibling):null;return!0}function ii(){$r=Kr=null,Qr=!1}function ai(e){null===Xr?Xr=[e]:Xr.push(e)}var oi=Error(o(460)),si=Error(o(474)),li={then:function(){}};function ci(e){return
+===e}function ui(){}function di(e,t,n){switch(void 0===(n=e[n])?e.push(t):n!==t&&(t.then(ui,ui),t=n),t.status){case
+:if((e=t.reason)===oi)throw Error(o(483));throw e;default:if(
+===typeof t.status)t.then(ui,ui);else{if(null!==(e=tc)&&100<e.shellSuspendCounter)throw Error(o(482));(e=t).status=
+,e.then(function(e){if(
+===t.status){var n=t;n.status=
+,n.value=e}},function(e){if(
+,n.reason=e}})}switch(t.status){case
++Object.keys(t).join(
+===typeof t)return(t=Ul(
++t,e.mode,n)).return=e,t;if(
+===typeof t&&null!==t){switch(t.$$typeof){case c:return vi(n=Il(t.type,t.key,t.props,null,e.mode,n),t),n.return=e,n;case u:return(t=Wl(t,e.mode,n)).return=e,t;case w:return m(e,t=(0,t._init)(t._payload),n)}if(V(t)||j(t))return(t=Bl(t,e.mode,n,null)).return=e,t;if(
+===typeof t.then)return m(e,gi(t),n);if(t.$$typeof===g)return m(e,Cs(e,t),n);yi(e,t)}return null}function v(e,t,n,r){var i=null!==t?t.key:null;if(
+===typeof n)return null!==i?null:l(e,t,
+===typeof n&&null!==n){switch(n.$$typeof){case c:return n.key===i?h(e,t,n,r):null;case u:return n.key===i?p(e,t,n,r):null;case w:return v(e,t,n=(i=n._init)(n._payload),r)}if(V(n)||j(n))return null!==i?null:f(e,t,n,r,null);if(
+===typeof n.then)return v(e,t,gi(n),r);if(n.$$typeof===g)return v(e,t,Cs(e,n),r);yi(e,n)}return null}function y(e,t,n,r,i){if(
+===typeof r)return l(t,e=e.get(n)||null,
+===typeof r&&null!==r){switch(r.$$typeof){case c:return h(t,e=e.get(null===r.key?n:r.key)||null,r,i);case u:return p(t,e=e.get(null===r.key?n:r.key)||null,r,i);case w:return y(e,t,n,r=(0,r._init)(r._payload),i)}if(V(r)||j(r))return f(t,e=e.get(n)||null,r,i,null);if(
+===typeof r.then)return y(e,t,n,gi(r),i);if(r.$$typeof===g)return y(e,t,n,Cs(t,r),i);yi(t,r)}return null}function x(l,h,p,f){if(
+===typeof p&&null!==p&&p.type===d&&null===p.key&&(p=p.props.children),
+===typeof p&&null!==p){switch(p.$$typeof){case c:e:{for(var b=p.key;null!==h;){if(h.key===b){if((b=p.type)===d){if(7===h.tag){n(l,h.sibling),(f=i(h,p.props.children)).return=l,l=f;break e}}else if(h.elementType===b||
+===typeof p.then)return x(l,h,gi(p),f);if(p.$$typeof===g)return x(l,h,Cs(l,p),f);yi(l,p)}return
+);var e=Ui;Ui=null,Hi=0,qi=null;for(var t=0;t<e.length;t++)(0,e[t])()}}var Gi=T.S;T.S=function(e,t){
+===typeof t&&null!==t&&
+===typeof t.then&&function(e,t){if(null===Ui){var n=Ui=[];Wi=0,Hi=wu(),qi={status:
+===typeof e){var n=e;if(e=n(),ia){xe(!0);try{n()}finally{xe(!1)}}}return t.memoizedState=t.baseState=e,t.queue={pending:null,lanes:0,dispatch:null,lastRenderedReducer:Sa,lastRenderedState:e},t}function Oa(e,t,n,r){return e.baseState=n,ja(e,ea,
+===typeof r?r:Sa)}function Fa(e,t,n,r,i){if(ko(e))throw Error(o(485));if(null!==(e=t.action)){var a={payload:i,action:e,next:null,isTransition:!0,status:
+===typeof n.then?n.then(function(n){za(e,t,n)},function(n){return Ia(e,t,n)}):za(e,t,n)}function za(e,t,n){t.status=
+,t.value=n,Ba(t),e.state=n,null!==(t=e.pending)&&((n=t.next)===t?e.pending=null:(n=n.next,t.next=n,Da(e,n)))}function Ia(e,t,n){var r=e.pending;if(e.pending=null,null!==r){r=r.next;do{t.status=
+===a?i:null}if(i){$r=sd(i.nextSibling),r=
+===typeof t){e=e();var n=t(e);return function(){
+===typeof l.then)bo(e,t,function(e,t){var n=[],r={status:
+,value:null,reason:null,then:function(e){n.push(e)}};return e.then(function(){r.status=
+,r.value=t;for(var e=0;e<n.length;e++)(0,n[e])(t)},function(e){for(r.status=
+,r.reason=e,e=0;e<n.length;e++)(0,n[e])(void 0)}),r}(l,r),Tc());else bo(e,t,r,Tc())}catch(u){bo(e,t,{then:function(){},status:
++(n=(Ur&~(1<<32-be(Ur)-1)).toString(32)+n),0<(n=aa++)&&(t+=
++(n=la++).toString(32)+
+===typeof(e=e.stateNode).shouldComponentUpdate?e.shouldComponentUpdate(r,a,o):!t.prototype||!t.prototype.isPureReactComponent||(!$n(n,r)||!$n(i,a))}function _o(e,t,n,r){e=t.state,
+===typeof t.componentWillReceiveProps&&t.componentWillReceiveProps(n,r),
+===typeof t.UNSAFE_componentWillReceiveProps&&t.UNSAFE_componentWillReceiveProps(n,r),t.state!==e&&To.enqueueReplaceState(t,t.state,null)}function Mo(e,t){var n=t;if(
+in t)for(var r in n={},t)
+!==r&&(n[r]=t[r]);if(e=e.defaultProps)for(var i in n===t&&(n=R({},n)),e)void 0===n[i]&&(n[i]=e[i]);return n}var Oo=
+===typeof reportError?reportError:function(e){if(
+===typeof window.ErrorEvent){var t=new window.ErrorEvent(
+,{bubbles:!0,cancelable:!0,message:
+===typeof e&&null!==e&&
+===typeof e.message?String(e.message):String(e),error:e});if(!window.dispatchEvent(t))return}else if(
+===typeof process.emit)return void process.emit(
+===typeof i){var a=r.value;e.payload=function(){return i(a)},e.callback=function(){Io(t,n,r)}}var o=n.stateNode;null!==o&&
+===typeof o.componentDidCatch&&(e.callback=function(){Io(t,n,r),
+!==typeof i&&(null===kc?kc=new Set([this]):kc.add(this));var e=r.stack;this.componentDidCatch(r.value,{componentStack:null!==e?e:
+})})}var Wo=Error(o(461)),Ho=!1;function qo(e,t,n,r){t.child=null===e?ki(t,null,n,r):wi(t,e.child,n,r)}function Yo(e,t,n,r,i){n=n.render;var a=t.ref;if(
+in r){var o={};for(var s in r)
+!==s&&(o[s]=r[s])}else o=r;return Es(t),r=da(e,t,n,o,a,i),s=ma(),null===e||Ho?(Qr&&s&&Yr(t),t.flags|=1,qo(e,t,r,i),t.child):(ga(e,t,i),hs(e,t,i))}function Go(e,t,n,r,i){if(null===e){var a=n.type;return
+===typeof o&&null!==o&&(a=js(o)),a=new n(r,a),t.memoizedState=null!==a.state&&void 0!==a.state?a.state:null,a.updater=To,t.stateNode=a,a._reactInternals=t,(a=t.stateNode).props=r,a.state=t.memoizedState,a.refs={},As(t),o=n.contextType,a.context=
+===typeof o&&null!==o?js(o):_r,a.state=t.memoizedState,
+===typeof(o=n.getDerivedStateFromProps)&&(Ao(t,n,o,r),a.state=t.memoizedState),
+===typeof n.getDerivedStateFromProps||
+===typeof a.getSnapshotBeforeUpdate||
+!==typeof a.UNSAFE_componentWillMount&&
+!==typeof a.componentWillMount||(o=a.state,
+===typeof a.componentWillMount&&a.componentWillMount(),
+===typeof a.UNSAFE_componentWillMount&&a.UNSAFE_componentWillMount(),o!==a.state&&To.enqueueReplaceState(a,a.state,null),Ls(t,r,a,i),Ds(),a.state=t.memoizedState),
+===typeof a.componentDidMount&&(t.flags|=4194308),r=!0}else if(null===e){a=t.stateNode;var s=t.memoizedProps,l=Mo(n,s);a.props=l;var c=a.context,u=n.contextType;o=_r,
+===typeof u&&null!==u&&(o=js(u));var d=n.getDerivedStateFromProps;u=
+===typeof a.getSnapshotBeforeUpdate,s=t.pendingProps!==s,u||
+!==typeof a.UNSAFE_componentWillReceiveProps&&
+!==typeof a.componentWillReceiveProps||(s||c!==o)&&_o(t,a,r,o),Ps=!1;var h=t.memoizedState;a.state=h,Ls(t,r,a,i),Ds(),c=t.memoizedState,s||h!==c||Ps?(
+===typeof d&&(Ao(t,n,d,r),c=t.memoizedState),(l=Ps||Ro(t,n,l,r,h,c,o))?(u||
+!==typeof a.componentWillMount||(
+===typeof a.UNSAFE_componentWillMount&&a.UNSAFE_componentWillMount()),
+===typeof a.componentDidMount&&(t.flags|=4194308)):(
+===typeof a.componentDidMount&&(t.flags|=4194308),t.memoizedProps=r,t.memoizedState=c),a.props=r,a.state=c,a.context=o,r=l):(
+===typeof a.componentDidMount&&(t.flags|=4194308),r=!1)}else{a=t.stateNode,Ts(e,t),u=Mo(n,o=t.memoizedProps),a.props=u,d=t.pendingProps,h=a.context,c=n.contextType,l=_r,
+===typeof c&&null!==c&&(l=js(c)),(c=
+===typeof(s=n.getDerivedStateFromProps)||
+===typeof a.getSnapshotBeforeUpdate)||
+!==typeof a.componentWillReceiveProps||(o!==d||h!==l)&&_o(t,a,r,l),Ps=!1,h=t.memoizedState,a.state=h,Ls(t,r,a,i),Ds();var p=t.memoizedState;o!==d||h!==p||Ps||null!==e&&null!==e.dependencies&&Ss(e.dependencies)?(
+===typeof s&&(Ao(t,n,s,r),p=t.memoizedState),(u=Ps||Ro(t,n,u,r,h,p,l)||null!==e&&null!==e.dependencies&&Ss(e.dependencies))?(c||
+!==typeof a.UNSAFE_componentWillUpdate&&
+!==typeof a.componentWillUpdate||(
+===typeof a.componentWillUpdate&&a.componentWillUpdate(r,p,l),
+===typeof a.UNSAFE_componentWillUpdate&&a.UNSAFE_componentWillUpdate(r,p,l)),
+===typeof a.componentDidUpdate&&(t.flags|=4),
+===typeof a.getSnapshotBeforeUpdate&&(t.flags|=1024)):(
+!==typeof a.componentDidUpdate||o===e.memoizedProps&&h===e.memoizedState||(t.flags|=4),
+!==typeof a.getSnapshotBeforeUpdate||o===e.memoizedProps&&h===e.memoizedState||(t.flags|=1024),t.memoizedProps=r,t.memoizedState=p),a.props=r,a.state=p,a.context=l,r=u):(
+!==typeof a.getSnapshotBeforeUpdate||o===e.memoizedProps&&h===e.memoizedState||(t.flags|=1024),r=!1)}return a=r,Xo(e,t),r=0!==(128&t.flags),a||r?(a=t.stateNode,n=r&&
+===c.data?t.lanes=16:t.lanes=536870912,null;Mi(t)}return c=i.children,i=i.fallback,a?(_i(),c=ss({mode:
+,children:i.children},c),(a=Bl(a,c,n,null)).flags|=2,i.return=t,a.return=t,i.sibling=a,t.child=i,wi(t,e.child,null,n),(i=t.child).memoizedState=rs(n),i.childLanes=is(e,r,n),t.memoizedState=ns,t=a);else if(Ti(t),
+===c.data){if(r=c.nextSibling&&c.nextSibling.dataset)var u=r.dgst;r=u,(i=Error(o(419))).stack=
+===c.data||Hc(),t=ls(e,t,n)}else
+,children:i.children})).return=t,n.sibling=null,null!==e&&(null===(r=t.deletions)?(t.deletions=[e],t.flags|=16):r.push(e)),t.child=n,t.memoizedState=null,n)}function os(e,t){return(t=ss({mode:
+:for(n=t.child,i=null;null!==n;)null!==(e=n.alternate)&&null===Fi(e)&&(i=n),n=n.sibling;null===(n=i)?(i=t.child,t.child=null):(i=n.sibling,n.sibling=null),us(t,!1,i,n,a);break;case
+:for(n=null,i=t.child,t.child=null;null!==i;){if(null!==(e=i.alternate)&&null===Fi(e)){t.child=i;break}e=i.sibling,i.sibling=n,n=i,i=e}us(t,!0,n,null,a);break;case
+!==typeof r){if(void 0!==r&&null!==r){if((i=r.$$typeof)===v){t.tag=11,t=Yo(null,t,r,e,n);break e}if(i===b){t.tag=14,t=Go(null,t,r,e,n);break e}}throw t=N(r)||r,Error(o(306,t,
+!==e.type))break}else if(r){if(!e[qe])switch(t){case
+))break;return e;case
+===(a=e.getAttribute(
+))break;if(a!==i.rel||e.getAttribute(
+)!==(null==i.href?null:i.href)||e.getAttribute(
+)!==(null==i.crossOrigin?null:i.crossOrigin)||e.getAttribute(
+)!==(null==i.title?null:i.title))break;return e;case
+:if(((a=e.getAttribute(
+))!==(null==i.src?null:i.src)||e.getAttribute(
+)!==(null==i.type?null:i.type)||e.getAttribute(
+)!==(null==i.crossOrigin?null:i.crossOrigin))&&a&&e.hasAttribute(
+))break;return e;default:return e}}else{if(
+!==e.type)return e;var a=null==i.name?null:
+===i.type&&e.getAttribute(
+===t)return null;for(;3!==e.nodeType;){if((1!==e.nodeType||
+===typeof(f=m.payload)){d=f.call(g,d,h);break e}d=f;break e;case 3:f.flags=-65537&f.flags|128;case 0:if(null===(h=
+===typeof n?e.refCleanup=n(i):n.current=i}}catch(a){ru(e,t,a)}}function qs(e,t){var n=e.ref,r=e.refCleanup;if(null!==n)if(
+===typeof r)try{r()}catch(i){ru(e,t,i)}finally{e.refCleanup=null,null!=(e=e.alternate)&&(e.refCleanup=null)}else if(
+===typeof n)try{n(null)}catch(a){ru(e,t,a)}else n.current=null}function Ys(e){var t=e.type,n=e.memoizedProps,r=e.stateNode;try{e:switch(t){case
+:n.autoFocus&&r.focus();break e;case
+:n.src?r.src=n.src:n.srcSet&&(r.srcset=n.srcSet)}}catch(i){ru(e,e.return,i)}}function Gs(e,t,n){try{var r=e.stateNode;!function(e,t,n,r){switch(t){case
+:var i=null,a=null,s=null,l=null,c=null,u=null,d=null;for(f in n){var h=n[f];if(n.hasOwnProperty(f)&&null!=h)switch(f){case
+:c=h;default:r.hasOwnProperty(f)||Hu(e,t,f,null,r,h)}}for(var p in r){var f=r[p];if(h=n[p],r.hasOwnProperty(p)&&(null!=f||null!=h))switch(p){case
+:if(null!=f)throw Error(o(137,t));break;default:f!==h&&Hu(e,t,p,f,r,h)}}return void gt(e,s,l,c,u,d,a,i);case
+:for(a in f=s=l=p=null,n)if(c=n[a],n.hasOwnProperty(a)&&null!=c)switch(a){case
+:f=c;default:r.hasOwnProperty(a)||Hu(e,t,a,null,r,c)}for(i in r)if(a=r[i],c=n[i],r.hasOwnProperty(i)&&(null!=a||null!=c))switch(i){case
+:s=a;default:a!==c&&Hu(e,t,i,a,r,c)}return t=l,n=s,r=f,void(null!=p?xt(e,!!n,p,!1):!!r!==!!n&&(null!=t?xt(e,!!n,t,!0):xt(e,!!n,n?[]:
+:for(l in f=p=null,n)if(i=n[l],n.hasOwnProperty(l)&&null!=i&&!r.hasOwnProperty(l))switch(l){case
+:break;default:Hu(e,t,l,null,r,i)}for(s in r)if(i=r[s],a=n[s],r.hasOwnProperty(s)&&(null!=i||null!=a))switch(s){case
+:if(null!=i)throw Error(o(91));break;default:i!==a&&Hu(e,t,s,i,r,a)}return void bt(e,p,f);case
+:for(var m in n)if(p=n[m],n.hasOwnProperty(m)&&null!=p&&!r.hasOwnProperty(m))if(
+===m)e.selected=!1;else Hu(e,t,m,null,r,p);for(c in r)if(p=r[c],f=n[c],r.hasOwnProperty(c)&&p!==f&&(null!=p||null!=f))if(
+!==typeof p;else Hu(e,t,c,p,r,f);return;case
+:for(var g in n)p=n[g],n.hasOwnProperty(g)&&null!=p&&!r.hasOwnProperty(g)&&Hu(e,t,g,null,r,p);for(u in r)if(p=r[u],f=n[u],r.hasOwnProperty(u)&&p!==f&&(null!=p||null!=f))switch(u){case
+:(!(a=i.getElementsByTagName(
+)[0])||a[qe]||a[ze]||
+===a.namespaceURI||a.hasAttribute(
+))&&(a=i.createElement(r),i.head.insertBefore(a,i.querySelector(
+))),Yu(a,r,n),a[ze]=e,Xe(a),r=a;break e;case
+));if(s)for(var l=0;l<s.length;l++)if((a=s[l]).getAttribute(
+)===(null==n.href?null:n.href)&&a.getAttribute(
+)===(null==n.rel?null:n.rel)&&a.getAttribute(
+)===(null==n.title?null:n.title)&&a.getAttribute(
+)===(null==n.crossOrigin?null:n.crossOrigin)){s.splice(l,1);break t}Yu(a=i.createElement(r),r,n),i.head.appendChild(a);break;case
+,i).get(r+(n.content||
+)))for(l=0;l<s.length;l++)if((a=s[l]).getAttribute(
+)===(null==n.content?null:
++n.content)&&a.getAttribute(
+)===(null==n.name?null:n.name)&&a.getAttribute(
+)===(null==n.property?null:n.property)&&a.getAttribute(
+)===(null==n.httpEquiv?null:n.httpEquiv)&&a.getAttribute(
+===c.rel.toLowerCase()||i.removeChild(c),c=u}for(var h=e.type,p=i.attributes;p.length;)i.removeAttributeNode(p[0]);Yu(i,h,a),i[ze]=e,i[Ie]=a}catch(m){ru(e,e.return,m)}}case 5:if(hl(t,e),ml(e),512&r&&(Zs||null===n||qs(n,n.return)),32&e.flags){i=e.stateNode;try{kt(i,
+!==e.memoizedProps.mode))e:for(n=null,t=e;;){if(5===t.tag||26===t.tag||27===t.tag){if(null===n){u=n=t;try{if(i=u.stateNode,c)
+===typeof(a=i.style).setProperty?a.setProperty(
+;else{s=u.stateNode;var f=void 0!==(l=u.memoizedProps.style)&&null!==l&&l.hasOwnProperty(
+)?l.display:null;s.style.display=null==f||
++f).trim()}}catch(m){ru(u,u.return,m)}}}else if(6===t.tag){if(null===n){u=t;try{u.stateNode.nodeValue=c?
+===typeof s&&s(o,null===t.alternate?
+!==typeof n.media||!1!==matchMedia(n.media).matches)&&0===(4&t.state.loading)){if(null===t.instance){var i=vd(n.href),a=e.querySelector(yd(i));if(a)return null!==(e=a._p)&&
+===typeof e.then&&(r.count++,r=_d.bind(r),e.then(r,r)),t.state.loading|=4,t.instance=a,void Xe(a);a=e.ownerDocument||e,n=xd(n),(i=ud.get(i))&&Ed(n,i),Xe(a=a.createElement(
+));var s=a;s._p=new Promise(function(e,t){s.onload=e,s.onerror=t}),Yu(a,
+,n),t.instance=a}null===r.stylesheets&&(r.stylesheets=new Map),r.stylesheets.set(t,e),(e=t.state.preload)&&0===(3&t.state.loading)&&(r.count++,t=_d.bind(r),e.addEventListener(
+,t),e.addEventListener(
+===typeof e)Dl(e)&&(s=1);else if(
+===typeof e)s=function(e,t,n){if(1===n||null!=t.itemProp)return!1;switch(e){case
+!==typeof t.precedence||
+===t.href)break;return!0;case
+===t.href||t.onLoad||t.onError)break;return
+!==t.rel||(e=t.disabled,
+===typeof t.precedence&&null==e);case
+!==typeof t.async&&!t.onLoad&&!t.onError&&t.src&&
+===typeof t.src)return!0}return!1}(e,n,$.current)?26:
+===e?27:5;else e:switch(e){case d:return Bl(n.children,i,a,t);case h:s=8,i|=24;break;case p:return(e=Fl(12,n,t,2|i)).elementType=p,e.lanes=a,e;case y:return(e=Fl(13,n,t,i)).elementType=y,e.lanes=a,e;case x:return(e=Fl(19,n,t,i)).elementType=x,e.lanes=a,e;case k:return Vl(n,i,a,t);default:if(
+===typeof e&&null!==e)switch(e.$$typeof){case f:case g:s=10;break e;case m:s=9;break e;case v:s=11;break e;case b:s=14;break e;case w:s=16,r=null;break e}s=29,n=Error(o(130,null===e?
+:t=e.tail;for(var n=null;null!==t;)null!==t.alternate&&(n=t),t=t.sibling;null===n?e.tail=null:n.sibling=null;break;case
+,n);break;case 2:e=i.createElementNS(
+,n);break;default:switch(n){case
+:e=i.createElementNS(
+,e=e.removeChild(e.firstChild);break;case
+===typeof r.is?i.createElement(
+,{is:r.is}):i.createElement(
+),r.multiple?e.multiple=!0:r.size&&(e.size=r.size);break;default:e=
+:e=!!r.autoFocus;break e;case
+:e=!0;break e;default:e=!1}e&&Hl(t)}}return Kl(t),t.flags&=-16777217,null;case 6:if(e&&null!=t.stateNode)e.memoizedProps!==r&&Hl(t);else{if(
+===typeof t.getDerivedStateFromError||null!==a&&
+:od(e);break;default:e.textContent=
+===typeof t.type.getDerivedStateFromError||
++e)}function Su(e,t){var n=t.ownerDocument.createElement(
+);return n.name=t.name,n.value=t.value,e.id&&n.setAttribute(
+,e.id),t.parentNode.insertBefore(n,t),e=new FormData(e),n.parentNode.removeChild(n),e}for(var Eu=0;Eu<wr.length;Eu++){var ju=wr[Eu];kr(ju.toLowerCase(),
++(ju[0].toUpperCase()+ju.slice(1)))}kr(pr,
+;n.has(r)||(Mu(t,e,2,!1),n.add(r))}function Tu(e,t,n){var r=0;t&&(r|=4),Mu(n,e,r,t)}var Ru=
++Math.random().toString(36).slice(2);function _u(e){if(!e[Ru]){e[Ru]=!0,Je.forEach(function(t){
+!==t&&(Nu.has(t)||Tu(t,!1,e),Tu(t,!0,e))});var t=9===e.nodeType?e:e.ownerDocument;null===t||t[Ru]||(t[Ru]=!0,Tu(
+,!1,t))}}function Mu(e,t,n,r){switch(Xd(t)){case 2:var i=qd;break;case 8:i=Yd;break;default:i=Gd}n=i.bind(null,t,n,e),i=void 0,!zt||
+:if(0===Ht(n))break e;case
+:if(2===n.button)break e;case
+:l=gn;break;case pr:case fr:case mr:l=on;break;case xr:l=vn;break;case
+:l=xn}var u=0!==(4&t),d=!u&&(
+===e),h=u?null!==s?s+
+:null:s;u=[];for(var p,f=r;null!==f;){var m=f;if(p=m.stateNode,5!==(m=m.tag)&&26!==m&&27!==m||null===p||null===h||null!=(m=Lt(f,h))&&u.push(Fu(f,m,p)),d)break;f=f.return}0<u.length&&(s=new l(s,c,null,n,i),o.push({event:s,listeners:u}))}}if(0===(7&t)){if(l=
+),d=null==l?s:$e(l),p=null==c?s:$e(c),(s=new u(m,f+
+,l,n,i)).target=d,s.relatedTarget=p,m=null,Ge(i)===r&&((u=new u(h,f+
+===(l=(s=r?$e(r):window).nodeName&&s.nodeName.toLowerCase())||
+===s.type)var g=Ln;else if(Rn(s))if(zn)g=Gn;else{g=qn;var v=Hn}else!(l=s.nodeName)||
+!==s.type?r&&Ct(r.elementType)&&(g=Ln):g=Yn;switch(g&&(g=g(e,r))?_n(o,g,n,i):(v&&v(e,s,r),
+===s.type&&null!=r.memoizedProps.value&&yt(s,
+,s.value)),v=r?$e(r):window,e){case
+===v.contentEditable)&&(rr=v,ir=r,ar=null);break;case
+:ar=ir=rr=null;break;case
+:or=!1,sr(o,n,i);break;case
+:sr(o,n,i)}var y;if(wn)e:{switch(e){case
+;break e}x=void 0}else An?Nn(e,n)&&(x=
+===e&&229===n.keyCode&&(x=
+===x&&An&&(y=Wt()):(Vt=
+in(Bt=i)?Bt.value:Bt.textContent,An=!0)),0<(v=Du(r,x)).length&&(x=new ln(x,e,null,n,i),o.push({event:x,listeners:v}),y?x.data=y:null!==(y=Pn(n))&&(x.data=y))),(y=Sn?function(e,t){switch(e){case
+:return 32!==t.which?null:(Cn=!0,jn);case
+:return(e=t.data)===jn&&Cn?null:e;default:return null}}(e,n):function(e,t){if(An)return
+===e||!wn&&Nn(e,t)?(e=Wt(),Ut=Vt=Bt=null,An=!1,e):null;switch(e){case
+:default:return null;case
+:if(!(t.ctrlKey||t.altKey||t.metaKey)||t.ctrlKey&&t.altKey){if(t.char&&1<t.char.length)return t.char;if(t.which)return String.fromCharCode(t.which)}return null;case
+!==t.locale?null:t.data}}(e,n))&&(0<(x=Du(r,
+)).length&&(v=new ln(
+,null,n,i),o.push({event:v,listeners:x}),v.data=y)),function(e,t,n,r,i){if(
+===t&&n&&n.stateNode===i){var a=ku((i[Ie]||null).action),o=r.submitter;o&&null!==(t=(t=o[Ie]||null)?ku(t.formAction):o.getAttribute(
+))&&(a=t,o=null);var s=new Jt(
+)}function Uu(e,t){return t=Vu(t),Vu(e)===t}function Wu(){}function Hu(e,t,n,r,i,a){switch(n){case
+:st(e,n,r);break;case
+:jt(e,r,a);break;case
+!==n)){e.removeAttribute(n);break}if(null==r||
+===typeof r){e.removeAttribute(n);break}r=At(
++r),e.setAttribute(n,r);break;case
+===typeof r){e.setAttribute(n,
+,i.name,i,null),Hu(e,t,
+,i.formEncType,i,null),Hu(e,t,
+,i.formMethod,i,null),Hu(e,t,
+,i.formTarget,i,null)):(Hu(e,t,
+,i.encType,i,null),Hu(e,t,
+,i.method,i,null),Hu(e,t,
+,i.target,i,null))),null==r||
+:null!=r&&(e.onclick=Wu);break;case
+in r))throw Error(o(61));if(null!=(n=r.__html)){if(null!=i.children)throw Error(o(60));e.innerHTML=n}}break;case
+!==typeof r;break;case
+===typeof r){e.removeAttribute(
++r),e.setAttributeNS(
+!==typeof r?e.setAttribute(n,
++r):e.removeAttribute(n);break;case
+):e.removeAttribute(n);break;case
+:!0===r?e.setAttribute(n,
+!==typeof r?e.setAttribute(n,r):e.removeAttribute(n);break;case
+!==typeof r&&!isNaN(r)&&1<=r?e.setAttribute(n,r):e.removeAttribute(n);break;case
+===typeof r||isNaN(r)?e.removeAttribute(n):e.setAttribute(n,r);break;case
+:break;default:(!(2<n.length)||
+!==n[1])&&ot(e,n=Nt.get(n)||n,r)}}function qu(e,t,n,r,i,a){switch(n){case
+===typeof r?kt(e,r):(
+:break;default:Ze.hasOwnProperty(n)||(
+!==n[1]||(i=n.endsWith(
+),t=n.slice(2,i?n.length-7:void 0),
+===typeof(a=null!=(a=e[Ie]||null)?a[n]:null)&&e.removeEventListener(t,a,i),
+!==typeof r)?n in e?e[n]=r:!0===r?e.setAttribute(n,
+!==typeof a&&null!==a&&(n in e?e[n]=null:e.hasAttribute(n)&&e.removeAttribute(n)),e.addEventListener(t,r,i)))}}function Yu(e,t,n){switch(t){case
+,e);var r,i=!1,a=!1;for(r in n)if(n.hasOwnProperty(r)){var s=n[r];if(null!=s)switch(r){case
+:throw Error(o(137,t));default:Hu(e,t,r,s,n,null)}}return a&&Hu(e,t,
+,n.srcSet,n,null),void(i&&Hu(e,t,
+,e);var l=r=s=a=null,c=null,u=null;for(i in n)if(n.hasOwnProperty(i)){var d=n[i];if(null!=d)switch(i){case
+:if(null!=d)throw Error(o(137,t));break;default:Hu(e,t,i,d,n,null)}}return vt(e,r,l,c,u,s,a,!1),void dt(e);case
+,e),i=s=r=null,n)if(n.hasOwnProperty(a)&&null!=(l=n[a]))switch(a){case
+:i=l;default:Hu(e,t,a,l,n,null)}return t=r,n=s,e.multiple=!!i,void(null!=t?xt(e,!!i,t,!1):null!=n&&xt(e,!!i,n,!0));case
+,e),r=a=i=null,n)if(n.hasOwnProperty(s)&&null!=(l=n[s]))switch(s){case
+:if(null!=l)throw Error(o(91));break;default:Hu(e,t,s,l,n,null)}return wt(e,i,a,r),void dt(e);case
+:for(c in n)if(n.hasOwnProperty(c)&&null!=(i=n[c]))if(
+!==typeof i;else Hu(e,t,c,i,n,null);return;case
+:for(i=0;i<Cu.length;i++)Au(Cu[i],e);break;case
+:for(u in n)if(n.hasOwnProperty(u)&&null!=(i=n[u]))switch(u){case
+:return 2;default:return 0}}function Xu(e,t){if(0===e)switch(t){case
+:return 2;default:return 0}return 1===e&&
+===t?0:e}function Ju(e,t){return
+===typeof t.children||
+===typeof t.dangerouslySetInnerHTML&&null!==t.dangerouslySetInnerHTML&&null!=t.dangerouslySetInnerHTML.__html}var Zu=null;var ed=
+===typeof setTimeout?setTimeout:void 0,td=
+===typeof clearTimeout?clearTimeout:void 0,nd=
+===typeof Promise?Promise:void 0,rd=
+===typeof queueMicrotask?queueMicrotask:
+!==typeof nd?function(e){return nd.resolve(null).then(e).catch(id)}:ed;function id(e){setTimeout(function(){throw e})}function ad(e,t){var n=t,r=0;do{var i=n.nextSibling;if(e.removeChild(n),i&&8===i.nodeType)if(
+===(n=i.data)){if(0===r)return e.removeChild(i),void mh(t);r--}else
+!==n||r++;n=i}while(n);mh(t)}function od(e){var t=e.firstChild;for(t&&10===t.nodeType&&(t=t.nextSibling);t;){var n=t;switch(t=t.nextSibling,n.nodeName){case
+:od(n),Ye(n);continue;case
+===n.rel.toLowerCase())continue}e.removeChild(n)}}function sd(e){for(;null!=e;e=e.nextSibling){var t=e.nodeType;if(1===t||3===t)break;if(8===t){if(
+===t)return null}}return e}function ld(e){e=e.previousSibling;for(var t=0;e;){if(8===e.nodeType){var n=e.data;if(
+===n){if(0===t)return e;t--}else
+===n&&t++}e=e.previousSibling}return null}function cd(e,t,n){switch(t=$u(n),e){case
+:if(!(e=t.documentElement))throw Error(o(452));return e;case
+:if(!(e=t.head))throw Error(o(453));return e;case
+:if(!(e=t.body))throw Error(o(454));return e;default:throw Error(o(451))}}var ud=new Map,dd=new Set;function hd(e){return
+===typeof e.getRootNode?e.getRootNode():e.ownerDocument}var pd=U.d;U.d={f:function(){var e=pd.f(),t=zc();return e||t},r:function(e){var t=Ke(e);null!==t&&5===t.tag&&
+===t.type?po(t):pd.r(e)},D:function(e){pd.D(e),md(
+,e,null)},C:function(e,t){pd.C(e,t),md(
+,e,t)},L:function(e,t,n){pd.L(e,t,n);var r=fd;if(r&&e&&t){var i='link[rel=
+===t&&n&&n.imageSrcSet?(i+='[imagesrcset=
+===typeof n.imageSizes&&(i+='[imagesizes=
+]';var a=i;switch(t){case
+:a=bd(e)}ud.has(a)||(e=R({rel:
+===t&&n&&n.imageSrcSet?void 0:e,as:t},n),ud.set(a,e),null!==r.querySelector(i)||
+===t&&r.querySelector(yd(a))||
+===t&&r.querySelector(wd(a))||(Yu(t=r.createElement(
+,e),Xe(t),r.head.appendChild(t)))}},m:function(e,t){pd.m(e,t);var n=fd;if(n&&e){var r=t&&
+]',a=i;switch(r){case
+:a=bd(e)}if(!ud.has(a)&&(e=R({rel:
+,href:e},t),ud.set(a,e),null===n.querySelector(i))){switch(r){case
+:if(n.querySelector(wd(a)))return}Yu(r=n.createElement(
+,e),Xe(r),n.head.appendChild(r)}}},X:function(e,t){pd.X(e,t);var n=fd;if(n&&e){var r=Qe(n).hoistableScripts,i=bd(e),a=r.get(i);a||((a=n.querySelector(wd(i)))||(e=R({src:e,async:!0},t),(t=ud.get(i))&&jd(e,t),Xe(a=n.createElement(
+,e),n.head.appendChild(a)),a={type:
+,instance:a,count:1,state:null},r.set(i,a))}},S:function(e,t,n){pd.S(e,t,n);var r=fd;if(r&&e){var i=Qe(r).hoistableStyles,a=vd(e);t=t||
+;var o=i.get(a);if(!o){var s={loading:0,preload:null};if(o=r.querySelector(yd(a)))s.loading=5;else{e=R({rel:
+:t},n),(n=ud.get(a))&&Ed(e,n);var l=o=r.createElement(
+,e),l._p=new Promise(function(e,t){l.onload=e,l.onerror=t}),l.addEventListener(
+,function(){s.loading|=1}),l.addEventListener(
+,function(){s.loading|=2}),s.loading|=4,Sd(o,t,r)}o={type:
+,instance:o,count:1,state:s},i.set(a,o)}}},M:function(e,t){pd.M(e,t);var n=fd;if(n&&e){var r=Qe(n).hoistableScripts,i=bd(e),a=r.get(i);a||((a=n.querySelector(wd(i)))||(e=R({src:e,async:!0,type:
+},t),(t=ud.get(i))&&jd(e,t),Xe(a=n.createElement(
+,instance:a,count:1,state:null},r.set(i,a))}}};var fd=
+===typeof document?null:document;function md(e,t,n){var r=fd;if(r&&
+===typeof t&&t){var i=mt(t);i='link[rel=
+===typeof n&&(i+='[crossorigin=
+]'),dd.has(i)||(dd.add(i),e={rel:e,crossOrigin:n,href:t},null===r.querySelector(i)&&(Yu(t=r.createElement(
+,e),Xe(t),r.head.appendChild(t)))}}function gd(e,t,n,r){var i,a,s,l,c=(c=X.current)?hd(c):null;if(!c)throw Error(o(446));switch(e){case
+===typeof n.precedence&&
+===typeof n.href?(t=vd(n.href),(r=(n=Qe(c).hoistableStyles).get(t))||(r={type:
+,instance:null,count:0,state:null},n.set(t,r)),r):{type:
+,instance:null,count:0,state:null};case
+===typeof n.precedence){e=vd(n.href);var u=Qe(c).hoistableStyles,d=u.get(e);if(d||(c=c.ownerDocument||c,d={type:
+,instance:null,count:0,state:{loading:0,preload:null}},u.set(e,d),(u=c.querySelector(yd(e)))&&!u._p&&(d.instance=u,d.state.loading=5),ud.has(e)||(n={rel:
+,href:n.href,crossOrigin:n.crossOrigin,integrity:n.integrity,media:n.media,hrefLang:n.hrefLang,referrerPolicy:n.referrerPolicy},ud.set(e,n),u||(i=c,a=e,s=n,l=d.state,i.querySelector('link[rel=
+)?l.loading=1:(a=i.createElement(
+),l.preload=a,a.addEventListener(
+,function(){return l.loading|=1}),a.addEventListener(
+,function(){return l.loading|=2}),Yu(a,
+,s),Xe(a),i.head.appendChild(a))))),t&&null===r)throw Error(o(528,
+));return d}if(t&&null!==r)throw Error(o(529,
+===typeof(n=n.src)&&t&&
+!==typeof t?(t=bd(n),(r=(n=Qe(c).hoistableScripts).get(t))||(r={type:
+,instance:null,count:0,state:null};default:throw Error(o(444,e))}}function vd(e){return'href=
+'}function yd(e){return'link[rel=
+}function xd(e){return R({},e,{
+:e.precedence,precedence:null})}function bd(e){return'[src=
+]'}function wd(e){return
++e}function kd(e,t,n){if(t.count++,null===t.instance)switch(t.type){case
+:var r=e.querySelector('style[data-href~=
+]');if(r)return t.instance=r,Xe(r),r;var i=R({},n,{
+:n.precedence,href:null,precedence:null});return Xe(r=(e.ownerDocument||e).createElement(
+,i),Sd(r,n.precedence,e),t.instance=r;case
+:i=vd(n.href);var a=e.querySelector(yd(i));if(a)return t.state.loading|=4,t.instance=a,Xe(a),a;r=xd(n),(i=ud.get(i))&&Ed(r,i),Xe(a=(e.ownerDocument||e).createElement(
+));var s=a;return s._p=new Promise(function(e,t){s.onload=e,s.onerror=t}),Yu(a,
+,r),t.state.loading|=4,Sd(a,n.precedence,e),t.instance=a;case
+:return a=bd(n.src),(i=e.querySelector(wd(a)))?(t.instance=i,Xe(i),i):(r=n,(i=ud.get(a))&&jd(r=R({},n),i),Xe(i=(e=e.ownerDocument||e).createElement(
+,r),e.head.appendChild(i),t.instance=i);case
+:return null;default:throw Error(o(443,t.type))}else
+===t.type&&0===(4&t.state.loading)&&(r=t.instance,t.state.loading|=4,Sd(r,n.precedence,e));return t.instance}function Sd(e,t,n){for(var r=n.querySelectorAll('link[rel=
+!==a.namespaceURI){var o=a.getAttribute(t)||
+;o=e+o;var s=r.get(o);s?s.push(a):r.set(o,[a])}}return r}function Pd(e,t,n){(e=e.ownerDocument||e).head.insertBefore(n,
+===t?e.querySelector(
+):null)}function Ad(e){return
+),a=0;a<i.length;a++){var o=i[a];
+)||(n.set(o.dataset.precedence,o),r=o)}r&&n.set(null,r)}o=(i=t.instance).getAttribute(
+),(a=n.get(o)||r)===r&&n.set(null,i),n.set(o,i),this.count++,r=_d.bind(this),i.addEventListener(
+,r),i.addEventListener(
+:return Zd=sh(Zd,e,t,n,r,i),!0;case
+:return eh=sh(eh,e,t,n,r,i),!0;case
+:return th=sh(th,e,t,n,r,i),!0;case
+:var a=i.pointerId;return nh.set(a,sh(nh.get(a)||null,e,t,n,r,i)),!0;case
+:switch(ce()){case ue:return 2;case de:return 8;case he:case pe:return 32;case fe:return 268435456;default:return 32}default:return 32}}var Jd=!1,Zd=null,eh=null,th=null,nh=new Map,rh=new Map,ih=[],ah=
+);function oh(e,t){switch(e){case
+:nh.delete(t.pointerId);break;case
+===typeof a)o||fh(n);else if(o){var s=null;if(a&&a.hasAttribute(
+)){if(i=a,o=a[Ie]||null)s=o.formAction;else if(null!==Qd(i))continue}else s=o.action;
+!==yh)throw Error(o(527,yh,
+));U.findDOMNode=function(e){var t=e._reactInternals;if(void 0===t){if(
+===typeof e.render)throw Error(o(188));throw e=Object.keys(e).join(
+,rendererPackageName:
+,currentDispatcherRef:T,findFiberByHostInstance:Ge,reconcilerVersion:
+!==typeof __REACT_DEVTOOLS_GLOBAL_HOOK__){var bh=__REACT_DEVTOOLS_GLOBAL_HOOK__;if(!bh.isDisabled&&bh.supportsFiber)try{ve=bh.inject(xh),ye=bh}catch(kh){}}t.createRoot=function(e,t){if(!s(e))throw Error(o(299));var n=!1,r=
+;var r=n(43);function i(e){var t=
++e;if(1<arguments.length){t+=
++encodeURIComponent(arguments[1]);for(var n=2;n<arguments.length;n++)t+=
++encodeURIComponent(arguments[n])}return
+}function a(){}var o={d:{f:a,r:function(){throw Error(i(522))},D:a,C:a,L:a,m:a,X:a,S:a,M:a},p:0,findDOMNode:null},s=Symbol.for(
+);var l=r.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;function c(e,t){return
++r,children:e,containerInfo:t,implementation:n}}(e,t,null,n)},t.flushSync=function(e){var t=l.T,n=o.p;try{if(l.T=null,o.p=2,e)return e()}finally{l.T=t,o.p=n,o.d.f()}},t.preconnect=function(e,t){
+===typeof(t=t.crossOrigin)?
+:void 0:t=null,o.d.C(e,t))},t.prefetchDNS=function(e){
+===typeof e&&o.d.D(e)},t.preinit=function(e,t){if(
+===typeof t.as){var n=t.as,r=c(n,t.crossOrigin),i=
+===typeof t.integrity?t.integrity:void 0,a=
+===typeof t.fetchPriority?t.fetchPriority:void 0;
+===typeof t.precedence?t.precedence:void 0,{crossOrigin:r,integrity:i,fetchPriority:a}):
+===n&&o.d.X(e,{crossOrigin:r,integrity:i,fetchPriority:a,nonce:
+===typeof t.nonce?t.nonce:void 0})}},t.preinitModule=function(e,t){if(
+===typeof t&&null!==t){if(null==t.as||
+===t.as){var n=c(t.as,t.crossOrigin);o.d.M(e,{crossOrigin:n,integrity:
+===typeof t.integrity?t.integrity:void 0,nonce:
+===typeof t.nonce?t.nonce:void 0})}}else null==t&&o.d.M(e)},t.preload=function(e,t){if(
+===typeof t.as){var n=t.as,r=c(n,t.crossOrigin);o.d.L(e,n,{crossOrigin:r,integrity:
+===typeof t.nonce?t.nonce:void 0,type:
+===typeof t.type?t.type:void 0,fetchPriority:
+===typeof t.fetchPriority?t.fetchPriority:void 0,referrerPolicy:
+===typeof t.referrerPolicy?t.referrerPolicy:void 0,imageSrcSet:
+===typeof t.imageSrcSet?t.imageSrcSet:void 0,imageSizes:
+===typeof t.imageSizes?t.imageSizes:void 0,media:
+===typeof t.media?t.media:void 0})}},t.preloadModule=function(e,t){if(
+===typeof e)if(t){var n=c(t.as,t.crossOrigin);o.d.m(e,{as:
+!==t.as?t.as:void 0,crossOrigin:n,integrity:
+===typeof t.integrity?t.integrity:void 0})}else o.d.m(e)},t.requestFormReset=function(e){o.d.r(e)},t.unstable_batchedUpdates=function(e,t){return e(t)},t.useFormState=function(e,t,n){return l.H.useFormState(e,t,n)},t.useFormStatus=function(){return l.H.useHostTransitionStatus()},t.version=
+!==typeof __REACT_DEVTOOLS_GLOBAL_HOOK__&&
+===typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE)try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(e)}catch(t){console.error(t)}}(),e.exports=n(4)},950(e,t,n){
+===typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE)try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(e)}catch(t){console.error(t)}}(),e.exports=n(672)},353(e,t,n){
+;var r=n(715).default,i=this&&this.__createBinding||(Object.create?function(e,t,n,r){void 0===r&&(r=n);var i=Object.getOwnPropertyDescriptor(t,n);i&&!(
+in i?!t.__esModule:i.writable||i.configurable)||(i={enumerable:!0,get:function(){return t[n]}}),Object.defineProperty(e,r,i)}:function(e,t,n,r){void 0===r&&(r=n),e[r]=t[n]}),a=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,
+,{enumerable:!0,value:t})}:function(e,t){e.default=t}),o=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)
+!==n&&Object.prototype.hasOwnProperty.call(e,n)&&i(t,e,n);return a(t,e),t},s=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,
+,{value:!0}),t.useRazorpay=void 0;const l=o(n(43)),c=s(n(131));t.useRazorpay=()=>{const e=l.useState(!1),t=r(e,2),n=t[0],i=t[1],a=l.useState(),o=r(a,2),s=o[0],u=o[1],d=
+!==typeof window;return l.useEffect(()=>{var e;d&&(i(!0),d&&
+,new Promise((t,n)=>{const r=window.document.createElement(
+);r.src=e,r.onload=function(){t()},r.onerror=function(e){n(e.toString())},document.body.appendChild(r)})).then(()=>{u(void 0)}).catch(e=>{e instanceof Error?u(e.message):u(
+)}).finally(()=>i(!1)))},[]),{error:s,isLoading:n,Razorpay:c.default}}},131(e,t){
+;Object.defineProperty(t,
+,{value:!0});t.default=class{constructor(e){this.instance=void 0,this.options=e,
+!==typeof window&&(this.instance=new window.Razorpay(this.options))}on(e,t){if(!this.instance)throw new Error(
+);this.instance.on(e,t)}open(){if(!this.instance)throw new Error(
+);this.instance.open()}}},799(e,t){
+);function i(e,t,r){var i=null;if(void 0!==r&&(i=
++r),void 0!==t.key&&(i=
+in t)for(var a in r={},t)
+!==a&&(r[a]=t[a]);else r=t;return t=r.ref,{$$typeof:n,type:e,key:i,ref:void 0!==t?t:null,props:r}}t.Fragment=r,t.jsx=i,t.jsxs=i},288(e,t){
+!==typeof e&&null!=e)throw Error(
+);this.updater.enqueueSetState(this,e,t,
+)},v.prototype.forceUpdate=function(e){this.updater.enqueueForceUpdate(this,e,
+===typeof e&&null!==e&&e.$$typeof===n}var C=/\/+/g;function N(e,t){return
+===typeof e&&null!==e&&null!=e.key?function(e){var t={
++e.replace(/[=:]/g,function(e){return t[e]})}(
++e.key):t.toString(36)}function P(){}function A(e,t,i,a,o){var s=typeof e;
+!==s||(e=null);var l,c,u=!1;if(null===e)u=!0;else switch(s){case
+:switch(e.$$typeof){case n:case r:u=!0;break;case h:return A((u=e._init)(e._payload),t,i,a,o)}}if(u)return o=o(e),u=
+,null!=u&&(i=u.replace(C,
+,function(e){return e})):null!=o&&(j(o)&&(l=o,c=i+(null==o.key||e&&e.key===o.key?
+)+u,o=E(l.type,c,void 0,0,0,l.props)),t.push(o)),1;u=0;var d,f=
+;if(w(e))for(var m=0;m<e.length;m++)u+=A(a=e[m],t,i,s=f+N(a,m),o);else if(
+===typeof(m=null===(d=e)||
+===typeof(d=p&&d[p]||d[
+])?d:null))for(e=m.call(e),m=0;!(a=e.next()).done;)u+=A(a=a.value,t,i,s=f+N(a,m++),o);else if(
+===typeof e.then)return A(function(e){switch(e.status){case
+:throw e.reason;default:switch(
+===typeof e.status?e.then(P,P):(e.status=
+===e.status&&(e.status=
+,e.value=t)},function(t){
+,e.reason=t)})),e.status){case
+:throw e.reason}}throw e}(e),t,i,a,o);throw t=String(e),Error(
++Object.keys(e).join(
+)}return u}function T(e,t,n){if(null==e)return e;var r=[],i=0;return A(e,r,
+,e);console.error(e)};function M(){}t.Children={map:T,forEach:function(e,t,n){T(e,function(){t.apply(this,arguments)},n)},count:function(e){var t=0;return T(e,function(){t++}),t},toArray:function(e){return T(e,function(e){return e})||[]},only:function(e){if(!j(e))throw Error(
+);return e}},t.Component=v,t.Fragment=i,t.Profiler=o,t.PureComponent=x,t.StrictMode=a,t.Suspense=u,t.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE=k,t.act=function(){throw Error(
+)},t.cache=function(e){return function(){return e.apply(null,arguments)}},t.cloneElement=function(e,t,n){if(null===e||void 0===e)throw Error(
+);var r=m({},e.props),i=e.key;if(null!=t)for(a in void 0!==t.ref&&void 0,void 0!==t.key&&(i=
++t.key),t)!S.call(t,a)||
++t.key),t)S.call(t,r)&&
+===typeof r&&null!==r&&
+;e.exports=n(288)},579(e,t,n){
+;e.exports=n(799)},896(e,t){
+===typeof performance&&
+===typeof performance.now){var o=performance;t.unstable_now=function(){return o.now()}}else{var s=Date,l=s.now();t.unstable_now=function(){return s.now()-l}}var c=[],u=[],d=1,h=null,p=3,f=!1,m=!1,g=!1,v=
+===typeof setTimeout?setTimeout:null,y=
+===typeof clearTimeout?clearTimeout:null,x=
+===typeof o){h.callback=null,p=h.priorityLevel;var s=o(h.expirationTime<=e);if(e=t.unstable_now(),
+===typeof s){h.callback=s,b(e),n=!0;break t}h===r(c)&&i(c),b(e)}else i(c);h=r(c)}if(null!==h)n=!0;else{var l=r(u);null!==l&&_(w,l.startTime-e),n=!1}}break e}finally{h=null,p=a,f=!1}n=void 0}}finally{n?k():S=!1}}}if(
+===typeof x)k=function(){x(P)};else if(
+===typeof a&&null!==a?a=
+!=typeof Symbol&&e[Symbol.iterator]||e[
+)},e.exports.__esModule=!0,e.exports.default=e.exports},715(e,t,n){var r=n(987),i=n(156),a=n(122),o=n(752);e.exports=function(e,t){return r(e)||i(e,t)||a(e,t)||o()},e.exports.__esModule=!0,e.exports.default=e.exports},122(e,t,n){var r=n(79);e.exports=function(e,t){if(e){if(
+==typeof e)return r(e,t);var n={}.toString.call(e).slice(8,-1);return
+===n&&e.constructor&&(n=e.constructor.name),
+===typeof r&&r){if(4&i&&r.__esModule)return r;if(16&i&&
+===typeof r.then)return r}var a=Object.create(null);n.r(a);var o={};e=e||[null,t({}),t([]),t(t)];for(var s=2&i&&r;(
+==typeof s)&&!~e.indexOf(s);s=t(s))Object.getOwnPropertyNames(s).forEach(e=>o[e]=()=>r[e]);return o.default=()=>r,n.d(a,o),a}})(),n.d=(e,t)=>{for(var r in t)n.o(t,r)&&!n.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},n.g=function(){if(
+===typeof globalThis)return globalThis;try{return this||new Function(
+===typeof window)return window}}(),n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),n.r=e=>{
+!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:
+}),Object.defineProperty(e,
+,{value:!0})},n.dn=e=>{(Object.getOwnPropertyDescriptor(e,
+)||{}).writable||Object.defineProperty(e,
+,configurable:!0})},(()=>{
+;var e={};n.r(e),n.d(e,{hasBrowserEnv:()=>gx,hasStandardBrowserEnv:()=>yx,hasStandardBrowserWebWorkerEnv:()=>xx,navigator:()=>vx,origin:()=>bx});var t=n(43),r=n.t(t,2),i=n(391);function a(e){return a=
+==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&
+==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?
+:typeof e},a(e)}function o(e){var t=function(e,t){if(
+!=a(e)||!e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||
+!=a(r))return r;throw new TypeError(
+===t?String:Number)(e)}(e,
+)}function d(e,t,n){u(e,t),t.set(e,n)}function h(e,t,n){if(
+==typeof e?e===t:e.has(t))return arguments.length<3?t:n;throw new TypeError(
+)}function p(e,t){return e.get(h(e,t))}function f(e,t,n){return e.set(h(e,t),n),n}var m=
+in globalThis;function g(){}function v(e,t){return
+===typeof e?e(t):e}function y(e,t){const n=e.type,r=void 0===n?
+:n,i=e.exact,a=e.fetchStatus,o=e.predicate,s=e.queryKey,l=e.stale;if(s)if(i){if(t.queryHash!==b(s,t.options))return!1}else if(!k(t.queryKey,s))return!1;if(
+!==r){const e=t.isActive();if(
+===r&&!e)return!1;if(
+===r&&e)return!1}return(
+)&&Object.getPrototypeOf(e)===Object.prototype)}function C(e){return
+===Object.prototype.toString.call(e)}function N(e,t,n){return
+,t,!1),()=>{window.removeEventListener(
+,t)}}})}onSubscribe(){p(O,this)||this.setEventListener(p(F,this))}onUnsubscribe(){var e;this.hasListeners()||(null===(e=p(O,this))||void 0===e||e.call(this),f(O,this,void 0))}setEventListener(e){var t;f(F,this,e),null===(t=p(O,this))||void 0===t||t.call(this),f(O,this,e(e=>{
+===typeof e?this.setFocused(e):this.onFocus()}))}setFocused(e){p(M,this)!==e&&(f(M,this,e),this.onFocus())}onFocus(){const e=this.isFocused();this.listeners.forEach(t=>{t(e)})}isFocused(){var e;return
+===typeof p(M,this)?p(M,this):
+,t,!1),window.addEventListener(
+,n,!1),()=>{window.removeEventListener(
+,t),window.removeEventListener(
+!==(null!==e&&void 0!==e?e:
+)||U.isOnline()}var q,Y=class extends Error{constructor(e){super(
+),this.revert=null===e||void 0===e?void 0:e.revert,this.silent=null===e||void 0===e?void 0:e.silent}};function G(e){return e instanceof Y}function K(e){let t,n,r,i=!1,a=0,o=!1;const s=new Promise((e,t)=>{n=e,r=t}),l=()=>V.isFocused()&&(
+===typeof u?u(a,t):u,g=!0===c||
+===typeof e.initialData?e.initialData():e.initialData,n=void 0!==t,r=n?
+,dataUpdatedAt:null===t||void 0===t?void 0:t.updatedAt,manual:null===t||void 0===t?void 0:t.manual}),n}setState(e,t){h(te,this,ae).call(this,{type:
+,query:this,observer:e}))}removeObserver(e){this.observers.includes(e)&&(this.observers=this.observers.filter(t=>t!==e),this.observers.length||(p(J,this)&&(p(ee,this)?p(J,this).cancel({revert:!0}):p(J,this).cancelRetry()),this.scheduleGc()),p(X,this).notify({type:
+,query:this,observer:e}))}getObserversCount(){return this.observers.length}invalidate(){this.state.isInvalidated||h(te,this,ae).call(this,{type:
+})}fetch(e,t){var n,r;if(
+===this.state.fetchStatus||this.state.fetchMeta!==(null===(r=o.fetchOptions)||void 0===r?void 0:r.meta))&&h(te,this,ae).call(this,{type:
+,meta:null===(s=o.fetchOptions)||void 0===s?void 0:s.meta});const l=e=>{var t,n,r,i;(G(e)&&e.silent||h(te,this,ae).call(this,{type:
+.concat(this.queryHash,
+)))},onError:l,onFail:(e,t)=>{h(te,this,ae).call(this,{type:
+,failureCount:e,error:t})},onPause:()=>{h(te,this,ae).call(this,{type:
+})},onContinue:()=>{h(te,this,ae).call(this,{type:
+})},retry:o.options.retry,retryDelay:o.options.retryDelay,networkMode:o.options.networkMode,canRun:()=>!0})),p(J,this).start()}});function ae(e){this.state=(t=>{var n,r;switch(e.type){case
+:return c(c({},t),{},{fetchFailureCount:e.failureCount,fetchFailureReason:e.error});case
+:return c(c({},t),{},{fetchStatus:
+:return c(c(c({},t),function(e,t){return c({fetchFailureCount:0,fetchFailureReason:null,fetchStatus:H(t.networkMode)?
+},void 0===e&&{error:null,status:
+})}(t.data,this.options)),{},{fetchMeta:null!==(n=e.meta)&&void 0!==n?n:null});case
+},!e.manual&&{fetchStatus:
+,fetchFailureCount:0,fetchFailureReason:null});case
+:const i=e.error;return G(i)&&i.revert&&p(Q,this)?c(c({},p(Q,this)),{},{fetchStatus:
+}):c(c({},t),{},{error:i,errorUpdateCount:t.errorUpdateCount+1,errorUpdatedAt:Date.now(),fetchFailureCount:t.fetchFailureCount+1,fetchFailureReason:i,fetchStatus:
+:return c(c({},t),{},{isInvalidated:!0});case
+:return c(c({},t),e.state)}})(this.state),I.batch(()=>{this.observers.forEach(e=>{e.onQueryUpdate()}),p(X,this).notify({query:this,type:
+,query:e}))}remove(e){const t=p(ne,this).get(e.queryHash);t&&(e.destroy(),t===e&&p(ne,this).delete(e.queryHash),this.notify({type:
+,variables:void 0,submittedAt:0},this.setOptions(e.options),this.scheduleGc()}setOptions(e){this.options=e,this.updateGcTime(this.options.gcTime)}get meta(){return this.options.meta}addObserver(e){p(oe,this).includes(e)||(p(oe,this).push(e),this.clearGcTimeout(),p(se,this).notify({type:
+,mutation:this,observer:e}))}removeObserver(e){f(oe,this,p(oe,this).filter(t=>t!==e)),this.scheduleGc(),p(se,this).notify({type:
+,mutation:this,observer:e})}optionalRemove(){p(oe,this).length||(
+)),onFail:(e,t)=>{h(ce,this,fe).call(this,{type:
+,failureCount:e,error:t})},onPause:()=>{h(ce,this,fe).call(this,{type:
+})},onContinue:()=>{h(ce,this,fe).call(this,{type:
+})},retry:null!==(t=this.options.retry)&&void 0!==t?t:0,retryDelay:this.options.retryDelay,networkMode:this.options.networkMode,canRun:()=>p(se,this).canRun(this)}));const n=
+===this.state.status,r=!p(le,this).canStart();try{var i,a,o,s,l,c,u,d;if(!n){var m,g,v,y;h(ce,this,fe).call(this,{type:
+,variables:e,isPaused:r}),await(null===(m=(g=p(se,this).config).onMutate)||void 0===m?void 0:m.call(g,e,this));const t=await(null===(v=(y=this.options).onMutate)||void 0===v?void 0:v.call(y,e));t!==this.state.context&&h(ce,this,fe).call(this,{type:
+,error:N})}}finally{p(se,this).runNext(this)}}});function fe(e){this.state=(t=>{switch(e.type){case
+:return c(c({},t),{},{failureCount:e.failureCount,failureReason:e.error});case
+:return c(c({},t),{},{isPaused:!0});case
+:return c(c({},t),{},{isPaused:!1});case
+,variables:e.variables,submittedAt:Date.now()});case
+})}})(this.state),I.batch(()=>{p(oe,this).forEach(t=>{t.onMutationUpdate(e)}),p(se,this).notify({mutation:this,type:
+,mutation:e})}remove(e){const t=Ee(e);if(p(ue,this).has(t)){var n;const r=null===(n=p(ue,this).get(t))||void 0===n?void 0:n.filter(t=>t!==e);r&&(0===r.length?p(ue,this).delete(t):p(ue,this).set(t,r))}this.notify({type:
+,mutation:e})}canRun(e){var t;const n=null===(t=p(ue,this).get(Ee(e)))||void 0===t?void 0:t.find(e=>
+,meta:t.options.meta};var s;s=o,Object.defineProperty(s,
+,{enumerable:!0,get:()=>(t.signal.aborted?n=!0:t.signal.addEventListener(
+,()=>{n=!0}),t.signal)});const l=await r(o),c=t.options.maxPages,u=a?A:P;return{pages:u(e.pages,l,c),pageParams:u(e.pageParams,i,c)}};if(s&&l.length){const e=
+})).length}isMutating(e){return p(ge,this).findAll(c(c({},e),{},{status:
+===e.refetchType)return Promise.resolve();const i=c(c({},e),{},{type:null!==(n=null!==(r=e.refetchType)&&void 0!==r?r:e.type)&&void 0!==n?n:
+!==t.networkMode),void 0===t.throwOnError&&(t.throwOnError=!!t.suspense),!t.networkMode&&t.persister&&(t.networkMode=
+;function Me(e,t,n){return Math.max(e,Math.min(t,n))}var Oe=class{constructor(){s(this,
+,()=>{this.onWrapperResize(),this.onContentResize()}),s(this,
+,()=>{this.wrapper instanceof Window?(this.width=window.innerWidth,this.height=window.innerHeight):(this.width=this.wrapper.clientWidth,this.height=this.wrapper.clientHeight)}),s(this,
+,this.debouncedResize)}get limit(){return{x:this.scrollWidth-this.width,y:this.scrollHeight-this.height}}},De=class{constructor(){s(this,
+,{width:0,height:0}),s(this,
+,e=>{const t=e.targetTouches?e.targetTouches[0]:e,n=t.clientX,r=t.clientY;this.touchStart.x=n,this.touchStart.y=r,this.lastDelta={x:0,y:0},this.emitter.emit(
+,{deltaX:0,deltaY:0,event:e})}),s(this,
+,e=>{const t=e.targetTouches?e.targetTouches[0]:e,n=t.clientX,r=t.clientY,i=-(n-this.touchStart.x)*this.options.touchMultiplier,a=-(r-this.touchStart.y)*this.options.touchMultiplier;this.touchStart.x=n,this.touchStart.y=r,this.lastDelta={x:i,y:a},this.emitter.emit(
+,{deltaX:i,deltaY:a,event:e})}),s(this,
+,e=>{this.emitter.emit(
+,{deltaX:this.lastDelta.x,deltaY:this.lastDelta.y,event:e})}),s(this,
+,e=>{let t=e.deltaX,n=e.deltaY,r=e.deltaMode;t*=Ie(r,this.window.width),n*=Ie(r,this.window.height),t*=this.options.wheelMultiplier,n*=this.options.wheelMultiplier,this.emitter.emit(
+,{deltaX:t,deltaY:n,event:e})}),s(this,
+,()=>{this.window={width:window.innerWidth,height:window.innerHeight}}),this.element=e,this.options=t,window.addEventListener(
+,this.onWindowResize),this.onWindowResize(),this.element.addEventListener(
+,this.onWheel,ze),this.element.addEventListener(
+,this.onTouchStart,ze),this.element.addEventListener(
+,this.onTouchMove,ze),this.element.addEventListener(
+,this.onTouchEnd,ze)}on(e,t){return this.emitter.on(e,t)}destroy(){this.emitter.destroy(),window.removeEventListener(
+,this.onWindowResize),this.element.removeEventListener(
+,this.onWheel,ze),this.element.removeEventListener(
+,this.onTouchStart,ze),this.element.removeEventListener(
+,this.onTouchMove,ze),this.element.removeEventListener(
+:S,j=e.gestureOrientation,C=void 0===j?
+,e=>{e instanceof CustomEvent||
+!==this.isScrolling&&!1!==this.isScrolling||e.stopPropagation()}),s(this,
+,()=>{this.options.wrapper.dispatchEvent(new CustomEvent(
+,{bubbles:this.options.wrapper===window,detail:{lenisScrollEnd:!0}}))}),s(this,
+,e=>{var t;null!==(t=e.propertyName)&&void 0!==t&&t.includes(
+)&&e.target===this.rootElement&&this.checkOverflow()}),s(this,
+,e=>{1===e.button&&this.reset()}),s(this,
+===typeof this.options.virtualScroll&&!1===this.options.virtualScroll(e))return;const t=e.deltaX,n=e.deltaY,r=e.event;if(this.emitter.emit(
+,{deltaX:t,deltaY:n,event:r}),r.ctrlKey)return;if(r.lenisStopPropagation)return;const i=r.type.includes(
+);if(i&&this.isIos&&(
+===r.type&&(this._isDraggingSelection=this.isTouchOnSelectionHandle(r)),this._isDraggingSelection))return void(
+===r.type&&(this._isDraggingSelection=!1));this.isTouching=
+===r.type;const o=0===t&&0===n;if(this.options.syncTouch&&i&&
+===r.type&&o&&!this.isStopped&&!this.isLocked)return void this.reset();const s=
+===this.options.gestureOrientation&&0===n||
+===this.options.gestureOrientation&&0===t;if(o||s)return;let l=r.composedPath();l=l.slice(0,l.indexOf(this.rootElement));const u=this.options.prevent,d=Math.abs(t)>=Math.abs(n)?
+;if(l.find(e=>{var r,o,s,l,c;return e instanceof HTMLElement&&(
+===typeof u&&(null===u||void 0===u?void 0:u(e))||(null===(r=e.hasAttribute)||void 0===r?void 0:r.call(e,
+===d&&(null===(o=e.hasAttribute)||void 0===o?void 0:o.call(e,
+===d&&(null===(s=e.hasAttribute)||void 0===s?void 0:s.call(e,
+))||i&&(null===(l=e.hasAttribute)||void 0===l?void 0:l.call(e,
+))||a&&(null===(c=e.hasAttribute)||void 0===c?void 0:c.call(e,
+))||this.options.allowNestedScroll&&this.hasNestedScroll(e,{deltaX:t,deltaY:n}))}))return;if(this.isStopped||this.isLocked)return void(r.cancelable&&r.preventDefault());if(!(this.options.syncTouch&&i||this.options.smoothWheel&&a))return this.isScrolling=
+,this.animate.stop(),void(r.lenisStopPropagation=!0);let h=n;
+===this.options.gestureOrientation?h=Math.abs(n)>Math.abs(t)?n:t:
+===r.type;f&&(h=Math.sign(h)*Math.abs(this.velocity)**this.options.touchInertiaExponent),this.scrollTo(this.targetScroll+h,c({programmatic:!1},p?{lerp:f?this.options.syncTouchLerp:1}:{lerp:this.options.lerp,duration:this.options.duration,easing:this.options.easing}))}),s(this,
+,()=>{if(null!==this._resetVelocityTimeout&&(clearTimeout(this._resetVelocityTimeout),this._resetVelocityTimeout=null),this._preventNextNativeScrollEvent)this._preventNextNativeScrollEvent=!1;else if(!1===this.isScrolling||
+===this.isScrolling){const e=this.animatedScroll;this.animatedScroll=this.targetScroll=this.actualScroll,this.lastVelocity=this.velocity,this.velocity=this.animatedScroll-e,this.direction=Math.sign(this.animatedScroll-e),this.isStopped||(this.isScrolling=
+),this.emit(),0!==this.velocity&&(this._resetVelocityTimeout=setTimeout(()=>{this.lastVelocity=this.velocity,this.velocity=0,this.isScrolling=!1,this.emit()},400))}}),s(this,
+,e=>{const t=e-(this.time||e);this.time=e,this.animate.advance(.001*t),this.options.autoRaf&&(this._rafId=requestAnimationFrame(this.raf))}),window.lenisVersion=_e,window.lenis||(window.lenis={}),window.lenis.version=_e,
+===E&&(window.lenis.horizontal=!0),!0===h&&(window.lenis.touch=!0),this.isIos=/(iPad|iPhone|iPod)/g.test(navigator.userAgent),n&&n!==document.documentElement||(n=window),
+,this.onNativeScroll),this.options.wrapper.addEventListener(
+,this.onScrollEnd,{capture:!0}),(this.options.anchors||this.options.stopInertiaOnNavigate)&&this.options.wrapper.addEventListener(
+,this.onClick),this.options.wrapper.addEventListener(
+,this.onPointerDown),this.virtualScroll=new Be(o,{touchMultiplier:P,wheelMultiplier:T}),this.virtualScroll.on(
+,this.onVirtualScroll),this.options.autoToggle&&(this.checkOverflow(),this.rootElement.addEventListener(
+,this.onTransitionEnd)),this.options.autoRaf&&(this._rafId=requestAnimationFrame(this.raf))}destroy(){this.emitter.destroy(),this.options.wrapper.removeEventListener(
+,this.onNativeScroll),this.options.wrapper.removeEventListener(
+,this.onScrollEnd,{capture:!0}),this.options.wrapper.removeEventListener(
+,this.onPointerDown),(this.options.anchors||this.options.stopInertiaOnNavigate)&&this.options.wrapper.removeEventListener(
+,this.onClick),this.virtualScroll.destroy(),this.dimensions.destroy(),this.cleanUpClassName(),this._rafId&&cancelAnimationFrame(this._rafId)}on(e,t){return this.emitter.on(e,t)}off(e,t){return this.emitter.off(e,t)}get overflow(){const e=this.isHorizontal?
+;return getComputedStyle(this.rootElement)[e]}checkOverflow(){[
+].includes(this.overflow)?this.internalStop():this.internalStart()}setScroll(e){this.isHorizontal?this.options.wrapper.scrollTo({left:e,behavior:
+}):this.options.wrapper.scrollTo({top:e,behavior:
+,this)}reset(){this.isLocked=!1,this.isScrolling=!1,this.animatedScroll=this.targetScroll=this.actualScroll,this.lastVelocity=this.velocity=0,this.animate.stop()}start(){this.isStopped&&(this.options.autoToggle?this.rootElement.style.removeProperty(
+):this.internalStart())}internalStart(){this.isStopped&&(this.reset(),this.isStopped=!1,this.emit())}stop(){this.isStopped||(this.options.autoToggle?this.rootElement.style.setProperty(
+].includes(w))w=0;else if(
+].includes(w))w=this.limit;else{var S;let e=null;if(
+===typeof w?(e=w.startsWith(
+)?document.getElementById(w.slice(1)):document.querySelector(w),e||(
+===w?w=0:console.warn(
+!==typeof p&&(p=1),this.animate.fromTo(this.animatedScroll,w,{duration:p,easing:m,lerp:d,onStart:()=>{s&&(this.isLocked=!0),this.isScrolling=
+,null===g||void 0===g||g(this)},onUpdate:(e,t)=>{this.isScrolling=
+].includes(t.overflowX),l=[
+].includes(t.overflowY),d=[
+].includes(t.overscrollBehaviorX),h=[
+===v)y=Math.round(e.scrollLeft),x=p-m,b=r,w=s,k=c,S=d;else{if(
+]}get isHorizontal(){return
+===this.isScrolling}get prefersReducedMotion(){return this.options.respectReducedMotion&&this.reducedMotionMediaQuery.matches}get className(){let e=
+;return this.options.autoToggle&&(e+=
+),this.isStopped&&(e+=
+),this.isLocked&&(e+=
+),this.isScrolling&&(e+=
+===this.isScrolling&&(e+=
+),e}updateClassName(){this.cleanUpClassName(),this.className.split(
+).forEach(e=>{this.rootElement.classList.add(e)})}cleanUpClassName(){for(const e of Array.from(this.rootElement.classList))(
+==typeof e)return He(e,t);var n={}.toString.call(e).slice(8,-1);return
+===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?He(e,t):void 0}}function Ge(){throw new TypeError(
+)}function Ke(e){return qe(e)||function(e){if(
+!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e[
+])return Array.from(e)}(e)||Ye(e)||Ge()}function $e(e,t){return qe(e)||function(e,t){var n=null==e?null:
+;function it(e){return
+===typeof e&&null!=e&&
+in e}function at(){return ht(function(e,t){var n;let r=null===(n=t.state)||void 0===n?void 0:n.masked,i=r||e.location;return ct(
+===typeof t?t:ut(t)},null,arguments.length>0&&void 0!==arguments[0]?arguments[0]:{})}function ot(e,t){if(!1===e||null===e||
+===typeof e)throw new Error(t)}function st(e,t){if(!e){
+:t,r=e.search,i=void 0===r?
+:r,a=e.hash,o=void 0===a?
++o),n}function dt(e){let t={};if(e){let n=e.indexOf(
+);n>=0&&(t.hash=e.substring(n),e=e.substring(0,n));let r=e.indexOf(
+,d=null,h=p();function p(){return(l.state||{idx:null}).idx}function f(){u=
+;let e=p(),t=null==e?null:e-h;h=e,d&&d({action:u,location:g.location,delta:t})}function m(e){return pt(e)}null==h&&(h=0,l.replaceState(c(c({},l.state),{},{idx:h}),
+));let g={get action(){return u},get location(){return e(a,l)},listen(e){if(d)throw new Error(
+;let r=it(e)?e:ct(g.location,e,t);n&&n(r,e),h=p()+1;let i=lt(r,h),o=g.createHref(r.mask||r);try{l.pushState(i,
+,o)}catch(c){if(c instanceof DOMException&&
+===c.name)throw c;a.location.assign(o)}s&&d&&d({action:u,location:g.location,delta:1})},replace:function(e,t){u=
+;let r=it(e)?e:ct(g.location,e,t);n&&n(r,e),h=p();let i=lt(r,h),a=g.createHref(r.mask||r);l.replaceState(i,
+,a),s&&d&&d({action:u,location:g.location,delta:0})},go:e=>l.go(e)};return g}function pt(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=
+!==typeof window&&(n=
+!==window.location.origin?window.location.origin:window.location.href),ot(n,
+===typeof e?e:ut(e);return r=r.replace(/ $/,
+)&&(r=n+r),new URL(r,n)}new WeakMap;function ft(e,t){return mt(e,t,arguments.length>2&&void 0!==arguments[2]?arguments[2]:
+,!1)}function mt(e,t,n,r,i){let a=Rt((
+:s,caseSensitive:!0===e.caseSensitive,childrenIndex:a,route:e};if(l.relativePath.startsWith(
+);if(0===t.length)return[];let n=Ke(t),r=n[0],i=He(n).slice(1),a=r.endsWith(
+);if(0===i.length)return a?[o,
+]:[o];let s=yt(i.join(
+)),l=[];return l.push(...s.map(e=>
+))),a&&l.push(...s),l.map(t=>e.startsWith(
+:t)}var xt=/^:[\w-]+$/,bt=3,wt=2,kt=1,St=10,Et=-2,jt=e=>
+===e;function Ct(e,t){let n=e.split(
+),r=n.length;return n.some(jt)&&(r+=Et),t&&(r+=wt),n.filter(e=>!jt(e)).reduce((e,t)=>e+(xt.test(t)?bt:
+===t?kt:St),r)}function Nt(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=e.routesMeta,i={},a=
+,o=[];for(let s=0;s<r.length;++s){let e=r[s],l=s===r.length-1,c=
+===a?t:t.slice(a.length)||
+),l=a.slice(1);return{params:i.reduce((e,t,n)=>{let r=t.paramName,i=t.isOptional;if(
+;s=o.slice(0,o.length-e.length).replace(/(.)\/+$/,
+)}const a=l[n];return e[r]=i&&!a?void 0:(a||
+ will be treated as if it were 
++e.replace(/\/*\*?$/,
+).replace(/[\\.*+^${}|()[\]]/g,
+).replace(/\/:([\w-]+)(\?)?/g,(e,t,n,i,a)=>{if(r.push({paramName:t,isOptional:null!=n}),n){let t=a.charAt(i+e.length);return t&&
+}).replace(/\/([\w-]+)\?(\/|$)/g,
+)?(r.push({paramName:
+),[new RegExp(i,t?void 0:
+),r]}function Tt(e){try{return e.split(
+).map(e=>decodeURIComponent(e).replace(/\//g,
+ could not be decoded because it is a malformed URL segment. This is probably due to a bad percent encoding (').concat(t,
+)),e}}function Rt(e,t){if(
+===t)return e;if(!e.toLowerCase().startsWith(t.toLowerCase()))return null;let n=t.endsWith(
+)?t.length-1:t.length,r=e.charAt(n);return r&&
+!==r?null:e.slice(n)||
+}var _t=/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;function Mt(e,t){let n=Bt(t).split(
+===e?n.length>1&&n.pop():
+!==e&&n.push(e)}),n.length>1?n.join(
+}function Ot(e,t,n,r){return
+).concat(JSON.stringify(r),
+,r)),ot(!r.search||!r.search.includes(
+}let l=function(e){let t,n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:
+:a,s=r.hash,l=void 0===s?
+:s;return i?(i=zt(i),t=i.startsWith(
+),l}var zt=e=>e.replace(/\/\/+/g,
+)),Bt=e=>e.replace(/\/+$/,
+),Vt=e=>Bt(e).replace(/^\/*/,
+;var Ht=class{constructor(e,t,n){let r=arguments.length>3&&void 0!==arguments[3]&&arguments[3];this.status=e,this.statusText=t||
+,this.internal=r,n instanceof Error?(this.data=n.toString(),this.error=n):this.data=n}};function qt(e){return null!=e&&
+===typeof e.statusText&&
+===typeof e.internal&&
+!==typeof window.document&&
+!==typeof window.document.createElement;function Kt(e,t){let n=e;if(
+!==typeof n||!_t.test(n))return{absoluteURL:void 0,isExternal:!1,to:n};let r=n,i=!1;if(Gt)try{let e=new URL(window.location.href),r=n.startsWith(
+);Object.getOwnPropertyNames(Object.prototype).sort().join(
+,...$t]);new Set(Qt),Symbol(
+);new WeakMap,new WeakMap,new WeakMap,new WeakMap;var Xt=t.createContext(null);Xt.displayName=
+;var Jt=t.createContext(null);Jt.displayName=
+;var Zt=t.createContext(!1);function en(){return t.useContext(Zt)}var tn=t.createContext({isTransitioning:!1});tn.displayName=
+;var nn=t.createContext(new Map);nn.displayName=
+;var rn=t.createContext(null);rn.displayName=
+;var an=t.createContext(null);an.displayName=
+;var on=t.createContext(null);on.displayName=
+;var sn=t.createContext({outlet:null,matches:[],isDataRoute:!1});sn.displayName=
+;var ln=t.createContext(null);ln.displayName=
+;function un(){return null!=t.useContext(on)}function dn(){return ot(un(),
+),t.useContext(on).location}var hn=
+;function pn(e){t.useContext(an).static||t.useLayoutEffect(e)}function fn(){return t.useContext(sn).isDataRoute?function(){let e=jn(
+),r=t.useRef(!1);pn(()=>{r.current=!0});let i=t.useCallback(async function(t){let i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};st(r.current,hn),r.current&&(
+===typeof t?await e.navigate(t):await e.navigate(t,c({fromRouteId:n},i)))},[e,n]);return i}():function(){ot(un(),
+===typeof t)return void i.go(t);let a=Lt(t,JSON.parse(s),o,
+===n.relative);null==e&&
+===n),[e,a,i,n])}function gn(e,n,r){ot(un(),
+;Tn(l,!d||e.endsWith(
+),'You rendered descendant <Routes> (or called `useRoutes()`) at 
+>.'))}let h,p=dn();if(n){var f;let e=
+===typeof n?dt(n):n;ot(
+!==u){let e=u.replace(/^\//,
+).slice(e.length).join(
+ ')),st(null==v||void 0!==v[v.length-1].route.element||void 0!==v[v.length-1].route.Component||void 0!==v[v.length-1].route.lazy,'Matched leaf route at location 
+ does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an 
+,mask:void 0},h),navigationType:
+}},y):y}function vn(){let e=Pn(),n=qt(e)?
+).concat(e.statusText):e instanceof Error?e.message:JSON.stringify(e),r=e instanceof Error?e.stack:null,i=
+,backgroundColor:i},o={padding:
+,backgroundColor:i},s=null;return console.error(
+,e),s=t.createElement(t.Fragment,null,t.createElement(
+)),t.createElement(t.Fragment,null,t.createElement(
+}},n),r?t.createElement(
+===e.revalidation?{error:e.error,location:e.location,revalidation:e.revalidation}:{error:void 0!==e.error?e.error:t.error,location:t.location,revalidation:e.revalidation||t.revalidation}}componentDidCatch(e,t){this.props.onError?this.props.onError(e,t):console.error(
+,e)}render(){let e=this.state.error;if(this.context&&
+===typeof e.digest){const t=function(e){if(e.startsWith(
+)))try{let t=JSON.parse(e.slice(40));if(
+===typeof r.digest){let e=function(e){if(e.startsWith(
+)))try{let t=JSON.parse(e.slice(28));if(
+===typeof t.statusText&&
+===typeof t.location&&
+===typeof t.reloadDocument&&
+.concat(Object.keys(o).join(
+)}function jn(e){let n=t.useContext(Xt);return ot(n,En(e)),n}function Cn(e){let n=t.useContext(Jt);return ot(n,En(e)),n}function Nn(e){let n=function(e){let n=t.useContext(sn);return ot(n,En(e)),n}(e),r=n.matches[n.matches.length-1];return ot(r.route.id,
+.concat(e,' can only be used on routes that contain a unique 
+')),r.route.id}function Pn(){var e;let n=t.useContext(ln),r=Cn(
+)}function Fn(e){let n=e.basename,r=void 0===n?
+:n,i=e.children,a=void 0===i?null:i,o=e.location,s=e.navigationType,l=void 0===s?
+:s,c=e.navigator,u=e.static,d=void 0!==u&&u,h=e.useTransitions;ot(!un(),
+);let p=r.replace(/^\/*/,
+),f=t.useMemo(()=>({basename:p,navigator:c,static:d,useTransitions:h,future:{}}),[p,c,d,h]);
+:g,y=m.search,x=void 0===y?
+:y,b=m.hash,w=void 0===b?
+:b,k=m.state,S=void 0===k?null:k,E=m.key,j=void 0===E?
+> is not able to match the URL 
+" because it does not start with the basename, so the <Router> won't render anything.
+] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>
+An index route cannot have child routes.
+application/x-www-form-urlencoded
+server://singlefetch/
+Error loading route module `
+You must render this element inside a <DataRouterContext.Provider> element
+You must render this element inside a <DataRouterStateContext.Provider> element
+You must render this element inside a <HydratedRouter> element
+window.__reactRouterContext = 
+window.__reactRouterContext.stream = new ReadableStream({start(controller){window.__reactRouterContext.streamController = controller;}}).pipeThrough(new TextEncoderStream());
+ not found in manifest
+window.__reactRouterManifest = 
+   window.__reactRouterRouteModules = {
+The <Scripts /> element is a no-op when using RSC and can be safely removed.
+Unhandled Thrown Response!
+hsla(10, 50%, 50%, 0.1)
+width=device-width,initial-scale=1,viewport-fit=cover
+system-ui, sans-serif
+useHref() may be used only in the context of a <Router> component.
+`useViewTransitionState` must be used within `react-router-dom`'s `RouterProvider`.  Did you accidentally import `RouterProvider` from `react-router`?
+useViewTransitionState
+useFormAction must be used inside a RouteContext
+ must be used within a data router.  See https://reactrouter.com/en/main/routers/picking-a-router.
+You cannot use the `useSearchParams` hook in a browser that does not support the URLSearchParams API. If you need to support Internet Explorer 11, we recommend you load a polyfill such as https://github.com/ungap/url-search-params.
+sonner-loading-wrapper
+M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z
+M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z
+M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z
+M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z
+(prefers-color-scheme: dark)
+px !important;             height: 
+px !important;             top: 
+px !important;             left: 
+px !important;           }         
+You are trying to animate 
+ is not an animatable value - to enable this animation set 
+ to a value animatable to 
+ via the `style` property.
+' is not an animatable color. Use the equivalent color code instead.
+' too different to mix. Ensure all colors are of the same type, and that each contains the same quantity of number and color values. Falling back to instant transition.
+Spring duration must be 10 seconds or less
+Cubic bezier arrays must contain four numerical values.
+Invalid easing type '
+Both input and output ranges must be the same length
+If `dragConstraints` is set as a React ref, that ref must be passed to another component's `ref` prop.
+borderBottomLeftRadius
+borderBottomRightRadius
+motionComponentSymbol
+data-framer-portal-id
+onBeforeLayoutMeasure
+onMeasureDragConstraints
+@emotion/is-prop-valid
+LayoutAnimationComplete
+(prefers-reduced-motion)
+M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z
+M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6
+M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2
+fixed inset-0 z-[80] bg-ink/50 backdrop-blur-sm
+fixed top-0 right-0 bottom-0 z-[85] w-full max-w-md bg-ivory flex flex-col shadow-2xl
+flex items-center justify-between px-6 h-16 border-b border-[#E6E2DC]
+flex items-center gap-2.5 font-display text-xl font-light
+p-2 text-ink/60 hover:text-ink
+flex-1 overflow-y-auto px-6 py-6
+h-full flex flex-col items-center justify-center text-center
+font-display text-2xl font-light text-ink/70
+mt-2 text-sm text-ink/50
+Add AM, PM or the full system to begin.
+flex gap-4 pb-5 border-b border-[#E6E2DC]
+w-20 h-20 rounded-xl overflow-hidden bg-white border border-[#E6E2DC] shrink-0
+w-full h-full object-cover
+flex items-start justify-between gap-3
+text-sm font-semibold text-ink leading-snug
+mt-1 text-xs text-ink/50
+p-1.5 text-ink/40 hover:text-[#B3402A] transition-colors
+mt-3 flex items-center justify-between
+inline-flex items-center border border-[#E6E2DC] rounded-full
+w-7 text-center text-sm font-semibold
+text-sm font-semibold
+border-t border-[#E6E2DC] px-6 py-6 bg-white/50
+flex items-center justify-between mb-1.5
+font-display text-2xl font-light
+text-[11px] text-ink/45 mb-5
+Free shipping \xb7 Secure Razorpay payment at checkout
+group w-full inline-flex items-center justify-center gap-2.5 bg-ink text-white text-sm font-semibold rounded-[10px] px-6 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-am
+transition-transform duration-300 group-hover:translate-x-1
+m17.66 17.66 1.41 1.41
+m6.34 17.66-1.41 1.41
+m19.07 4.93-1.41 1.41
+M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z
+M20 21a8 8 0 0 0-16 0
+M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4
+rounded-full bg-white/30 backdrop-blur-md border border-white/25 px-7 py-2.5
+fixed top-0 inset-x-0 z-50 transition-all duration-500 
+bg-ivory/90 backdrop-blur-xl border-b border-[#E6E2DC]
+bg-transparent border-b border-transparent
+max-w-[1440px] mx-auto px-6 md:px-10 h-16 md:h-[72px] flex items-center justify-between
+flex items-center gap-2 
+font-extrabold tracking-tight text-lg md:text-xl
+hidden sm:flex items-center gap-1.5 opacity-60
+hidden lg:flex items-center gap-9 transition-all duration-500 
+ text-[13px] font-medium tracking-wide opacity-70 hover:opacity-100 transition-opacity
+flex items-center gap-3
+relative hidden md:block
+flex items-center justify-center w-10 h-10 rounded-full border border-ink/15 text-ink hover:bg-ink hover:text-white transition-colors
+absolute right-0 top-12 w-64 rounded-xl border border-[#E6E2DC] bg-ivory p-4 shadow-xl
+text-[10px] uppercase tracking-[0.18em] text-ink/45
+mt-2 truncate text-sm font-semibold text-ink
+truncate text-xs text-ink/60
+mt-4 flex w-full items-center gap-2 border-t border-ink/10 pt-3 text-left text-xs font-semibold text-ink/70 hover:text-am
+hidden md:inline text-[13px] font-medium tracking-wide opacity-70 hover:opacity-100 transition-opacity 
+nav-link-create-account
+relative p-2 text-ink
+absolute -top-0.5 -right-0.5 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-am text-white text-[10px] font-bold px-1
+hidden md:inline-flex items-center gap-2 bg-ink text-white text-[13px] font-semibold tracking-wide rounded-[10px] px-6 py-2.5 transition-all duration-300 hover:bg-am hover:-translate-y-0.5
+fixed inset-0 z-[70] bg-ink text-ivory flex flex-col
+px-6 h-16 flex items-center justify-between border-b border-white/10
+font-extrabold tracking-tight text-lg
+flex-1 flex flex-col justify-center px-8 gap-2
+text-left font-display font-light text-4xl py-3 text-ivory/85 hover:text-am transition-colors
+mt-5 border-t border-white/10 pt-5
+flex items-center gap-3 text-ivory/85
+truncate text-base font-semibold
+nav-profile-name-mobile
+truncate text-xs text-ivory/55
+nav-profile-email-mobile
+mt-4 flex items-center gap-2 text-sm text-ivory/60 hover:text-am
+nav-profile-logout-mobile
+nav-link-create-account-mobile
+w-full inline-flex items-center justify-center gap-2 bg-ivory text-ink text-sm font-semibold rounded-[10px] px-6 py-4
+mt-6 text-center text-[10px] uppercase tracking-[0.3em] text-ivory/35
+Day Nutrition. Night Nutrition.
+ options but the provided ref is not yet hydrated, probably because it's defined higher up the tree. Try calling useScroll() in the same component as the ref, or setting its `layoutEffect: false` option.
+/videos/review-1.webm
+/videos/review-1-poster.jpg
+/videos/review-2.webm
+/videos/review-2-poster.jpg
+/images/real-system.webp
+/images/am-product.webp
+/images/pm-product.webp
+/images/real-am-portrait.webp
+/images/real-pm-portrait.webp
+/images/dayanand.jpeg
+/images/ingredient-magnesium.webp
+/images/ingredient-zinc.webp
+/images/ingredient-bcomplex.webp
+/images/lifestyle-morning.webp
+/images/lifestyle-evening.webp
+/images/lifestyle-professional.webp
+/images/lifestyle-athlete.webp
+/images/lifestyle-student.webp
+/images/lifestyle-traveler.webp
+block overflow-hidden pb-[0.12em] -mb-[0.12em]
+block will-change-transform
+relative hidden xl:block
+grid grid-cols-2 min-h-screen
+relative overflow-hidden bg-ambg will-change-transform
+AM-PM AM day nutrition bottle on warm ivory stone in soft morning sunlight
+absolute inset-0 w-full h-full object-cover
+absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(244,122,32,0.14),transparent_60%)] pointer-events-none
+absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/30 pointer-events-none
+absolute top-24 left-10 text-[11px] font-semibold uppercase tracking-[0.3em] text-ink/55
+relative overflow-hidden bg-pm will-change-transform
+AM-PM PM night nutrition bottle on midnight blue stone in soft moonlight
+absolute inset-0 w-full h-full object-cover brightness-[1.45] saturate-[0.8] contrast-[0.92]
+absolute inset-0 bg-[#7C9BDB]/25 mix-blend-screen pointer-events-none
+absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(112,145,205,0.28),transparent_60%)] pointer-events-none
+absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 pointer-events-none
+absolute top-24 right-10 text-[11px] font-semibold uppercase tracking-[0.3em] text-ivory/60
+pointer-events-none absolute inset-0 z-10 flex items-center justify-center
+absolute inset-y-0 left-1/2 -translate-x-1/2 w-[52%] bg-gradient-to-r from-transparent via-black/25 to-transparent
+text-center px-6 max-w-2xl
+text-white text-[11px] font-semibold uppercase tracking-[0.35em] mb-8 [text-shadow:0_1px_20px_rgba(0,0,0,0.25)]
+text-white font-display font-light tracking-tight leading-[1.04] text-[clamp(2.5rem,4.6vw,4.3rem)] [text-shadow:0_2px_30px_rgba(0,0,0,0.3)]
+Your body doesn't need
+text-white mt-8 max-w-xl mx-auto text-base md:text-lg leading-relaxed [text-shadow:0_1px_16px_rgba(0,0,0,0.3)]
+pointer-events-auto mt-10 flex flex-wrap items-center justify-center gap-4
+group inline-flex items-center gap-2.5 bg-ink text-white text-sm font-semibold rounded-[10px] px-8 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-am
+text-white inline-flex items-center gap-2.5 border border-white/80 text-sm font-semibold rounded-[10px] px-8 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-ink
+absolute bottom-7 left-1/2 -translate-x-1/2 z-10 mix-blend-difference text-white flex flex-col items-center gap-3
+text-[10px] uppercase tracking-[0.35em]
+block w-px h-9 bg-white origin-top
+relative xl:hidden bg-ivory overflow-hidden
+pointer-events-none absolute -top-20 -left-24 w-72 h-72 rounded-full bg-am/[0.08] blur-3xl
+pointer-events-none absolute top-64 -right-24 w-72 h-72 rounded-full bg-pm/[0.08] blur-3xl
+relative px-6 pt-28 pb-14
+text-[10px] font-semibold uppercase tracking-[0.3em] text-ink/50
+mt-5 font-display font-light tracking-tight leading-[1.08] text-[clamp(2rem,8.6vw,2.35rem)] text-ink
+mt-5 text-[15px] leading-relaxed text-ink/65 max-w-sm
+Most multivitamins deliver everything at once. AM-PM separates daytime performance from nighttime recovery to match your body's natural rhythm.
+relative mt-9 overflow-hidden rounded-[20px] shadow-[0_24px_56px_rgba(17,17,17,0.12)]
+w-full aspect-[3/2] object-cover
+absolute bottom-3 inset-x-3 flex items-center justify-between
+inline-flex items-center gap-1.5 backdrop-blur-md bg-white/70 border border-white/50 rounded-full px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/70
+mt-7 text-center text-[10px] font-semibold uppercase tracking-[0.35em] text-ink/40
+mt-6 flex flex-col gap-3
+inline-flex items-center justify-center gap-2 bg-ink text-white text-sm font-semibold rounded-[10px] px-6 py-4
+hero-cta-explore-mobile
+inline-flex items-center justify-center gap-2 border border-ink/20 text-ink text-sm font-semibold rounded-[10px] px-6 py-4
+hero-cta-science-mobile
+M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z
+M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12
+trust-clean-nutrition
+M10 20c5.5-2.5.8-6.4 3-10
+M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z
+M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z
+trust-essential-nutrients
+M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2
+M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4
+M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8
+M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16
+trust-better-everyday
+border-y border-black/[0.07] bg-white/40
+max-w-[1440px] mx-auto px-6 md:px-10 py-10 md:py-12 flex flex-wrap items-center justify-between gap-x-10 gap-y-8
+flex items-center gap-3.5
+text-[11px] md:text-xs font-semibold uppercase tracking-[0.2em] text-ink/60
+items-start text-left
+items-center text-center
+text-[11px] md:text-xs font-semibold uppercase tracking-[0.25em] text-ink/70
+mt-1.5 text-[11px] md:text-xs font-semibold uppercase tracking-[0.25em] text-ink/40
+block h-px w-12 md:w-20 bg-[#CFC8BB] 
+block w-px h-12 md:h-16 bg-[#CFC8BB] origin-top
+py-28 md:py-36 overflow-hidden
+max-w-[1440px] mx-auto px-6 md:px-10
+max-w-2xl mx-auto text-center
+text-xs font-semibold uppercase tracking-[0.3em] text-ink/45 mb-6
+font-display font-light tracking-tight leading-[1.05] text-4xl md:text-6xl text-ink
+Why traditional multivitamins are 
+mt-6 max-w-lg mx-auto text-base md:text-lg leading-relaxed text-ink/65
+relative mt-14 md:mt-16 mx-auto max-w-3xl h-[440px] md:h-[500px] hidden sm:block
+absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[360px] md:h-[360px] rounded-full bg-white/80 border border-[#E6E2DC]
+absolute inset-0 z-10 flex items-center justify-center
+flex flex-col items-center -mt-8
+relative w-28 h-28 md:w-36 md:h-36 rounded-full bg-gradient-to-br from-white to-[#E2DACB] ring-1 ring-[#D8D2C4] shadow-[inset_0_-10px_22px_rgba(0,0,0,0.09),0_22px_44px_rgba(17,17,17,0.14)]
+absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[2px] w-2/3 bg-black/[0.14] rounded-full
+mt-4 text-[10px] font-semibold uppercase tracking-[0.3em] text-ink/45
+One Tablet \xb7 One Formula \xb7 All Day
+absolute left-1/2 -translate-x-1/2 top-0 flex flex-col items-center
+absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-0
+absolute left-1/2 -translate-x-1/2 bottom-0 flex flex-col items-center
+absolute left-0 top-1/2 -translate-y-1/2 flex items-center
+sm:hidden mt-12 divide-y divide-[#E6E2DC] border-y border-[#E6E2DC]
+problem-points-mobile
+flex items-center gap-4 py-5
+text-[#B3402A] shrink-0
+font-display text-2xl md:text-3xl font-light text-ink/80 max-w-3xl mx-auto leading-snug
+Different moments. Different needs. 
+py-28 md:py-36 bg-white/50 border-y border-black/[0.06] overflow-hidden
+text-center max-w-2xl mx-auto
+Meet the AM-PM system.
+mt-16 md:mt-20 max-w-5xl mx-auto hidden md:block
+h-px origin-left bg-gradient-to-r from-am via-[#C9BCA8] to-pm
+absolute inset-x-0 -top-[7px] flex justify-between
+flex flex-col items-center
+h-3.5 w-3.5 rounded-full bg-white border-2 
+mt-4 text-sm font-semibold tracking-wide text-ink/70
+mt-1.5 text-[9px] font-semibold uppercase tracking-[0.3em] text-ink/35
+md:hidden mt-12 space-y-4
+solution-timeline-mobile
+flex items-center gap-4
+h-3 w-3 rounded-full bg-white border-2 
+text-sm font-semibold text-ink/70
+text-[9px] font-semibold uppercase tracking-[0.3em] text-ink/35
+grid md:grid-cols-2 gap-4 md:gap-6 mt-16 md:mt-24 max-w-5xl mx-auto
+flex items-center gap-3 mb-8
+text-[11px] font-semibold uppercase tracking-[0.3em] text-ink/45
+font-display text-3xl md:text-4xl font-light text-ink
+mt-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-ink/40
+flex items-center gap-3 text-sm md:text-base text-ink/70
+A nighttime formula designed around recovery, relaxation and restoration.
+bg-gradient-to-b from-[#557BB6] via-[#486DA9] to-[#385E99] text-ivory
+border-white/20 bg-white/[0.06] text-ivory/80
+border-am/25 bg-white/60 text-ink/70
+bg-ivory text-pm hover:bg-white
+bg-am text-white hover:bg-ink
+ py-28 md:py-36 overflow-hidden
+pointer-events-none absolute -top-24 
+ w-[460px] h-[460px] rounded-full 
+relative max-w-[1440px] mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-16 lg:gap-20 items-center
+pointer-events-none select-none absolute -top-16 md:-top-24 -left-2 font-display text-[10rem] md:text-[14rem] leading-none 
+relative overflow-hidden rounded-[24px] aspect-[4/5] shadow-[0_24px_64px_rgba(17,17,17,0.12)]
+spotlight absolute inset-0 z-10 pointer-events-none
+flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] 
+font-display font-light tracking-tight leading-[1.02] text-4xl md:text-6xl 
+mt-7 max-w-md text-base md:text-lg leading-relaxed 
+mt-9 flex flex-wrap gap-3
+text-[11px] font-semibold uppercase tracking-[0.18em] rounded-full border 
+mt-11 flex flex-wrap items-center gap-6
+group inline-flex items-center gap-2.5 
+ text-sm font-semibold tracking-wide rounded-[10px] px-8 py-4 transition-all duration-300 hover:-translate-y-0.5
+text-[11px] uppercase tracking-[0.22em] 
+30 Tablets \xb7 Nutraceutical
+relative py-40 md:py-56 overflow-hidden
+absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] md:w-[560px] md:h-[560px] rounded-full blur-[110px] pointer-events-none
+relative max-w-[1440px] mx-auto px-6 md:px-10 flex flex-col items-center text-center
+relative h-10 w-10 mb-9
+absolute inset-0 flex items-center justify-center text-am
+absolute inset-0 flex items-center justify-center text-ivory
+text-[11px] font-semibold uppercase tracking-[0.35em] opacity-60 mb-7
+font-display font-light tracking-tight leading-[1.08] text-4xl md:text-6xl max-w-3xl
+So should your nutrition.
+mt-14 w-full max-w-md
+flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.3em] opacity-60 mb-3.5
+h-px bg-current opacity-15 w-full
+h-px origin-left bg-gradient-to-r from-am to-[#7C9BDB] -mt-px
+flex shrink-0 items-center
+flex items-center gap-4 px-10 text-sm font-medium uppercase tracking-[0.35em] text-ivory/60
+bg-ink py-7 overflow-hidden border-y border-white/5
+Fuel your day, restore your night
+flex w-max animate-marquee
+For ambitious days and demanding schedules.
+lifestyle-entrepreneurs
+Support your routine from the first meeting to the final task.
+lifestyle-professionals
+Built for focused days and consistent routines.
+Nutrition that fits around everything else.
+Fuel the day. Prioritize recovery at night.
+Keep your routine wherever the day takes you.
+max-w-2xl mb-16 md:mb-20
+Made for modern life.
+mt-6 text-base md:text-lg leading-relaxed text-ink/70
+Long days. Busy schedules. Early mornings. Late nights. AM-PM is designed to fit the rhythm of real life.
+grid md:grid-cols-6 gap-4 md:gap-5
+group relative overflow-hidden rounded-[24px] 
+absolute inset-0 w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.06]
+absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/45 via-black/10 to-transparent
+absolute bottom-0 inset-x-0 p-5 md:p-6
+backdrop-blur-xl bg-white/75 border border-white/50 rounded-2xl px-5 py-4 inline-block max-w-full
+font-display text-xl md:text-2xl leading-none text-ink
+mt-2 text-[13px] leading-snug text-ink/65
+Recovery & Relaxation
+py-28 md:py-36 bg-white/50 border-y border-black/[0.06]
+max-w-2xl mb-14 md:mb-20
+What's inside matters. 
+When you take it matters too.
+grid lg:grid-cols-2 gap-14 lg:gap-24 items-start
+group w-full text-left border-b border-[#E6E2DC] py-7 md:py-9 first:border-t touch-manipulation select-none
+flex items-baseline justify-between gap-6
+font-display font-light tracking-tight text-3xl md:text-5xl transition-colors duration-300 
+text-ink/25 group-hover:text-ink/55
+shrink-0 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.25em] transition-colors duration-300 
+pt-5 max-w-md text-sm md:text-base leading-relaxed text-ink/60
+pt-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/40
+lg:hidden mt-6 h-56 w-full object-cover rounded-2xl
+mt-10 text-xs uppercase tracking-[0.22em] text-ink/40
+relative overflow-hidden rounded-[24px] aspect-square bg-ivory border border-[#E6E2DC]
+absolute inset-x-0 bottom-0 p-7 bg-gradient-to-t from-black/35 to-transparent
+text-[10px] font-semibold uppercase tracking-[0.3em] text-white/75 mb-2
+font-display text-2xl md:text-3xl font-light text-white
+m4.93 10.93 1.41 1.41
+m19.07 10.93-1.41 1.41
+radial-gradient(620px circle at 50% 46%, 
+max-w-[1440px] mx-auto px-6 md:px-10 pt-28 md:pt-36 pb-8 text-center
+text-xs font-semibold uppercase tracking-[0.3em] text-am mb-6
+font-display font-light tracking-tight leading-[1.05] text-4xl md:text-6xl
+mt-7 max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-ivory/60
+Your body follows a biological clock. Energy, metabolism, activity and recovery shift throughout the day. AM-PM is designed around that rhythm.
+relative h-[150vh] md:h-[320vh]
+circadian-scroll-track
+sticky top-0 h-screen flex items-center justify-center overflow-hidden
+relative w-[min(78vw,520px)] aspect-square
+rgba(248,245,240,0.08)
+rgba(248,245,240,0.4)
+rgba(248,245,240,0.15)
+rgba(248,245,240,0.25)
+rgba(248,245,240,0.45)
+absolute inset-0 flex flex-col items-center justify-center text-center
+mb-4 text-[10px] font-semibold uppercase tracking-[0.4em] text-ivory/40
+mt-4 font-display text-4xl md:text-5xl font-light
+mt-2 text-xs uppercase tracking-[0.35em] text-ivory/45
+absolute bottom-10 inset-x-0 text-center text-[11px] uppercase tracking-[0.3em] text-ivory/35
+Your biology changes throughout the day
+max-w-[1440px] mx-auto px-6 md:px-10 pb-24 text-center
+text-xs text-ivory/35 tracking-wide
+Illustrative. AM-PM is a food supplement, not a medicine.
+All nutrients together
+Day / night optimization
+Circadian-based approach
+AM-PM vs Traditional Multivitamins
+grid grid-cols-[1fr_auto_1fr] gap-x-4 md:gap-x-12 pb-6 border-b border-[#E6E2DC]
+text-right text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.3em] text-ink/40
+text-left text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.3em] text-ink
+grid grid-cols-[1fr_auto_1fr] gap-x-4 md:gap-x-12 py-7 md:py-9 
+border-b border-[#E6E2DC]
+flex items-center justify-end gap-3 text-right
+text-lg md:text-2xl font-light text-ink/40
+relative w-px bg-[#E6E2DC]
+absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-ivory px-1.5 text-[10px] font-semibold tracking-widest text-ink/35
+text-[#1D8A4B] shrink-0
+text-lg md:text-2xl font-normal text-ink
+Co-founder, AM-PM Nutritions
+Dr. Shweta Shete, Co-founder of AM-PM Nutritions
+Mr. Dayanand V. P., Co-founder of AM-PM Nutritions
+Modern lifestyles create inconsistent routines and nutritional habits.
+The body operates through changing day-night biological cycles.
+AM-PM separates daytime and nighttime nutritional support.
+group relative flex flex-col h-full w-full
+relative overflow-hidden rounded-[22px] w-full border border-[#E6E2DC] bg-[#F1EEE6] shadow-[0_16px_40px_rgba(17,17,17,0.09)] transition-shadow duration-[350ms] ease-out group-hover:shadow-[0_20px_46px_rgba(17,17,17,0.13)]
+w-full h-auto object-contain transition-transform duration-[400ms] ease-out group-hover:scale-[1.012]
+w-full aspect-[4/3] flex items-center justify-center text-[10px] uppercase tracking-[0.25em] text-ink/35
+font-display text-xl md:text-2xl font-bold leading-tight tracking-tight text-ink
+mt-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-ink/45 min-h-[1em]
+mt-1.5 text-sm leading-relaxed text-ink/55
+relative py-28 md:py-36 overflow-hidden
+pointer-events-none absolute inset-0 -z-10 overflow-hidden
+absolute -top-24 -left-24 w-[420px] h-[420px] rounded-full blur-3xl
+radial-gradient(circle, rgba(124,139,116,0.14) 0%, rgba(124,139,116,0) 70%)
+absolute top-1/3 -right-32 w-[480px] h-[480px] rounded-full blur-3xl
+radial-gradient(circle, rgba(200,168,130,0.14) 0%, rgba(200,168,130,0) 70%)
+font-display font-light tracking-tight leading-[1.08] text-4xl md:text-[3.4rem] text-ink
+Meet the people behind 
+grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-x-14 xl:gap-x-20 gap-y-14 items-start
+max-w-2xl text-base md:text-lg leading-relaxed text-ink/65
+AM-PM Nutritions was built around a simple belief: nutrition should be thoughtfully designed around everyday life and timing, not the other way around.
+mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-16 xl:gap-x-24 border-t border-[#E6E2DC]
+py-6 border-b border-[#E6E2DC]
+text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/40
+mt-2 text-base md:text-lg leading-relaxed text-ink/80 max-w-md
+mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-16 xl:gap-x-24 gap-y-8 items-start
+max-w-md text-sm leading-relaxed text-ink/55
+group inline-flex items-center gap-2.5 border border-ink/20 text-ink text-sm font-semibold tracking-wide rounded-[10px] px-8 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink hover:text-white
+M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z
+M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z
+testimonials-tab-videos
+testimonials-tab-doctors
+testimonials-tab-stories
+text-center max-w-2xl mx-auto mb-12 md:mb-14
+testimonials-headline
+Real People. Real Routines.
+flex justify-center mb-12 md:mb-16
+inline-flex items-center gap-1 bg-white border border-[#E6E2DC] rounded-full p-1.5
+Testimonial categories
+text-[12px] md:text-[13px] font-semibold rounded-full px-5 md:px-7 py-3 touch-manipulation select-none transition-colors duration-300 
+text-ink/55 hover:text-ink
+grid md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto
+group relative aspect-video rounded-[24px] bg-ink overflow-hidden text-left touch-manipulation
+absolute inset-0 w-full h-full object-cover opacity-90 pointer-events-none
+absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-black/10
+absolute inset-0 flex items-center justify-center
+flex h-16 w-16 items-center justify-center rounded-full bg-white/15 border border-white/30 backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:bg-white/25
+absolute bottom-0 inset-x-0 p-6
+text-sm md:text-[15px] text-ivory/95 font-light leading-snug max-w-[92%]
+mt-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-ivory/55
+absolute top-5 right-5 text-[9px] font-semibold uppercase tracking-[0.25em] text-ivory/70 border border-white/25 rounded-full px-3 py-1.5 backdrop-blur-sm
+rounded-[24px] bg-white border border-black/[0.07] p-8 md:p-10 flex flex-col
+font-display text-xl md:text-2xl font-light leading-snug text-ink/60 flex-1
+mt-8 flex items-center justify-between
+text-[10px] font-semibold uppercase tracking-[0.25em] text-ink/45 border border-[#E6E2DC] rounded-full px-3.5 py-1.5
+Doctor review placeholder
+max-w-4xl mx-auto space-y-4 md:space-y-6
+rounded-[24px] bg-white border border-black/[0.07] p-8 md:p-10
+font-display text-xl md:text-2xl font-light leading-snug text-ink/85
+mt-7 text-[10px] font-semibold uppercase tracking-[0.25em] text-ink/45
+Customer story placeholder
+rounded-[24px] border border-black/[0.07] overflow-hidden grid md:grid-cols-2
+text-[10px] font-semibold uppercase tracking-[0.3em] text-ink/40 mb-5
+font-display text-xl md:text-2xl font-light text-ink/55 leading-snug
+One tablet, remembered whenever. No rhythm, no routine.
+bg-ink text-ivory p-8 md:p-10
+text-[10px] font-semibold uppercase tracking-[0.3em] text-ivory/45 mb-5
+flex items-center gap-3 text-sm text-ivory/80
+mt-7 text-[10px] font-semibold uppercase tracking-[0.25em] text-ivory/40
+Lifestyle story placeholder
+text-[11px] uppercase tracking-[0.25em] text-ink/35
+fixed inset-0 z-[80] bg-ink/95 backdrop-blur-md flex items-center justify-center p-4 md:p-10
+absolute top-5 right-5 md:top-8 md:right-8 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-ivory/80 hover:text-white hover:border-white/50 transition-colors
+w-full aspect-video rounded-[20px] bg-black
+mt-5 text-center text-xs uppercase tracking-[0.28em] text-ivory/50
+Energy \xb7 Focus \xb7 Performance
+Recovery \xb7 Relax \xb7 Restore
+text-center max-w-2xl mx-auto mb-16 md:mb-20
+Start your daily rhythm.
+Purposeful nutrition. Thoughtful timing. One AM with your morning, one PM before the night.
+grid md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto
+ rounded-[24px] p-7 md:p-9 flex flex-col
+relative overflow-hidden rounded-2xl aspect-[4/5] mb-8
+w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]
+flex items-center gap-2.5 mb-3
+font-display text-2xl md:text-[1.7rem] leading-none text-ink
+mt-7 flex items-center justify-between
+flex items-baseline gap-2
+text-lg font-semibold tracking-tight
+text-sm text-ink/40 line-through
+group inline-flex items-center gap-2 
+ text-white text-[13px] font-semibold rounded-[10px] px-6 py-3 hover:bg-ink transition-colors duration-300
+transition-transform duration-300 group-hover:translate-x-0.5
+mt-4 md:mt-6 rounded-[24px] bg-ink text-ivory p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6
+text-[11px] uppercase tracking-[0.28em] text-ivory/50 mb-2
+font-display text-2xl md:text-3xl font-light
+The Full AM-PM System
+group inline-flex items-center justify-center gap-2.5 bg-ivory text-ink text-sm font-semibold rounded-[10px] px-8 py-4 hover:bg-am hover:text-white transition-colors duration-300 shrink-0
+Add The System To Cart
+max-w-xl mx-auto mt-16 text-center
+text-xs font-semibold uppercase tracking-[0.3em] text-ink/45 mb-5
+inline-flex items-center gap-2 text-sm text-ink/70
+email-success-message
+ You're on the list. Welcome to the rhythm.
+Please enter a valid email address
+Launch updates will land in your inbox.
+flex items-center gap-2 bg-white border border-black/10 rounded-full p-1.5 pl-6
+flex-1 bg-transparent text-sm outline-none placeholder:text-ink/35 min-w-0
+bg-ink text-white text-[13px] font-semibold rounded-[10px] px-6 py-3 hover:bg-am transition-colors duration-300 shrink-0
+py-28 md:py-36 bg-white/50 border-t border-black/[0.06]
+subscription-headline
+mt-9 inline-flex flex-wrap items-center justify-center gap-x-7 gap-y-3
+hidden sm:block h-3.5 w-px bg-ink/15
+font-semibold text-ink
+inline-flex items-center gap-1.5 text-sm font-semibold text-[#1D8A4B]
+grid md:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto items-stretch
+rounded-[24px] p-8 md:p-9 flex flex-col 
+bg-white border border-black/[0.07]
+self-start text-[10px] font-semibold uppercase tracking-[0.25em] bg-am text-white rounded-[10px] px-4 py-1.5 mb-6
+text-[11px] font-semibold uppercase tracking-[0.28em] 
+mt-5 inline-flex items-center gap-1 self-start bg-ivory border border-[#E6E2DC] rounded-full p-1
+text-[11px] font-semibold rounded-full px-4 py-1.5 transition-colors duration-300 
+plan-monthly-subscribe
+mt-4 flex items-baseline gap-2.5
+font-display text-4xl md:text-5xl font-light tracking-tight
+mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D8A4B]
+mt-6 space-y-2.5 border-t border-[#E6E2DC] pt-5
+monthly-price-breakdown
+flex items-center justify-between text-xs text-ink/45
+flex items-center justify-between text-xs text-ink/70
+flex items-center justify-between text-xs font-semibold text-[#1D8A4B]
+mt-8 space-y-3.5 flex-1
+flex items-center gap-3 text-sm 
+group mt-9 inline-flex items-center justify-center gap-2 text-sm font-semibold rounded-[10px] px-6 py-3.5 transition-all duration-300 hover:-translate-y-0.5 
+bg-ivory text-ink hover:bg-am hover:text-white
+bg-ink text-white hover:bg-am
+` must be used within `
+. Components should not switch from controlled to uncontrolled (or vice versa). Decide between using a controlled or uncontrolled value for the lifetime of the component.
+--radix-collapsible-content-height
+--radix-collapsible-content-width
+data-radix-collection-item
+--radix-accordion-content-height
+var(--radix-collapsible-content-height)
+--radix-accordion-content-width
+var(--radix-collapsible-content-width)
+text-decoration-style
+text-decoration-thickness
+text-decoration-color
+mask-image-linear-pos
+mask-image-linear-from-pos
+mask-image-linear-to-pos
+mask-image-linear-from-color
+mask-image-linear-to-color
+mask-image-t-from-pos
+mask-image-t-from-color
+mask-image-t-to-color
+mask-image-r-from-pos
+mask-image-r-from-color
+mask-image-r-to-color
+mask-image-b-from-pos
+mask-image-b-from-color
+mask-image-b-to-color
+mask-image-l-from-pos
+mask-image-l-from-color
+mask-image-l-to-color
+mask-image-x-from-pos
+mask-image-x-from-color
+mask-image-x-to-color
+mask-image-y-from-pos
+mask-image-y-from-color
+mask-image-y-to-color
+mask-image-radial-from-pos
+mask-image-radial-to-pos
+mask-image-radial-from-color
+mask-image-radial-to-color
+mask-image-radial-shape
+mask-image-radial-size
+mask-image-radial-pos
+mask-image-conic-from-pos
+mask-image-conic-to-pos
+mask-image-conic-from-color
+mask-image-conic-to-color
+flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline text-left [&[data-state=open]>svg]:rotate-180
+h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200
+overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down
+Yes, if nighttime recovery is your focus. For full-day coverage, pair it with AM.
+How long before results?
+Nutrition is cumulative, not instant. AM-PM is designed to complement a consistent daily routine rather than promise overnight change.
+Who should use AM-PM?
+Yes. AM-PM is a vegetarian nutraceutical formulation.
+max-w-[1440px] mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-12
+font-display font-light tracking-tight leading-[1.05] text-4xl md:text-5xl text-ink
+text-left font-display text-xl md:text-2xl font-light py-6 hover:no-underline hover:text-am transition-colors
+text-base leading-relaxed text-ink/65 pb-7 max-w-2xl
+relative bg-ink text-ivory overflow-hidden
+absolute -left-40 -top-20 w-[560px] h-[560px] rounded-full bg-am/25 blur-[140px]
+absolute -right-40 -bottom-20 w-[560px] h-[560px] rounded-full bg-pm/50 blur-[140px]
+relative max-w-[1440px] mx-auto px-6 md:px-10 py-32 md:py-44 text-center
+text-xs font-semibold uppercase tracking-[0.3em] text-ivory/45 mb-8
+font-display font-light tracking-tight leading-[1.04] text-4xl md:text-7xl
+mt-8 max-w-xl mx-auto text-base md:text-lg text-ivory/60
+mt-4 text-sm md:text-base text-ivory/50
+text-[#7C9BDB] font-medium
+group mt-12 inline-flex items-center gap-2.5 bg-ivory text-ink text-sm font-semibold rounded-[10px] px-9 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-am hover:text-white
+Start Your AM-PM Routine
+M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z
+M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z
+M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17
+M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z
+footer-link-ingredients
+footer-social-instagram
+footer-social-twitter
+footer-social-youtube
+footer-social-linkedin
+max-w-[1440px] mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-10
+grid lg:grid-cols-12 gap-12 pb-16 border-b border-white/10
+font-display font-light leading-[0.95] text-[clamp(3.5rem,9vw,7.5rem)] tracking-tight
+mt-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-ivory/40
+mt-6 text-sm md:text-base text-ivory/55 max-w-sm leading-relaxed
+Fuel your day. Restore your night. Purposeful nutrition, thoughtful timing.
+mt-8 flex items-center gap-3
+flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-ivory/60 hover:text-ivory hover:border-white/40 transition-colors
+lg:col-span-6 flex gap-20 lg:justify-end
+text-[10px] font-semibold uppercase tracking-[0.3em] text-ivory/35 mb-1
+text-left text-sm text-ivory/60 hover:text-ivory transition-colors w-fit
+pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4
+text-[11px] text-ivory/35 tracking-wide flex items-center gap-3
+\xa9 2026 AM-PM. All rights reserved.
+text-[11px] text-ivory/35 tracking-wide max-w-xl
+AM-PM is a nutraceutical food supplement. It is not intended to diagnose, treat, cure, or prevent any disease.
+Can not rewrite read-only method '
+Object iterator must return a key-value pair
+parser must be boolean|regexp|function
+ERR_FR_TOO_MANY_REDIRECTS
+ERR_FORM_DATA_DEPTH_EXCEEDED
+target must be an object
+visitor must be a function
+Blob is not supported. Use a Buffer instead.
+Object is too deeply nested (
+ levels). Max depth: 
+data must be an object
+Circular reference detected in 
+FormData field is too deeply nested (
+ levels). Max depth: 100
+application/x-www-form-urlencoded;charset=utf-8
+application/json, text/plain, */*
+Request failed with status code 
+validateStatusUndefinedResolves
+getAllResponseHeaders
+Unsupported protocol 
+Object is not async iterable
+Request body larger than maxBodyLength limit
+maxContentLength size of 
+Stream request bodies are not supported by the current fetch implementation
+is not supported by the environment
+is not available in the build
+as no adapter specified
+There is no suitable adapter to dispatch the request 
+] Transitional option '
+ has been deprecated since v
+ and will be removed in the near future
+ is likely a misspelling of 
+options must be an object
+executor must be a function.
+M7 11V7a5 5 0 0 1 10 0v4
+prj_oDO3IthWydcugIw7cJBDB3Hau9xB
+a480bcafbc6ede03/script.js
+a480bcafbc6ede03/view
+a480bcafbc6ede03/event
+a480bcafbc6ede03/session
+117cd0bdeb1cb9b0/script.js
+117cd0bdeb1cb9b0/vitals
+am-pm-skincare-website-git-main-achal5.vercel.app
+backend url baseurl updated
+dpl_6ov4zG6z6zApSX3psDtcTSNyPy6y
+Am-pm-Skincare-Website
+d5620e91dc3cd9d4911571e41f20ade38a9f6339
+am-pm-skincare-website-914ot0pva-achal5.vercel.app
+www.am-pm-skincare.in
+/api/payments/razorpay/config
+w-full bg-white border rounded-[10px] px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-ink/35 
+border-[#E6E2DC] focus:border-ink/40
+min-h-screen bg-ivory
+border-b border-[#E6E2DC] bg-ivory/90 backdrop-blur-xl sticky top-0 z-40
+max-w-6xl mx-auto px-6 h-16 flex items-center justify-between
+flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ink/45
+max-w-6xl mx-auto px-6 py-10 md:py-14
+max-w-lg mx-auto text-center py-16
+mx-auto mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-[#1D8A4B]/10 border border-[#1D8A4B]/25
+font-display text-4xl font-light
+mt-4 text-sm text-ink/60 leading-relaxed
+mt-9 inline-flex items-center gap-2 bg-ink text-white text-sm font-semibold rounded-[10px] px-8 py-4 hover:bg-am transition-colors
+max-w-lg mx-auto text-center py-20
+mx-auto text-ink/20 mb-5
+font-display text-3xl font-light
+mt-3 text-sm text-ink/55
+Add AM, PM or the full system before checking out.
+mt-8 inline-flex items-center gap-2 bg-ink text-white text-sm font-semibold rounded-[10px] px-8 py-4 hover:bg-am transition-colors
+grid lg:grid-cols-[1fr_400px] gap-10 lg:gap-14 items-start
+Enter a valid 10-digit mobile number
+Enter your full delivery address
+Enter a valid 6-digit pincode
+/api/payments/razorpay/order
+/api/payments/razorpay/verify
+Payment could not be verified. Please contact support before retrying.
+/api/payments/razorpay/failure
+Could not start Razorpay Checkout. Please try again.
+Razorpay is still loading. Please wait a moment and try again.
+Razorpay is not configured yet. Add the Razorpay API keys to enable secure payment.
+inline-flex items-center gap-2 text-sm text-ink/55 hover:text-ink mb-8
+font-display text-3xl md:text-4xl font-light mb-9
+text-[11px] font-semibold uppercase tracking-[0.25em] text-ink/45 mb-4
+mt-1.5 text-xs text-[#B3402A]
+grid sm:grid-cols-2 gap-3.5
+ min-h-[88px] resize-none
+House / street / area
+rounded-[14px] border border-ink/60 bg-white p-5 mb-4
+payment-method-razorpay
+flex items-center justify-between gap-4
+h-4 w-4 rounded-full border-[5px] border-ink
+text-xs text-ink/50 mt-0.5
+UPI, cards, netbanking and wallets
+text-[9px] font-semibold uppercase tracking-[0.2em] text-ink/45 border border-[#E6E2DC] rounded-full px-3 py-1.5
+mt-4 text-xs leading-relaxed text-[#8A5A16]
+payment-setup-warning
+Razorpay keys are not connected yet, so payment is temporarily unavailable.
+mb-5 rounded-[12px] border border-[#B3402A]/20 bg-[#B3402A]/5 px-4 py-3 text-sm text-[#8F321F]
+w-full inline-flex items-center justify-center gap-2.5 bg-ink text-white text-sm font-semibold rounded-[10px] px-6 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-am disabled:opacity-60 disabled:hover:translate-y-0
+mt-4 text-center text-[11px] text-ink/45
+Payments are encrypted and processed by Razorpay. Cash on Delivery is not available.
+rounded-[20px] bg-white border border-[#E6E2DC] p-7 lg:sticky lg:top-24
+text-[11px] font-semibold uppercase tracking-[0.25em] text-ink/45 mb-6
+relative w-14 h-14 rounded-xl overflow-hidden bg-ivory border border-[#E6E2DC] shrink-0
+absolute -top-0 -right-0 bg-ink text-white text-[10px] font-semibold rounded-bl-lg px-1.5 py-0.5
+text-sm font-semibold leading-snug
+border-t border-[#E6E2DC] pt-5 space-y-2.5
+flex justify-between text-sm text-ink/60
+text-[#1D8A4B] font-medium
+flex justify-between pt-2.5 border-t border-[#E6E2DC]
+M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z
+M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z
+M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2
+M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14
+rounded-xl border bg-card text-card-foreground shadow
+flex flex-col space-y-1.5 p-6
+font-semibold leading-none tracking-tight
+text-sm text-muted-foreground
+flex items-center p-6 pt-0
+inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
+bg-primary text-primary-foreground shadow hover:bg-primary/90
+bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90
+border border-input shadow-sm hover:bg-accent hover:text-accent-foreground
+bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80
+hover:bg-accent hover:text-accent-foreground
+text-primary underline-offset-4 hover:underline
+h-8 rounded-md px-3 text-xs
+A lightweight, fast-absorbing formula that protects and energizes your skin for the day ahead.
+images/am-product.png
+A deeply nourishing overnight formula that repairs and restores your skin while you sleep.
+images/pm-product.png
+My skin has never felt this balanced. Mornings and nights finally have a purpose.
+Simple routine, visible results within two weeks. Worth every rupee.
+The PM formula is rich but never greasy. I wake up glowing.
+bg-ink text-ivory text-center text-[11px] sm:text-xs tracking-wide py-2 px-4
+max-w-5xl mx-auto px-4 sm:px-6 pt-12 md:pt-16 pb-24
+relative text-center mb-14 md:mb-20
+absolute inset-x-0 -top-10 h-40 mx-auto max-w-xs blur-3xl opacity-40 pointer-events-none
+radial-gradient(circle, rgba(224,122,63,0.25), transparent 70%)
+relative text-[11px] uppercase tracking-[0.3em] text-ink/50 font-semibold
+relative mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold text-ink tracking-tight
+relative mt-4 text-sm sm:text-base text-ink/60 max-w-md mx-auto
+Two rituals. One routine. Formulated for morning and night.
+space-y-8 md:space-y-10
+group relative flex flex-col md:flex-row overflow-hidden border border-ink/10 rounded-2xl shadow-sm hover:shadow-xl hover:border-ink/20 transition-all duration-500
+absolute top-4 left-4 z-10 flex items-center gap-1.5 bg-am text-white text-[10px] font-semibold uppercase tracking-wide px-3 py-1.5 rounded-full shadow-sm
+w-full md:w-64 shrink-0 overflow-hidden
+w-full h-64 sm:h-72 md:h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105
+flex-1 flex flex-col justify-between p-6 sm:p-8
+flex items-center gap-2
+text-xs uppercase tracking-widest text-ink/50 font-semibold
+text-2xl sm:text-3xl font-semibold text-ink mt-2
+flex items-center gap-1.5 mt-2
+flex items-center gap-0.5
+text-sm sm:text-[15px] text-ink/70 mt-3 leading-relaxed max-w-md
+flex items-baseline gap-2 mt-5
+text-lg sm:text-xl font-bold text-ink
+text-[11px] font-semibold text-am
+flex flex-wrap items-center gap-x-4 gap-y-1.5 mt-4 text-[11px] text-ink/50
+flex items-center gap-1.5
+flex flex-col sm:flex-row sm:items-center gap-3 mt-6
+flex items-center border border-ink/20 rounded-lg w-fit overflow-hidden
+p-2.5 text-ink/60 hover:text-ink hover:bg-ink/5 transition-colors focus:outline-none
+w-8 text-center text-sm font-medium text-ink
+border-ink/20 text-ink hover:bg-ink/5 flex-1 sm:flex-none
+bg-ink text-white hover:bg-am transition-colors flex-1 sm:flex-none
+mt-10 md:mt-14 rounded-2xl bg-ink text-ivory p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6
+text-center md:text-left
+flex items-center justify-center md:justify-start gap-1.5 mb-2 opacity-70
+text-xl sm:text-2xl font-semibold
+Want the full AM + PM routine?
+text-sm text-ivory/60 mt-2 max-w-sm
+Save more with a subscription and never run out.
+bg-ivory text-ink hover:bg-am hover:text-white transition-colors px-8 w-full md:w-auto
+text-center text-[11px] uppercase tracking-[0.3em] text-ink/50 font-semibold mb-8
+grid sm:grid-cols-3 gap-5
+rounded-xl border border-ink/10 p-5 bg-white/60 flex flex-col gap-3
+text-sm text-ink/70 leading-relaxed
+text-xs font-semibold text-ink/50 mt-auto
+mt-10 text-center text-sm text-ink/60
+Don't have an account?
+underline text-ink font-medium
+max-w-3xl mx-auto px-4 sm:px-6 pt-10 md:pt-14 pb-24
+inline-flex items-center gap-2 text-sm font-medium text-ink/70 hover:text-ink transition-colors mb-8
+subscribe-back-button
+text-center mb-10 md:mb-12
+text-3xl sm:text-4xl md:text-5xl font-semibold text-ink tracking-tight
+mt-3 text-sm sm:text-base text-ink/60
+Never run out of your routine. Cancel anytime.
+border border-ink/10 rounded-2xl shadow-sm p-6 sm:p-8
+text-xs uppercase tracking-[0.2em] text-ink/50 font-semibold mb-4
+grid grid-cols-1 sm:grid-cols-3 gap-3
+text-left rounded-xl border p-4 transition-all 
+border-ink/15 hover:border-ink/30
+text-sm text-ink/60 mt-1
+rounded-xl border p-4 font-medium text-ink transition-all 
+block text-[11px] font-normal text-am mt-1
+mt-8 pt-6 border-t border-ink/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4
+Your subscription price
+text-2xl font-bold text-ink
+bg-ink text-white hover:bg-am transition-colors px-8
+subscribe-continue-checkout
+text-center text-sm text-ink/60 mt-8
+Prefer a one-time purchase?
+M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2
+m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7
+M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384
+M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49
+M14.084 14.158a3 3 0 0 1-4.242-4.242
+M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143
+M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0
+https://am-pm-skincare-backend.onrender.com
+Something went wrong.
+linear-gradient(180deg, #FBF6EC, #F6E8CE)
+0 30px 60px -25px rgba(120,90,30,0.28)
+linear-gradient(90deg, transparent, #C68A2E, transparent)
+A ritual for every hour
+Join us for a personalized skincare routine.
+Please enter your full name.
+Please enter your email.
+Please enter your mobile number.
+Password must be at least 8 characters.
+Passwords don't match.
+Please agree to the Terms and Privacy Policy.
+Account created successfully!
+Registration failed. Please try again.
+At least 8 characters
+Re-enter your password
+linear-gradient(180deg,#C68A2E,#9A6A1E)
+Already have an account?
+Sign in to continue your skincare journey.
+Please enter your password.
+Invalid email or password.
+We've sent a password reset link to 
+The link expires in 1 hour.
+Enter your email and we'll send you a reset link.
+/api/auth/forgot-password
+Something went wrong. Please try again.
+Unable to connect to the server. Please try again.
+Enter a valid email address.
+Choose a strong password for your account.
+This reset link is missing or invalid. Please
+This reset link is missing or invalid.
+Passwords do not match.
+/api/auth/reset-password
+This reset link is invalid or expired.
+(prefers-reduced-motion: reduce)
+bg-ivory text-ink font-sans antialiased

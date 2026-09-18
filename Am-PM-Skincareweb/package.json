@@ -1,0 +1,14 @@
+{
+  "name": "am-pm-skincare-smooth-scroll",
+  "version": "1.0.0",
+  "description": "AM-PM Skincare & Nutritions Luxury Smooth Scroll Experience",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4",
+    "vite": "^5.4.2"
+  }
+}

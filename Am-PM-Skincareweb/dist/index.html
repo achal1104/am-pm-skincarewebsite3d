@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AM-PM — Day Nutrition. Night Nutrition. A dual-phase multivitamin system designed around your body's natural circadian rhythm. AM for daytime performance. PM for nighttime recovery." />
+  <meta name="keywords" content="AM-PM skincare, day nutrition, night nutrition, circadian rhythm, chrono nutrition, dual-phase multivitamin" />
+  <meta property="og:title" content="AM-PM — Day Nutrition. Night Nutrition." />
+  <meta property="og:description" content="A dual-phase multivitamin system designed around your body's natural rhythm. AM for daytime performance. PM for nighttime recovery." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>" />
+  <title>AM-PM — Day Nutrition. Night Nutrition. | Luxury Smooth Scroll</title>
+  
+  <!-- Google Fonts: Fraunces & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <script type="module" crossorigin src="/assets/index-Bxa9tfRR.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Dp0-k2N9.css">
+</head>
+<body class="dark-theme">
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="brand-monogram">AM<span class="divider">/</span>PM</div>
+      <div class="preloader-title">Calibrating High-Fidelity Sequence</div>
+      <div class="progress-bar-container">
+        <div id="preloader-bar" class="progress-bar-fill"></div>
+      </div>
+      <div id="preloader-text" class="preloader-percent">0% Loaded</div>
+      <p class="preloader-quote">"Your biology changes throughout the day. So should your nutrition."</p>
+    </div>
+  </div>
+
+  <!-- FIXED FULL-PAGE HIGH-QUALITY CANVAS BACKGROUND (VISIBLE THROUGHOUT ENTIRE SITE) -->
+  <div class="fixed-canvas-container" id="canvas-container">
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+  </div>
+
+  <!-- Fixed HUD Frame & Phase Indicator (Visible while scrolling anywhere) -->
+  <div class="frame-indicator" id="frame-indicator">
+    <span class="phase-tag" id="phase-tag">AM PHASE • DAY NUTRITION</span>
+    <div class="progress-track">
+      <div class="progress-thumb" id="progress-thumb"></div>
+    </div>
+    <span class="frame-counter" id="frame-counter">FRAME 001 / 300</span>
+  </div>
+
+  <!-- Fixed Navigation Header -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" id="brand-logo">
+        <span class="logo-am">AM</span>
+        <span class="logo-dot">•</span>
+        <span class="logo-pm">PM</span>
+        <span class="logo-subtitle">NUTRITION</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link">The Ritual</a>
+        <a href="#problem" class="nav-link">The Problem</a>
+        <a href="#difference" class="nav-link">The Difference</a>
+        <a href="#science" class="nav-link">The Science</a>
+        <a href="#system" class="nav-link">The System</a>
+        <a href="#founders" class="nav-link">Our Story</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-trigger-btn" id="open-cart-btn" aria-label="Shopping cart">
+          <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+            <path d="M3 6h18"></path>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cart-counter">0</span>
+        </button>
+        <a href="#system" class="btn-primary nav-cta">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper (Floats seamlessly over the fixed canvas) -->
+  <main class="page-content">
+    
+    <!-- Hero / Initial Scrollytelling Narrative Section -->
+    <section class="hero-narrative-section" id="hero">
+      <div class="hero-scroll-track">
+        <!-- Sticky Story Card Container -->
+        <div class="sticky-story-viewport">
+          
+          <!-- Story Step 1: Morning Ritual (AM) (Frames 1-85) -->
+          <div class="story-card active" data-phase="am" id="story-am">
+            <div class="pill-badge am-pill">
+              <span class="badge-dot"></span> The Day Phase
+            </div>
+            <h1 class="story-heading">Day Nutrition.<br><span class="highlight-gold">Fuel Your Day.</span></h1>
+            <p class="story-body">
+              A lightweight, fast-absorbing daytime formula designed around performance, mental focus, sustained vitality, and immune defense.
+            </p>
+            <div class="nutrient-tags">
+              <span class="nutrient-tag">⚡ Energy Production</span>
+              <span class="nutrient-tag">🧠 Mental Focus</span>
+              <span class="nutrient-tag">🌿 Clean Nutrition</span>
+              <span class="nutrient-tag">🔬 Vitamin B Complex</span>
+            </div>
+            <div class="story-actions">
+              <button class="btn-secondary quick-add-btn" data-product="am">Add AM to Cart — ₹849</button>
+              <span class="scroll-hint">Scroll down to observe the transition ↓</span>
+            </div>
+          </div>
+
+          <!-- Story Step 2: Circadian Shift (Frames 86-170) -->
+          <div class="story-card" data-phase="transition" id="story-transition">
+            <div class="pill-badge transition-pill">
+              <span class="badge-dot"></span> Circadian Shift
+            </div>
+            <h2 class="story-heading">The Day Changes.<br><span class="highlight-twilight">So Should Your Nutrition.</span></h2>
+            <p class="story-body">
+              Your body doesn't need the same nutrients 24 hours a day. Energy nutrients belong to the sunrise; recovery nutrients belong to the moonlight.
+            </p>
+            <div class="comparison-mini">
+              <div class="comp-col">
+                <span class="comp-label">Traditional Multivitamins</span>
+                <span class="comp-val">Same generic formula all day</span>
+              </div>
+              <div class="comp-divider">vs</div>
+              <div class="comp-col highlight">
+                <span class="comp-label">AM-PM Chrono System</span>
+                <span class="comp-val">Chrono-timed biological support</span>
+              </div>
+            </div>
+            <span class="scroll-hint">Continuing into the Night Phase ↓</span>
+          </div>
+
+          <!-- Story Step 3: Night Ritual (PM) (Frames 171-245) -->
+          <div class="story-card" data-phase="pm" id="story-pm">
+            <div class="pill-badge pm-pill">
+              <span class="badge-dot"></span> The Night Phase
+            </div>
+            <h2 class="story-heading">Night Nutrition.<br><span class="highlight-blue">Restore Your Night.</span></h2>
+            <p class="story-body">
+              A deeply nourishing overnight formula designed around cellular recovery, stress relief, and deep restorative sleep. Wake up refreshed and glowing.
+            </p>
+            <div class="nutrient-tags">
+              <span class="nutrient-tag">🌙 Restorative Sleep</span>
+              <span class="nutrient-tag">🧘 Stress Support</span>
+              <span class="nutrient-tag">🧬 Cellular Repair</span>
+              <span class="nutrient-tag">✨ Magnesium Matrix</span>
+            </div>
+            <div class="story-actions">
+              <button class="btn-secondary quick-add-btn" data-product="pm">Add PM to Cart — ₹849</button>
+              <span class="scroll-hint">Scroll down to unveil the Complete System ↓</span>
+            </div>
+          </div>
+
+          <!-- Story Step 4: The Full System (Frames 246-300) -->
+          <div class="story-card" data-phase="system" id="story-system">
+            <div class="pill-badge system-pill">
+              <span class="badge-dot"></span> 24-Hour Circadian Synergy
+            </div>
+            <h2 class="story-heading">Two Rituals.<br><span class="highlight-gradient">One Seamless Routine.</span></h2>
+            <p class="story-body">
+              AM with your morning coffee. PM before restful sleep. The complete dual-phase system designed to fit into real, demanding lives.
+            </p>
+            <div class="system-highlights">
+              <div class="sys-item">✓ 30 Days AM Day Tablets</div>
+              <div class="sys-item">✓ 30 Days PM Night Tablets</div>
+              <div class="sys-item">✓ 100% Vegetarian Nutraceutical</div>
+              <div class="sys-item">✓ Dermatologist Tested</div>
+            </div>
+            <div class="story-actions">
+              <button class="btn-primary quick-add-btn" data-product="combo">Add Full System — ₹1,529 <span class="savings">(Save 25%)</span></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: The Problem (Glassmorphic Overlay) -->
+    <section class="section problem-section" id="problem">
+      <div class="container">
+        <div class="section-badge">The Problem</div>
+        <h2 class="section-title">Why traditional multivitamins are <span class="serif-italic">out of sync</span></h2>
+        <p class="section-subtitle">
+          Most multivitamins deliver everything in a single pill taken at random hours. But your biology is dynamic throughout the 24-hour cycle.
+        </p>
+
+        <div class="problem-grid">
+          <div class="problem-card">
+            <div class="problem-icon">⏱️</div>
+            <h3>Same Formula Morning + Night</h3>
+            <p>Taking the exact same pill at 8 AM or 10 PM makes zero biological sense. Daytime organs need active focus; nighttime cells need quiet restoration.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">⚡</div>
+            <h3>Energy Nutrients At Bedtime</h3>
+            <p>High-dose stimulatory B-complex and metabolism boosters taken in the evening disrupt REM sleep architecture and restful recovery.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">😴</div>
+            <h3>Recovery Nutrients During Work</h3>
+            <p>Relaxing minerals and heavy sleep-aid botanicals taken during morning hours induce brain fog, lethargy, and mid-afternoon slumps.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">🧩</div>
+            <h3>One-Size-Fits-All Nutrition</h3>
+            <p>Overloaded single pills cause nutrient competition for absorption pathways, meaning most actives pass through unabsorbed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: The Difference (Direct Comparison) -->
+    <section class="section difference-section" id="difference">
+      <div class="container">
+        <div class="section-badge">The Difference</div>
+        <h2 class="section-title">AM-PM vs Traditional Multivitamins</h2>
+        <p class="section-subtitle">A side-by-side comparison of chrono-nutrition against traditional supplement pills.</p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="col-traditional">Traditional Multivitamins</th>
+                <th class="col-ampm">AM-PM Chrono System</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-name">Formulation Strategy</td>
+                <td class="col-traditional">One tablet fits all</td>
+                <td class="col-ampm highlight-cell">Dual-phase day & night synchronization</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Timing Protocol</td>
+                <td class="col-traditional">Generic timing (anytime)</td>
+                <td class="col-ampm highlight-cell">Chrono-nutrition aligned to biological clock</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Nutrient Synergy</td>
+                <td class="col-traditional">All nutrients crammed together</td>
+                <td class="col-ampm highlight-cell">Day / night optimization (no competing absorption)</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Circadian Harmony</td>
+                <td class="col-traditional">Standard static formula</td>
+                <td class="col-ampm highlight-cell">Circadian-based approach for high performance</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Lifestyle Fit</td>
+                <td class="col-traditional">Easy to forget, inconsistent</td>
+                <td class="col-ampm highlight-cell">Built naturally into your morning & evening rituals</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: The Science (Circadian Biology) -->
+    <section class="section science-section" id="science">
+      <div class="container">
+        <div class="section-badge">The Science</div>
+        <h2 class="section-title">Built around your <span class="serif-italic">biological clock</span></h2>
+        <p class="section-subtitle">
+          Your body follows a 24-hour circadian cycle. Energy, cortisol, metabolism, cell repair, and melatonin shift throughout the day. AM-PM is engineered directly around that natural rhythm.
+        </p>
+
+        <div class="circadian-timeline">
+          <div class="timeline-card card-am">
+            <div class="timeline-time">07:00 AM — 02:00 PM</div>
+            <div class="timeline-icon">☀️</div>
+            <h3>Day Phase: Performance & Focus</h3>
+            <ul class="timeline-points">
+              <li><strong>Cortisol & Energy Awakening:</strong> Vitamin B Complex supports mitochondrial ATP production without caffeine jitters.</li>
+              <li><strong>Metabolic Rate & Focus:</strong> Active nutrients enhance neuro-alertness and mental sharpness for busy workdays.</li>
+              <li><strong>Environmental Protection:</strong> Free-radical defense shields skin cells from daytime pollution and blue light.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-card card-transition">
+            <div class="timeline-time">02:00 PM — 07:00 PM</div>
+            <div class="timeline-icon">🌅</div>
+            <h3>Transition Phase: Afternoon Balance</h3>
+            <ul class="timeline-points">
+              <li><strong>Steady Glycemic Support:</strong> Clean minerals prevent the common 3 PM slump and energy drop.</li>
+              <li><strong>Hydration Maintenance:</strong> Sustains micro-cellular moisture reserves throughout active hours.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-card card-pm">
+            <div class="timeline-time">08:00 PM — 06:00 AM</div>
+            <div class="timeline-icon">🌙</div>
+            <h3>Night Phase: Restoration & Sleep</h3>
+            <ul class="timeline-points">
+              <li><strong>Melatonin & Stress Ease:</strong> Magnesium Matrix supports nervous system calm and parasympathetic activation.</li>
+              <li><strong>Cellular DNA Repair:</strong> Overnight micro-nutrients nourish skin collagen regeneration and tissue rebuild.</li>
+              <li><strong>Morning Vitality:</strong> Sleep quality is optimized so you awake energized, without morning grogginess.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: The System (Product Collection & Pricing) -->
+    <section class="section system-section" id="system">
+      <div class="container">
+        <div class="section-badge">The Collection</div>
+        <h2 class="section-title">Start your <span class="serif-italic">daily rhythm</span></h2>
+        <p class="section-subtitle">
+          Purposeful nutrition. Thoughtful timing. One AM with your morning, one PM before the night.
+        </p>
+
+        <div class="pricing-toggle-wrapper">
+          <span class="toggle-label" id="toggle-label-onetime">One-Time Purchase</span>
+          <label class="switch">
+            <input type="checkbox" id="subscription-toggle" checked />
+            <span class="slider round"></span>
+          </label>
+          <span class="toggle-label active" id="toggle-label-sub">
+            Subscribe & Save 15% <span class="badge-discount">Best Value</span>
+          </span>
+        </div>
+
+        <div class="products-grid">
+          <!-- AM Bottle -->
+          <div class="product-card" id="card-am-prod">
+            <div class="product-tag am-tag">Morning Ritual</div>
+            <div class="product-image-container">
+              <img src="/frames/ezgif-frame-001.jpg" alt="AM Day Nutrition Bottle" class="product-img" />
+            </div>
+            <div class="product-details">
+              <h3 class="product-title">AM Day Nutrition</h3>
+              <p class="product-desc">A lightweight, fast-absorbing formula that protects and energizes your skin and body for the day ahead.</p>
+              <div class="product-specs">
+                <span>30 Tablets</span>
+                <span>•</span>
+                <span>1 Month Supply</span>
+                <span>•</span>
+                <span>Energy & Focus</span>
+              </div>
+              <div class="product-pricing">
+                <span class="price-current" data-base="999" data-sub="849">₹849</span>
+                <span class="price-mrp">₹1,199</span>
+              </div>
+              <button class="btn-secondary full-width add-to-cart-btn" data-id="am" data-name="AM Day Nutrition" data-price="849" data-img="/frames/ezgif-frame-001.jpg">
+                Add AM to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Full System Combo (Featured) -->
+          <div class="product-card featured-product" id="card-combo-prod">
+            <div class="featured-ribbon">Most Popular • Save 25%</div>
+            <div class="product-tag combo-tag">The Full System</div>
+            <div class="product-image-container">
+              <img src="/frames/ezgif-frame-300.jpg" alt="AM-PM Complete Dual-Phase System" class="product-img" />
+            </div>
+            <div class="product-details">
+              <h3 class="product-title">The Full AM-PM System</h3>
+              <p class="product-desc">AM Day Nutrition + PM Night Nutrition paired for complete 24-hour circadian synergy and full recovery.</p>
+              <div class="product-specs">
+                <span>60 Tablets (AM + PM)</span>
+                <span>•</span>
+                <span>Full Circadian Balance</span>
+              </div>
+              <div class="product-pricing">
+                <span class="price-current" data-base="1799" data-sub="1529">₹1,529</span>
+                <span class="price-mrp">₹2,398</span>
+              </div>
+              
+              <div class="subscription-selector">
+                <label class="sub-label">Delivery Frequency:</label>
+                <select class="sub-dropdown" id="sub-frequency">
+                  <option value="1-month">Every Month (15% Off)</option>
+                  <option value="2-month">Every 2 Months (15% Off)</option>
+                  <option value="3-month">Every 3 Months (15% Off)</option>
+                </select>
+              </div>
+
+              <button class="btn-primary full-width add-to-cart-btn" data-id="combo" data-name="The Full AM-PM System" data-price="1529" data-img="/frames/ezgif-frame-300.jpg">
+                Add The System to Cart
+              </button>
+              <p class="sub-guarantee">✓ Free Express Shipping • Cancel or Pause Anytime</p>
+            </div>
+          </div>
+
+          <!-- PM Bottle -->
+          <div class="product-card" id="card-pm-prod">
+            <div class="product-tag pm-tag">Night Ritual</div>
+            <div class="product-image-container">
+              <img src="/frames/ezgif-frame-150.jpg" alt="PM Night Nutrition Bottle" class="product-img" />
+            </div>
+            <div class="product-details">
+              <h3 class="product-title">PM Night Nutrition</h3>
+              <p class="product-desc">A deeply nourishing overnight formula that repairs and restores your skin and body while you sleep.</p>
+              <div class="product-specs">
+                <span>30 Tablets</span>
+                <span>•</span>
+                <span>1 Month Supply</span>
+                <span>•</span>
+                <span>Sleep & Recovery</span>
+              </div>
+              <div class="product-pricing">
+                <span class="price-current" data-base="999" data-sub="849">₹849</span>
+                <span class="price-mrp">₹1,199</span>
+              </div>
+              <button class="btn-secondary full-width add-to-cart-btn" data-id="pm" data-name="PM Night Nutrition" data-price="849" data-img="/frames/ezgif-frame-150.jpg">
+                Add PM to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Our Story & Founders -->
+    <section class="section founders-section" id="founders">
+      <div class="container">
+        <div class="section-badge">Our Story</div>
+        <h2 class="section-title">Meet the people behind <span class="serif-italic">AM-PM</span></h2>
+        <p class="section-subtitle">
+          AM-PM Nutritions was built around a simple belief: nutrition should be thoughtfully designed around everyday life and timing, not the other way around.
+        </p>
+
+        <div class="founders-grid">
+          <div class="founder-card">
+            <div class="founder-avatar-wrap">
+              <div class="founder-avatar">👩‍⚕️</div>
+            </div>
+            <h3 class="founder-name">Dr. Shweta Shete</h3>
+            <p class="founder-role">Co-founder, AM-PM Nutritions</p>
+            <p class="founder-quote">
+              "Modern lifestyles create erratic schedules and constant stress. By separating daytime metabolic support from nighttime cellular repair, we give the human body exactly what it needs, when it can actually use it."
+            </p>
+          </div>
+
+          <div class="founder-card">
+            <div class="founder-avatar-wrap">
+              <div class="founder-avatar">👨‍💼</div>
+            </div>
+            <h3 class="founder-name">Mr. Dayanand V. P.</h3>
+            <p class="founder-role">Co-founder, AM-PM Nutritions</p>
+            <p class="founder-quote">
+              "We didn't want to make just another multivitamin that gathers dust on your counter. We engineered a ritual that brings consistency, clarity, and genuine results to every morning and every evening."
+            </p>
+          </div>
+        </div>
+
+        <!-- Brand Pillars from live website -->
+        <div class="pillars-row">
+          <div class="pillar-item">
+            <span class="pillar-label">The Insight</span>
+            <p>The body operates through changing day-night biological cycles.</p>
+          </div>
+          <div class="pillar-arrow">→</div>
+          <div class="pillar-item">
+            <span class="pillar-label">The Approach</span>
+            <p>AM-PM separates daytime and nighttime nutritional support.</p>
+          </div>
+          <div class="pillar-arrow">→</div>
+          <div class="pillar-item">
+            <span class="pillar-label">The Belief</span>
+            <p>Timing matters. Precision creates genuine transformation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Real People. Real Routines. (Reviews) -->
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-badge">Early Words</div>
+        <h2 class="section-title">Real People. <span class="serif-italic">Real Routines.</span></h2>
+        <p class="section-subtitle">Loved by real skin and ambitious routines across the country.</p>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"My skin has never felt this balanced. Mornings and nights finally have a purpose. Taking AM before my work meetings gives me clear focus, and PM helps me wind down properly."</p>
+            <div class="review-author">
+              <span class="author-name">Priya Sharma</span>
+              <span class="author-meta">Verified Customer • Mumbai</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Simple routine, visible results within two weeks. Worth every rupee. No stomach upset like traditional multivitamins, and my sleep score has noticeably improved."</p>
+            <div class="review-author">
+              <span class="author-name">Rohan Mehta</span>
+              <span class="author-meta">Tech Professional • Bengaluru</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"The PM formula is rich but never greasy. I wake up glowing and ready for the day without the morning fog I used to experience. AM-PM is now an unshakeable habit."</p>
+            <div class="review-author">
+              <span class="author-name">Ananya Iyer</span>
+              <span class="author-meta">Verified Customer • Delhi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-strip">
+          <div class="trust-item">
+            <span class="trust-icon">🌱</span>
+            <span class="trust-text">100% Vegetarian Formula</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🔬</span>
+            <span class="trust-text">Dermatologist & Science Tested</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">📦</span>
+            <span class="trust-text">Free All-India Express Shipping</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🔒</span>
+            <span class="trust-text">Secure Encrypted Payments</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: FAQ Accordion -->
+    <section class="section faq-section" id="faq">
+      <div class="container narrow">
+        <div class="section-badge">Common Questions</div>
+        <h2 class="section-title">Asked, <span class="serif-italic">answered.</span></h2>
+        <p class="section-subtitle">Everything you need to know about starting your AM-PM ritual.</p>
+
+        <div class="accordion" id="faq-accordion">
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Why two tablets instead of one?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Most multivitamins deliver everything at once, cramming energizing and relaxing compounds into a single pill. Your body operates on a biological circadian clock: morning demands sustained energy, metabolism, and focus, while night demands cellular recovery and deep relaxation. AM-PM separates them so each nutrient works when your body needs it most.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Can I take only AM?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Yes, if daytime performance, focus, and clean energy are your primary goals. However, daytime nutrition and nighttime recovery work best as a unified 24-hour cycle to achieve maximum skin and metabolic balance.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Can I take only PM?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Yes, if nighttime recovery, stress relief, and better sleep are your focus. For full-day coverage and optimal cellular balance, pair it with AM.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>How long before I see results?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Nutrition is cumulative, not instant. AM-PM is designed to complement a consistent daily routine rather than promise overnight change. Most customers report waking up feeling noticeably more rested within 7 to 10 days, with daytime mental clarity and skin radiance following in 2 to 3 weeks.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Who should use AM-PM?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>AM-PM is designed for busy professionals, entrepreneurs, travelers, and anyone with ambitious days and demanding schedules seeking clean, thoughtful nutrition that seamlessly fits real life.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Is AM-PM vegetarian?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Yes. AM-PM is a 100% vegetarian nutraceutical formulation crafted without synthetic fillers or animal by-products.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Launch Updates Newsletter -->
+    <section class="section newsletter-section">
+      <div class="container narrow">
+        <div class="newsletter-box">
+          <div class="pill-badge am-pill">Get Launch Updates</div>
+          <h2 class="newsletter-title">Start your daily rhythm</h2>
+          <p class="newsletter-desc">Join our priority circle for exclusive wellness insights, chronobiology guides, and early access to replenishment drops.</p>
+          
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" class="newsletter-input" id="newsletter-email" placeholder="Enter your email address..." required />
+            <button type="submit" class="btn-primary">Notify Me</button>
+          </form>
+          <p class="newsletter-note" id="newsletter-status">Launch updates will land in your inbox.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">AM<span class="gold">•</span>PM</div>
+            <p class="footer-tagline">Fuel your day. Restore your night. Purposeful nutrition, thoughtful timing.</p>
+          </div>
+
+          <div class="footer-links-col">
+            <h4>The System</h4>
+            <a href="#hero">Morning Ritual (AM)</a>
+            <a href="#hero">Night Ritual (PM)</a>
+            <a href="#system">The Full System</a>
+            <a href="#system">Subscription Plans</a>
+          </div>
+
+          <div class="footer-links-col">
+            <h4>The Science</h4>
+            <a href="#science">Circadian Biology</a>
+            <a href="#difference">Why AM-PM</a>
+            <a href="#founders">Founders' Story</a>
+            <a href="#faq">Common Questions</a>
+          </div>
+
+          <div class="footer-links-col">
+            <h4>Contact & Updates</h4>
+            <p class="footer-info">Bangalore & Mumbai, India</p>
+            <p class="footer-info">support@am-pm.in</p>
+            <div class="footer-socials">
+              <a href="#" aria-label="Instagram">Instagram</a>
+              <span>•</span>
+              <a href="#" aria-label="Twitter">Twitter</a>
+              <span>•</span>
+              <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+          <p class="disclaimer-text">
+            AM-PM is a nutraceutical food supplement. It is not intended to diagnose, treat, cure, or prevent any disease. Illustrative. AM-PM is a food supplement, not a medicine.
+          </p>
+          <p class="copyright-text">
+            © 2026 AM-PM Nutritions. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div class="cart-title-row">
+        <h3>Your Cart</h3>
+        <button class="cart-close-btn" id="close-cart-btn" aria-label="Close cart">✕</button>
+      </div>
+      <div class="free-shipping-progress">
+        <span class="shipping-text" id="shipping-text">🎉 You unlocked FREE Express Shipping!</span>
+        <div class="shipping-bar-track">
+          <div class="shipping-bar-fill" style="width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-drawer-items" id="cart-items-container">
+      <div class="empty-cart-state" id="empty-cart">
+        <span class="empty-icon">🛍️</span>
+        <p class="empty-title">Your cart is empty</p>
+        <p class="empty-sub">Add AM, PM or the full system to begin your daily rhythm.</p>
+        <a href="#system" class="btn-primary continue-shopping-btn" id="continue-shopping">Browse System</a>
+      </div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span class="cart-subtotal" id="cart-subtotal">₹0</span>
+      </div>
+      <div class="cart-summary-line shipping-line">
+        <span>Express Delivery</span>
+        <span class="free-badge">FREE</span>
+      </div>
+      <button class="btn-primary full-width checkout-btn" id="checkout-btn">
+        Proceed to Checkout
+      </button>
+      <p class="cart-guarantee">🔒 Payments are encrypted and processed securely. Cash on Delivery unavailable.</p>
+    </div>
+  </aside>
+
+  <!-- Checkout Success Modal -->
+  <div class="modal-backdrop" id="checkout-modal">
+    <div class="modal-box">
+      <div class="modal-icon">✨</div>
+      <h3 class="modal-title">Order Initiated</h3>
+      <p class="modal-desc">Welcome to the AM-PM rhythm! Your order has been registered in demo mode. A confirmation with tracking details will arrive shortly.</p>
+      <button class="btn-primary full-width" id="close-modal-btn">Return to Experience</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast"></div>
+
+  <!-- Main JavaScript File -->
+</body>
+</html>
