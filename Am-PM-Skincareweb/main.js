@@ -189,7 +189,7 @@ function renderFrame(frameIndex) {
     offsetY = 0;
   }
 
-  ctx.fillStyle = document.documentElement.getAttribute('data-theme') === 'light' ? '#F8F5F0' : '#050507';
+  ctx.fillStyle = '#050507';
   ctx.fillRect(0, 0, cWidth, cHeight);
   ctx.drawImage(img, Math.round(offsetX), Math.round(offsetY), Math.round(renderWidth), Math.round(renderHeight));
   lastDrawnFrame = frameIndex;
@@ -244,6 +244,8 @@ function updateHeroStoryCards(scrollY) {
   if (!heroSection) return;
 
   const heroRect = heroSection.getBoundingClientRect();
+
+
   const heroTop = -heroRect.top;
   const heroHeight = heroSection.offsetHeight - window.innerHeight;
 
@@ -285,10 +287,19 @@ function animationLoop() {
   }
 
   // Sticky header background
-  if (window.scrollY > 40) {
-    navbar?.classList.add('scrolled');
-  } else {
-    navbar?.classList.remove('scrolled');
+  // Sticky header background + force visibility (fixes mobile scroll-down disappear bug)
+  if (navbar) {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    // Force repaint every frame — prevents mobile browsers from dropping
+    // the fixed navbar's compositing layer during downward momentum scroll
+    navbar.style.opacity = '0.999';
+    requestAnimationFrame(() => {
+      navbar.style.opacity = '1';
+    });
   }
 
   requestAnimationFrame(animationLoop);
@@ -588,23 +599,26 @@ function initMobileNav() {
 /**
  * Theme Toggle — Dark / Light
  */
-function initThemeToggle() {
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  try { localStorage.setItem('ampm-theme', theme); } catch (e) { }
+
   const btn = document.getElementById('theme-toggle-btn');
-  const html = document.documentElement;
+  btn?.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
 
-  // Apply saved theme on load
-  const saved = localStorage.getItem('ampm-theme') || 'dark';
-  html.setAttribute('data-theme', saved);
+  // canvas cha background colour theme var depend aahe, mhanun redraw
+  lastDrawnFrame = -1;
+  renderFrame(Math.round(currentFrame));
+}
 
-  if (!btn) return;
+function initThemeToggle() {
+  let saved = 'dark';
+  try { saved = localStorage.getItem('ampm-theme') || 'dark'; } catch (e) { }
+  applyTheme(saved === 'light' ? 'light' : 'dark');
 
-  btn.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme') || 'dark';
-    const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('ampm-theme', next);
-    lastDrawnFrame = -1;
-    renderFrame(Math.round(currentFrame));
+  document.getElementById('theme-toggle-btn')?.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    applyTheme(isLight ? 'dark' : 'light');
   });
 }
 
@@ -640,3 +654,89 @@ async function init() {
 
 // Start
 document.addEventListener('DOMContentLoaded', init);
+/**
+ * Scroll Drop-In Animations (cards fall in + golden beans fall behind)
+ * PASTE this function into main.js (anywhere above init()), then call
+ * initScrollAnimations(); inside init() after initThemeToggle();
+ */
+function initScrollAnimations() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  const REPLAY = false; // true = animation repeats every time you scroll back to it
+  const isMobile = window.innerWidth <= 768;
+
+  const textSel = '.section-badge, .section-title, .section-subtitle, .pricing-toggle-wrapper';
+  const cardSel = [
+    '.problem-card', '.timeline-card', '.product-card', '.founder-card',
+    '.review-card', '.accordion-item', '.trust-item', '.pillars-row',
+    '.newsletter-box', '.comparison-table-wrapper'
+  ].join(', ');
+
+  // Tag elements + set stagger delay based on position among siblings
+  function tag(root, sel, cls, step) {
+    root.querySelectorAll(sel).forEach((el) => {
+      el.classList.add(cls);
+      const sibs = Array.from(el.parentElement.children).filter((c) => c.matches(sel));
+      el.style.setProperty('--d', `${sibs.indexOf(el) * step}s`);
+    });
+  }
+
+  const sections = document.querySelectorAll('.page-content .section');
+  sections.forEach((section) => {
+    tag(section, textSel, 'reveal-text', 0.1);
+    tag(section, cardSel, 'reveal', 0.14);
+  });
+
+  // Reveal observer
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.classList.add('in');
+        if (!REPLAY) revealObserver.unobserve(el);
+      } else if (REPLAY) {
+        el.classList.remove('in');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-text').forEach((el) => revealObserver.observe(el));
+
+  // Falling beans when a section enters the screen
+  function dropBeans(section) {
+    const layer = document.createElement('div');
+    layer.className = 'bean-layer';
+    section.prepend(layer);
+
+    const h = section.offsetHeight;
+    const count = isMobile ? 8 : 16;
+
+    for (let i = 0; i < count; i++) {
+      const bean = document.createElement('span');
+      bean.className = 'bean';
+      bean.style.cssText = [
+        `left:${Math.random() * 100}%`,
+        `--s:${8 + Math.random() * 10}px`,
+        `--x:${(Math.random() - 0.5) * 160}px`,
+        `--h:${h * (0.5 + Math.random() * 0.45)}px`,
+        `--r:${Math.random() * 720 - 360}deg`,
+        `--t:${2.2 + Math.random() * 1.8}s`,
+        `--d:${Math.random() * 0.9}s`
+      ].join(';');
+      layer.appendChild(bean);
+    }
+    setTimeout(() => layer.remove(), 6500);
+  }
+
+  const beanObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        dropBeans(entry.target);
+        if (!REPLAY) beanObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach((s) => beanObserver.observe(s));
+}

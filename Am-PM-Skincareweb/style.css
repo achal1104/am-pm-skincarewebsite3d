@@ -103,10 +103,55 @@
 
 /* Typography */
 :root {
-  --font-serif: 'Fraunces', Georgia, serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  /* Backgrounds */
+  --bg-obsidian: #060608;
+  --bg-surface-glass: rgba(10, 11, 17, 0.48);
+  --bg-surface-hover: rgba(18, 20, 30, 0.68);
+  --bg-glass-heavy: rgba(10, 11, 16, 0.80);
+  --bg-page: #060608;
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-glow: rgba(255, 255, 255, 0.28);
+  --border-gold: rgba(226, 149, 72, 0.45);
+
+  /* Gold */
+  --gold-primary: #e29548;
+  --gold-glow: #f5b066;
+  --gold-dark: #b86e24;
+  --gold-soft: rgba(226, 149, 72, 0.15);
+
+  /* Blue */
+  --blue-night: #4f78e8;
+  --blue-glow: #7093f7;
+  --blue-dark: #2c4da6;
+  --blue-soft: rgba(79, 120, 232, 0.15);
+
+  /* Accents (used by the JS phase tag) */
+  --purple: #c084fc;
+  --yellow-accent: #fef08a;
+
+  /* Text */
+  --text-pure: #ffffff;
+  --text-ivory: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-subtle: #94a3b8;
+  --text-body: #e2e8f0;
+
+  /* Nav */
+  --nav-bg: rgba(6, 6, 8, 0.0);
+  --nav-scrolled-bg: rgba(8, 9, 14, 0.82);
+  --nav-border: rgba(255, 255, 255, 0.10);
+
+  /* Shadows */
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.50);
+  --shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.70);
+  --shadow-gold: 0 12px 35px rgba(226, 149, 72, 0.28);
+  --shadow-3d: 0 20px 60px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.4);
+
+  --canvas-opacity: 1;
+  color-scheme: dark;
 }
 
 
@@ -130,13 +175,7 @@ html {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-body {
-  background-color: var(--bg-obsidian);
-  overflow-x: hidden;
-  position: relative;
-  line-height: 1.6;
-  transition: background-color 0.4s ease;
-}
+
 
 /* ==========================================================================
    FIXED FULL-PAGE PERSISTENT VIDEO CANVAS (High-Fidelity throughout website)
@@ -302,14 +341,25 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   z-index: 1001;
   padding: 1.1rem 2.2rem;
   background: var(--nav-bg);
+  isolation: isolate;
+  will-change: background;
   transition: background 0.4s ease, backdrop-filter 0.4s ease,
     border-bottom 0.4s ease, box-shadow 0.4s ease;
 }
 
 .site-header.scrolled {
+  background: var(--nav-scrolled-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.site-header.scrolled::before {
   background: var(--nav-scrolled-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -462,21 +512,20 @@ body {
 }
 
 /* Story Cards */
+/* Story Cards */
 .story-card {
   position: absolute;
   width: clamp(340px, 38vw, 540px);
   padding: 2.6rem 2.4rem;
-  background: rgba(8, 9, 14, 0.82);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  border: 1px solid var(--border-subtle);
-  border-radius: 24px;
-  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   opacity: 0;
   transform: translateY(35px) scale(0.96);
   transition: opacity 0.5s var(--ease-spring), transform 0.5s var(--ease-spring);
   pointer-events: auto;
-  /* Right-side positioning */
   right: clamp(2rem, 5vw, 7rem);
   left: auto;
 }
@@ -2279,10 +2328,22 @@ html:not([data-theme]) .theme-icon-light {
   }
 
   .site-header {
-    padding: 0.75rem 1.1rem;
-    background: rgba(6, 7, 10, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1001;
+    padding: 1.1rem 2.2rem;
+    background: var(--nav-bg);
+    isolation: isolate;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform, background;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease,
+      border-bottom 0.4s ease, box-shadow 0.4s ease;
   }
 
   /* Mobile nav: full-screen slide-in drawer */
@@ -2821,5 +2882,2014 @@ html:not([data-theme]) .theme-icon-light {
 
   [data-theme="light"] .featured-product {
     background: rgba(255, 250, 240, 0.94);
+  }
+}
+
+/* ==========================================================================
+   SCROLL DROP-IN ANIMATIONS — paste at the VERY BOTTOM of style.css
+   (uses individual translate/rotate/scale props so your hover effects still work)
+   ========================================================================== */
+
+/* Cards: fall from above with 3D tilt, bounce and settle */
+.reveal {
+  opacity: 0;
+  translate: 0 -120px;
+  rotate: 1 0 0 40deg;
+  scale: 0.9;
+  transition:
+    opacity 0.7s ease var(--d, 0s),
+    translate 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) var(--d, 0s),
+    rotate 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) var(--d, 0s),
+    scale 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) var(--d, 0s),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.4s ease;
+}
+
+.reveal.in {
+  opacity: 1;
+  translate: 0 0;
+  rotate: 1 0 0 0deg;
+  scale: 1;
+}
+
+/* Titles / subtitles: smooth rise */
+.reveal-text {
+  opacity: 0;
+  translate: 0 50px;
+  transition:
+    opacity 0.8s ease var(--d, 0s),
+    translate 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s);
+}
+
+.reveal-text.in {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Perspective for non-grid groups so the 3D tilt is visible */
+.accordion,
+.trust-strip {
+  perspective: 1400px;
+}
+
+/* Falling golden beans / sparks (behind the cards) */
+.section>.container {
+  position: relative;
+  z-index: 1;
+}
+
+.bean-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bean {
+  position: absolute;
+  top: -30px;
+  width: var(--s);
+  height: calc(var(--s) * 1.5);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--gold-glow), var(--gold-dark));
+  box-shadow: 0 0 12px rgba(226, 149, 72, 0.55);
+  opacity: 0;
+  animation: bean-fall var(--t) cubic-bezier(0.3, 0.1, 0.6, 1) var(--d) forwards;
+}
+
+/* little center crease like a coffee bean */
+.bean::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  bottom: 12%;
+  width: 1.5px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 2px;
+  transform: translateX(-50%) rotate(8deg);
+}
+
+@keyframes bean-fall {
+  0% {
+    transform: translate3d(0, -40px, 0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate3d(var(--x), var(--h), 0) rotate(var(--r));
+    opacity: 0;
+  }
+}
+
+/* Respect users who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal,
+  .reveal-text {
+    opacity: 1;
+    translate: none;
+    rotate: none;
+    scale: none;
+    transition: none;
+  }
+
+  .bean-layer {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .story-heading {
+    font-size: 1.15rem;
+  }
+
+  .section-title {
+    font-size: 1.55rem;
+  }
+
+  .products-grid,
+  .problem-grid,
+  .circadian-timeline {
+    gap: 1.1rem;
+  }
+
+  .product-card,
+  .problem-card,
+  .timeline-card {
+    padding: 1.3rem 1rem;
+  }
+
+  .newsletter-box {
+    padding: 2.2rem 1.2rem;
+  }
+}
+
+/* Change this line in your existing 768px media query selector... */
+@media (max-width: 900px) {
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    padding: 0.75rem 1.1rem;
+    padding-top: calc(0.75rem + env(safe-area-inset-top));
+    background: rgba(6, 7, 10, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 0.999;
+    /* forces separate compositing layer that survives scroll */
+  }
+}
+
+/* ==========================================================================
+   REMOVE STORY-CARD BACKGROUND BOX — TEXT ONLY, ANIMATED ACCENT COLOR
+   ========================================================================== */
+
+.story-card,
+[data-theme="light"] .story-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+@media (max-width: 768px) {
+
+  .story-card,
+  [data-theme="light"] .story-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0.5rem 1.2rem !important;
+  }
+}
+
+/* Legibility without a box: soft drop shadow behind the text itself */
+.story-heading,
+.story-body,
+.pill-badge,
+.scroll-hint,
+.nutrient-tag,
+.comp-label,
+.comp-val,
+.sys-item {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65), 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="light"] .story-heading,
+[data-theme="light"] .story-body,
+[data-theme="light"] .pill-badge,
+[data-theme="light"] .scroll-hint,
+[data-theme="light"] .nutrient-tag,
+[data-theme="light"] .comp-label,
+[data-theme="light"] .comp-val,
+[data-theme="light"] .sys-item {
+  text-shadow: 0 2px 14px rgba(255, 255, 255, 0.75), 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+/* Pills/tags lose their boxes too, become plain glowing labels */
+.pill-badge,
+.nutrient-tag {
+  background: transparent !important;
+  border: none !important;
+  padding: 0.2rem 0 !important;
+}
+
+.comparison-mini {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Animated gradient color sweep on the main headings for visual interest */
+.story-heading {
+  background: linear-gradient(100deg,
+      var(--gold-primary) 0%,
+      var(--gold-glow) 20%,
+      #ffffff 40%,
+      var(--blue-glow) 60%,
+      var(--gold-primary) 80%,
+      var(--gold-glow) 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heading-shimmer 6s linear infinite;
+}
+
+@keyframes heading-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* Pulse the pill dot so the eye has something alive to follow, now that boxes are gone */
+.badge-dot {
+  animation: dot-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-heading {
+    animation: none;
+    background-position: 0% 50%;
+  }
+
+  .badge-dot {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   HERO POLISH — fix washed-out overlay + restyle buttons for text-only look
+   ========================================================================== */
+
+/* 1) Replace the flat gray wash with a tighter, darker vignette so the
+      product photo stays vivid and only the text zone is dimmed */
+.sticky-story-viewport {
+  background: linear-gradient(to left,
+      rgba(6, 6, 8, 0.55) 0%,
+      rgba(6, 6, 8, 0.30) 30%,
+      rgba(6, 6, 8, 0.0) 55%) !important;
+}
+
+[data-theme="light"] .sticky-story-viewport {
+  background: linear-gradient(to left,
+      rgba(20, 14, 6, 0.30) 0%,
+      rgba(20, 14, 6, 0.14) 30%,
+      rgba(20, 14, 6, 0.0) 55%) !important;
+}
+
+@media (max-width: 768px) {
+  .sticky-story-viewport {
+    background: linear-gradient(to top,
+        rgba(6, 6, 8, 0.65) 0%,
+        rgba(6, 6, 8, 0.25) 35%,
+        rgba(6, 6, 8, 0.0) 65%) !important;
+  }
+}
+
+/* 2) Ghost/outline buttons instead of solid white pills — fits the
+      transparent, floating-text aesthetic */
+.story-actions .btn-secondary,
+.story-actions .btn-primary {
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid var(--gold-primary) !important;
+  color: var(--text-pure) !important;
+  box-shadow: 0 8px 28px rgba(226, 149, 72, 0.18);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: all 0.3s ease;
+}
+
+.story-actions .btn-secondary:hover,
+.story-actions .btn-primary:hover {
+  background: rgba(226, 149, 72, 0.16) !important;
+  border-color: var(--gold-glow) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(226, 149, 72, 0.32);
+}
+
+/* Give buttons their own soft shadow so they read clearly with no card
+   behind them */
+.story-actions {
+  gap: 0.9rem;
+}
+
+.scroll-hint {
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+/* 3) Tighten heading size a touch and add letter-spacing so the shimmer
+      gradient reads crisply against the photo */
+.story-heading {
+  letter-spacing: -0.01em;
+}
+
+/* 4) Nutrient tags: small glowing dot instead of naked text, so they still
+      feel like distinct chips without a background box */
+.nutrient-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.15rem 0 !important;
+}
+
+/* 5) Pill badge gets a thin underline-style accent instead of floating bare */
+.pill-badge {
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+  padding-bottom: 0.3rem !important;
+}
+
+/* ==========================================================================
+   PROFESSIONAL POLISH PASS — remove card backgrounds site-wide,
+   replace with a subtle section-level vignette + refined typography
+   ========================================================================== */
+
+/* 1) Soft photographic vignette behind each SECTION (not each card) —
+      keeps the video visible and cinematic, but guarantees legible text
+      without boxy panels. This is the key fix: contrast comes from the
+      whole section, not from individual white/gray tiles. */
+.section {
+  position: relative;
+  isolation: isolate;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: -2rem;
+  background: radial-gradient(ellipse 80% 60% at 50% 30%,
+      rgba(6, 7, 10, 0.38) 0%,
+      rgba(6, 7, 10, 0.62) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+[data-theme="light"] .section::before {
+  background: radial-gradient(ellipse 80% 60% at 50% 30%,
+      rgba(248, 245, 240, 0.55) 0%,
+      rgba(248, 245, 240, 0.78) 100%);
+}
+
+/* 2) Strip the box look from content cards: problem, science, founders,
+      reviews, pillars, newsletter, accordion, comparison table.
+      Product cards are kept structured further down (commerce needs it). */
+.problem-card,
+.timeline-card,
+.founder-card,
+.review-card,
+.accordion-item,
+.newsletter-box,
+.pillars-row,
+.comparison-table-wrapper {
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Give them a thin accent rule instead of a box — reads as "editorial",
+   not "UI panel" */
+.problem-card,
+.timeline-card,
+.founder-card,
+.review-card {
+  border-top: 1px solid var(--border-subtle) !important;
+  padding-top: 1.8rem !important;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.problem-card:hover,
+.timeline-card:hover,
+.founder-card:hover,
+.review-card:hover {
+  border-top-color: var(--gold-primary) !important;
+  transform: translateY(-4px);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.timeline-card.card-am:hover,
+.problem-card:hover {
+  border-top-color: var(--gold-primary) !important;
+}
+
+.timeline-card.card-pm:hover {
+  border-top-color: var(--blue-glow) !important;
+}
+
+.timeline-card.card-transition:hover {
+  border-top-color: #c084fc !important;
+}
+
+/* Legibility: text shadow instead of a background fill, tuned per theme */
+.problem-card h3,
+.problem-card p,
+.timeline-card h3,
+.timeline-time,
+.timeline-points li,
+.founder-name,
+.founder-role,
+.founder-quote,
+.review-text,
+.author-name,
+.author-meta,
+.review-stars,
+.pillar-label,
+.pillar-item p,
+.newsletter-title,
+.newsletter-desc,
+.newsletter-note,
+.accordion-header,
+.accordion-content p,
+.comparison-table th,
+.comparison-table td,
+.section-title,
+.section-subtitle,
+.section-badge {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="light"] .problem-card h3,
+[data-theme="light"] .problem-card p,
+[data-theme="light"] .timeline-card h3,
+[data-theme="light"] .timeline-time,
+[data-theme="light"] .timeline-points li,
+[data-theme="light"] .founder-name,
+[data-theme="light"] .founder-role,
+[data-theme="light"] .founder-quote,
+[data-theme="light"] .review-text,
+[data-theme="light"] .author-name,
+[data-theme="light"] .author-meta,
+[data-theme="light"] .review-stars,
+[data-theme="light"] .pillar-label,
+[data-theme="light"] .pillar-item p,
+[data-theme="light"] .newsletter-title,
+[data-theme="light"] .newsletter-desc,
+[data-theme="light"] .newsletter-note,
+[data-theme="light"] .accordion-header,
+[data-theme="light"] .accordion-content p,
+[data-theme="light"] .comparison-table th,
+[data-theme="light"] .comparison-table td,
+[data-theme="light"] .section-title,
+[data-theme="light"] .section-subtitle,
+[data-theme="light"] .section-badge {
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.65), 0 1px 2px rgba(255, 255, 255, 0.85);
+}
+
+/* 3) Comparison table: keep it readable but drop the boxed header fill */
+.comparison-table th {
+  background: transparent !important;
+}
+
+.col-ampm,
+[data-theme="light"] .col-ampm {
+  background: transparent !important;
+  border-bottom: 2px solid var(--gold-primary) !important;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+/* 4) Pillars row: no card, just a clean divided row */
+.pillars-row {
+  border-top: 1px solid var(--border-subtle) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  border-radius: 0 !important;
+  padding: 2rem 0.5rem !important;
+}
+
+/* 5) Newsletter: text-first, no glass box */
+.newsletter-box {
+  padding: 1rem 0 !important;
+  text-align: center;
+}
+
+.newsletter-input {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1.5px solid var(--border-glow) !important;
+}
+
+[data-theme="light"] .newsletter-input {
+  background: rgba(255, 255, 255, 0.55) !important;
+}
+
+/* 6) Accordion: thin divider list instead of glass panels */
+.accordion-item {
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+.accordion-header {
+  padding-left: 0 !important;
+  padding-right: 0.5rem !important;
+}
+
+.accordion-content {
+  padding-left: 0 !important;
+}
+
+.accordion-header[aria-expanded="true"]+.accordion-content {
+  padding: 0 0.5rem 1.8rem 0 !important;
+}
+
+/* 7) Trust strip / icons: subtle glow instead of flat card row */
+.trust-item {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .trust-item {
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.7);
+}
+
+/* 8) Product cards KEEP structure (price/CTA need grouping for usability)
+      but refine: less "frosted glass slab", more a soft card with a
+      hairline border and lighter fill so it still feels premium */
+.product-card {
+  background: rgba(10, 11, 17, 0.30) !important;
+  border: 1px solid var(--border-subtle) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+}
+
+[data-theme="light"] .product-card {
+  background: rgba(255, 255, 255, 0.42) !important;
+}
+
+.featured-product {
+  background: rgba(24, 25, 36, 0.55) !important;
+}
+
+[data-theme="light"] .featured-product {
+  background: rgba(255, 250, 240, 0.62) !important;
+}
+
+/* 9) Fix low-contrast CTA button text in the hero (was blending into the
+      shimmering background) */
+.story-actions .btn-secondary,
+.story-actions .btn-primary {
+  text-shadow: none !important;
+  /* buttons get their own solid fill, no shadow needed */
+}
+
+.story-actions .btn-secondary {
+  color: var(--text-pure) !important;
+  font-weight: 700 !important;
+}
+
+/* 10) Comparison-mini (AM vs PM mini box in hero) — drop its dark panel,
+       keep just text with strong shadow so it reads over bright video */
+.comparison-mini {
+  padding: 0.4rem 0 !important;
+}
+
+.comp-label,
+.comp-val {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="light"] .comp-label,
+[data-theme="light"] .comp-val {
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.75), 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+
+/* ==========================================================================
+   LIGHT THEME FIX — blur the background instead of fogging it,
+   restore proper contrast and remove the "dirty glass" look
+   ========================================================================== */
+
+/* 1) Replace the flat tint with an actual blur of the video behind it.
+      This is the key fix: text now sits on a soft, out-of-focus wash
+      instead of a hazy but still-sharp, competing product photo. */
+[data-theme="light"] .section::before {
+  background: rgba(248, 245, 240, 0.38);
+  backdrop-filter: blur(46px) saturate(1.05);
+  -webkit-backdrop-filter: blur(46px) saturate(1.05);
+}
+
+/* 2) Same treatment for the hero's sticky viewport in light mode, so the
+      "AM-PM" bottle label text stops bleeding through your headings */
+[data-theme="light"] .sticky-story-viewport {
+  backdrop-filter: blur(0px);
+  /* left crisp on the product side */
+}
+
+
+
+[data-theme="light"] .story-card::before {
+  content: '';
+  position: absolute;
+  inset: -1.5rem -2rem;
+  background: rgba(248, 245, 240, 0.30);
+  backdrop-filter: blur(38px) saturate(1.05);
+  -webkit-backdrop-filter: blur(38px) saturate(1.05);
+  z-index: -1;
+  border-radius: 24px;
+}
+
+/* 3) Crisper text — drop the heavy white glow (it looked good vs. a dark
+      video, but reads as smudgy on a blurred pastel background) and use
+      tight, minimal shadow just for edge definition */
+[data-theme="light"] .story-heading,
+[data-theme="light"] .story-body,
+[data-theme="light"] .pill-badge,
+[data-theme="light"] .scroll-hint,
+[data-theme="light"] .nutrient-tag,
+[data-theme="light"] .comp-label,
+[data-theme="light"] .comp-val,
+[data-theme="light"] .sys-item,
+[data-theme="light"] .problem-card h3,
+[data-theme="light"] .problem-card p,
+[data-theme="light"] .timeline-card h3,
+[data-theme="light"] .timeline-time,
+[data-theme="light"] .timeline-points li,
+[data-theme="light"] .founder-name,
+[data-theme="light"] .founder-role,
+[data-theme="light"] .founder-quote,
+[data-theme="light"] .review-text,
+[data-theme="light"] .author-name,
+[data-theme="light"] .author-meta,
+[data-theme="light"] .pillar-label,
+[data-theme="light"] .pillar-item p,
+[data-theme="light"] .newsletter-title,
+[data-theme="light"] .newsletter-desc,
+[data-theme="light"] .newsletter-note,
+[data-theme="light"] .accordion-header,
+[data-theme="light"] .accordion-content p,
+[data-theme="light"] .comparison-table th,
+[data-theme="light"] .comparison-table td,
+[data-theme="light"] .section-title,
+[data-theme="light"] .section-subtitle,
+[data-theme="light"] .section-badge {
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 4) The gradient-fill heading in the hero needs a real dark fallback in
+      light mode — white/gold-glow gradient text was nearly invisible */
+[data-theme="light"] .story-heading {
+  background: linear-gradient(100deg,
+      var(--gold-dark) 0%,
+      var(--gold-primary) 20%,
+      #1c1712 40%,
+      var(--blue-dark) 60%,
+      var(--gold-dark) 80%,
+      var(--gold-primary) 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 5) Comparison table: solid readable rows without a box, blurred backing
+      so numbers never collide with the bottle image behind them */
+[data-theme="light"] .comparison-table-wrapper {
+  position: relative;
+}
+
+[data-theme="light"] .comparison-table-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -1rem -1.5rem;
+  background: rgba(248, 245, 240, 0.45);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  z-index: -1;
+  border-radius: 20px;
+}
+
+/* 6) Section badges / eyebrow labels: slightly heavier weight so they
+      don't wash out against the softened background */
+[data-theme="light"] .section-badge {
+  font-weight: 800;
+}
+
+/* 7) Founders / pillars / newsletter text blocks get the same blurred
+      backing so they read as clean editorial sections, not foggy panels */
+[data-theme="light"] .founders-grid,
+[data-theme="light"] .pillars-row,
+[data-theme="light"] .newsletter-box,
+[data-theme="light"] .reviews-grid,
+[data-theme="light"] .circadian-timeline,
+[data-theme="light"] .problem-grid {
+  position: relative;
+}
+
+[data-theme="light"] .founders-grid::before,
+[data-theme="light"] .pillars-row::before,
+[data-theme="light"] .newsletter-box::before,
+[data-theme="light"] .reviews-grid::before,
+[data-theme="light"] .circadian-timeline::before,
+[data-theme="light"] .problem-grid::before {
+  content: '';
+  position: absolute;
+  inset: -1.5rem -2rem;
+  background: rgba(248, 245, 240, 0.32);
+  backdrop-filter: blur(42px);
+  -webkit-backdrop-filter: blur(42px);
+  z-index: -1;
+  border-radius: 24px;
+}
+
+/* ==========================================================================
+   KILL THE BROKEN PER-SECTION BLUR BOXES (previous attempt)
+   ========================================================================== */
+[data-theme="light"] .section::before,
+[data-theme="light"] .story-card::before,
+[data-theme="light"] .founders-grid::before,
+[data-theme="light"] .pillars-row::before,
+[data-theme="light"] .newsletter-box::before,
+[data-theme="light"] .reviews-grid::before,
+[data-theme="light"] .circadian-timeline::before,
+[data-theme="light"] .problem-grid::before,
+[data-theme="light"] .comparison-table-wrapper::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* ==========================================================================
+   ONE SEAMLESS FULL-PAGE BLUR LAYER — no boxes, no hard edges
+   Sits between the video canvas and the page content, fixed like the canvas
+   so it never scrolls and never shows a rectangle border
+   ========================================================================== */
+.light-mode-blur {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: rgba(248, 245, 240, 0.42);
+  backdrop-filter: blur(34px) saturate(1.1);
+  -webkit-backdrop-filter: blur(34px) saturate(1.1);
+}
+
+[data-theme="light"] .light-mode-blur {
+  opacity: 1;
+}
+
+/* Dark theme: layer stays fully off, zero visual effect */
+[data-theme="dark"] .light-mode-blur,
+:root:not([data-theme]) .light-mode-blur {
+  opacity: 0;
+}
+
+/* Content sits above the blur layer */
+.page-content {
+  position: relative;
+  z-index: 5;
+}
+
+/* ==========================================================================
+   CLEAN, MINIMAL TEXT CONTRAST — now that background is uniformly soft,
+   we only need a light shadow for edge definition, not heavy glow
+   ========================================================================== */
+[data-theme="light"] .story-heading,
+[data-theme="light"] .story-body,
+[data-theme="light"] .pill-badge,
+[data-theme="light"] .scroll-hint,
+[data-theme="light"] .nutrient-tag,
+[data-theme="light"] .comp-label,
+[data-theme="light"] .comp-val,
+[data-theme="light"] .sys-item,
+[data-theme="light"] .problem-card h3,
+[data-theme="light"] .problem-card p,
+[data-theme="light"] .timeline-card h3,
+[data-theme="light"] .timeline-time,
+[data-theme="light"] .timeline-points li,
+[data-theme="light"] .founder-name,
+[data-theme="light"] .founder-role,
+[data-theme="light"] .founder-quote,
+[data-theme="light"] .review-text,
+[data-theme="light"] .author-name,
+[data-theme="light"] .author-meta,
+[data-theme="light"] .pillar-label,
+[data-theme="light"] .pillar-item p,
+[data-theme="light"] .newsletter-title,
+[data-theme="light"] .newsletter-desc,
+[data-theme="light"] .newsletter-note,
+[data-theme="light"] .accordion-header,
+[data-theme="light"] .accordion-content p,
+[data-theme="light"] .comparison-table th,
+[data-theme="light"] .comparison-table td,
+[data-theme="light"] .section-title,
+[data-theme="light"] .section-subtitle,
+[data-theme="light"] .section-badge {
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Gradient heading needs a dark-tone fallback in light mode — pure white/
+   gold glow was invisible against a pale background */
+[data-theme="light"] .story-heading {
+  background: linear-gradient(100deg,
+      var(--gold-dark) 0%,
+      var(--gold-primary) 22%,
+      #1c1712 42%,
+      var(--blue-dark) 62%,
+      var(--gold-dark) 82%,
+      var(--gold-primary) 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .section-badge {
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   DARK-ONLY MODE — hide the theme toggle, force dark permanently
+   ========================================================================== */
+
+
+/* ==========================================================================
+   HERO TEXT ENHANCEMENT — richer typography & visual hierarchy
+   ========================================================================== */
+
+/* 1) Eyebrow badge — small caps, tracked out, with a glowing dot */
+.pill-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  gap: 0.6rem;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.am-pill .badge-dot {
+  color: var(--gold-primary);
+}
+
+.pm-pill .badge-dot {
+  color: var(--blue-glow);
+}
+
+.transition-pill .badge-dot {
+  color: #c084fc;
+}
+
+/* 2) Main heading — bigger, tighter leading, stronger weight on the serif */
+.story-heading {
+  font-size: clamp(2.6rem, 4.6vw, 3.6rem);
+  line-height: 1.08;
+  font-weight: 600;
+  margin-bottom: 1.3rem;
+  letter-spacing: -0.015em;
+}
+
+.story-heading .highlight-gold,
+.story-heading .highlight-blue,
+.story-heading .highlight-twilight {
+  font-weight: 500;
+}
+
+/* 3) Body copy — larger, more generous line height, softer color for
+      an editorial feel instead of flat gray */
+.story-body {
+  font-size: 1.12rem;
+  line-height: 1.75;
+  max-width: 34ch;
+  color: var(--text-ivory);
+  opacity: 0.88;
+  margin-bottom: 1.9rem;
+}
+
+/* 4) Nutrient tags — remove the plain inline look, give them individual
+      weight and a hover lift, like little feature callouts */
+.nutrient-tags {
+  gap: 0.9rem 1.4rem;
+  margin-bottom: 2.2rem;
+}
+
+.nutrient-tag {
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.nutrient-tag:hover {
+  transform: translateY(-2px);
+  color: var(--gold-glow);
+}
+
+/* 5) CTA button — larger touch target, bolder label, subtle shine sweep
+      on hover to reinforce the premium feel */
+.story-actions .btn-secondary,
+.story-actions .btn-primary {
+  font-size: 1.02rem;
+  padding: 1.05rem 2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-actions .btn-secondary::after,
+.story-actions .btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.story-actions .btn-secondary:hover::after,
+.story-actions .btn-primary:hover::after {
+  left: 130%;
+}
+
+/* 6) Scroll hint — small arrow bounce so it reads as an active prompt,
+      not a static label */
+.scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+@keyframes hint-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.scroll-hint::after {
+  content: '';
+  display: none;
+}
+
+/* 7) Comparison mini (used in the transition story card) — bigger, more
+      confident labels so the "vs" comparison reads clearly */
+.comp-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.comp-val {
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.comp-col.highlight .comp-val {
+  font-weight: 700;
+}
+
+/* 8) System highlights (final story card) — turn plain checklist text
+      into a cleaner two-column feature list with better spacing */
+.system-highlights {
+  gap: 1rem 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.sys-item {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .story-actions .btn-secondary::after,
+  .story-actions .btn-primary::after {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   FOUNDER PHOTOS — replace emoji avatars with real portraits
+   ========================================================================== */
+.founder-photo {
+  width: 100%;
+  max-width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.founder-card:hover .founder-photo {
+  transform: scale(1.02);
+  border-color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   INGREDIENT SHOWCASE SECTION
+   ========================================================================== */
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+}
+
+.ingredient-card {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.8rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.ingredient-card:hover {
+  transform: translateY(-4px);
+}
+
+.ingredient-card.am-ingredient:hover {
+  border-top-color: var(--gold-primary);
+}
+
+.ingredient-card.pm-ingredient:hover {
+  border-top-color: var(--blue-glow);
+}
+
+.ingredient-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.ingredient-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--text-pure);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
+.ingredient-support {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.am-ingredient .ingredient-support {
+  color: var(--gold-primary);
+}
+
+.pm-ingredient .ingredient-support {
+  color: var(--blue-glow);
+}
+
+.ingredient-card p {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .ingredient-card h3,
+[data-theme="light"] .ingredient-card p {
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+/* ==========================================================================
+   LIFESTYLE SECTION — "Made For Modern Life"
+   ========================================================================== */
+.lifestyle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+.lifestyle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.8rem 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.lifestyle-item:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-primary);
+  background: rgba(226, 149, 72, 0.06);
+}
+
+.lifestyle-icon {
+  font-size: 2.4rem;
+}
+
+.lifestyle-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-ivory);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .lifestyle-label {
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .founder-photo {
+    max-width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .lifestyle-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .lifestyle-item {
+    padding: 1.2rem 0.6rem;
+  }
+
+  .lifestyle-icon {
+    font-size: 1.9rem;
+  }
+}
+
+/* ONE SCROLLBAR ONLY — overflow: clip does NOT create a scroll container */
+html {
+  overflow-x: hidden;
+  /* fallback for old browsers */
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: visible;
+  /* body kadhich scroll container houn naye */
+  max-width: 100%;
+}
+
+.page-content,
+.hero-narrative-section,
+.hero-scroll-track,
+.sticky-story-viewport,
+.section,
+.container {
+  max-width: 100%;
+  overflow: visible;
+  /* hidden nako, nahitar scrollbar parat yeil */
+}
+
+/* Sections chya baher janara content (beans, ::before) clip kara, scrollbar na banavta */
+.section {
+  overflow-x: clip;
+}
+
+.story-card {
+  max-width: calc(100vw - 4rem);
+  box-sizing: border-box;
+}
+
+.comparison-mini,
+.system-highlights,
+.nutrient-tags {
+  max-width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.founder-photo {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.founder-card {
+  overflow: hidden;
+  /* he thik aahe, card madhe scroll nahi */
+}
+
+@media (max-width: 768px) {
+  .story-card {
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+/* ==========================================================================
+   LIGHT THEME FINAL TUNING
+   ========================================================================== */
+
+/* Hero madhe video crisp rahil, blur + cream wash fakt hero nantar yeil */
+[data-theme="light"] .light-mode-blur {
+  opacity: 0;
+  background: rgba(248, 245, 240, 0.80);
+  /* 0.65 = video jast disel, 0.9 = text jast clear */
+}
+
+[data-theme="light"] body.past-hero .light-mode-blur {
+  opacity: 1;
+}
+
+/* Hero cha text dark aahe, mhanun right side la cream wash (aadhi brown hota) */
+[data-theme="light"] .sticky-story-viewport {
+  background: linear-gradient(to left,
+      rgba(248, 245, 240, 0.94) 0%,
+      rgba(248, 245, 240, 0.80) 35%,
+      rgba(248, 245, 240, 0) 62%) !important;
+}
+
+@media (max-width: 768px) {
+  [data-theme="light"] .sticky-story-viewport {
+    background: linear-gradient(to top,
+        rgba(248, 245, 240, 0.95) 0%,
+        rgba(248, 245, 240, 0.75) 40%,
+        rgba(248, 245, 240, 0) 70%) !important;
+  }
+}
+
+/* ==========================================================================
+   LIGHT THEME — PREMIUM REBUILD  (paste at the VERY BOTTOM)
+   ========================================================================== */
+
+/* Native scrollbar / form controls theme sobat badlatil */
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* 1) ROOT-CAUSE FIX: story cards parat right side la stack hotil */
+[data-theme="light"] .story-card {
+  position: absolute;
+}
+
+/* 2) Text-shadow halo kadhun taka (blur/smudge cha karan) */
+html[data-theme="light"] .page-content * {
+  text-shadow: none !important;
+}
+
+/* 3) Hero headings: shimmer gradient aivaji crisp solid colours */
+[data-theme="light"] .story-heading {
+  background: none;
+  animation: none;
+  color: var(--text-pure);
+  -webkit-text-fill-color: var(--text-pure);
+}
+
+[data-theme="light"] .story-heading .highlight-gold {
+  color: var(--gold-primary);
+  -webkit-text-fill-color: var(--gold-primary);
+}
+
+[data-theme="light"] .story-heading .highlight-twilight {
+  color: #6d28d9;
+  -webkit-text-fill-color: #6d28d9;
+}
+
+[data-theme="light"] .story-heading .highlight-blue {
+  color: var(--blue-night);
+  -webkit-text-fill-color: var(--blue-night);
+}
+
+[data-theme="light"] .story-heading .highlight-gradient {
+  background: linear-gradient(90deg, var(--gold-primary), var(--blue-night));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 4) Hero overlay: smooth cream fade (banding nahi), text dark-on-cream */
+[data-theme="light"] .sticky-story-viewport {
+  background: linear-gradient(to left,
+      rgba(248, 245, 240, 0.96) 0%,
+      rgba(248, 245, 240, 0.90) 28%,
+      rgba(248, 245, 240, 0.65) 44%,
+      rgba(248, 245, 240, 0.25) 58%,
+      rgba(248, 245, 240, 0) 70%) !important;
+}
+
+@media (max-width: 768px) {
+  [data-theme="light"] .sticky-story-viewport {
+    background: linear-gradient(to top,
+        rgba(248, 245, 240, 0.96) 0%,
+        rgba(248, 245, 240, 0.80) 40%,
+        rgba(248, 245, 240, 0) 72%) !important;
+  }
+}
+
+/* 5) Hero CTA: solid gold, white text */
+[data-theme="light"] .story-actions .btn-secondary,
+[data-theme="light"] .story-actions .btn-primary {
+  background: linear-gradient(135deg, #c17b28, #a8631a) !important;
+  color: #ffffff !important;
+  border: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 10px 28px rgba(193, 123, 40, 0.32);
+}
+
+[data-theme="light"] .story-actions .btn-secondary:hover,
+[data-theme="light"] .story-actions .btn-primary:hover {
+  background: linear-gradient(135deg, #d38a33, #b56f1f) !important;
+  box-shadow: 0 16px 36px rgba(193, 123, 40, 0.42);
+}
+
+/* 6) Header light mode madhe nehmi solid (top la pan nav vachta yeil) */
+html[data-theme="light"] .site-header {
+  background: rgba(248, 245, 240, 0.86);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 2px 20px rgba(80, 55, 25, 0.06);
+}
+
+/* 7) Hero nantar: muddy gray aivaji clean cream + soft gold/blue glow */
+[data-theme="light"] .light-mode-blur {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  background:
+    radial-gradient(55% 45% at 12% 8%, rgba(226, 149, 72, 0.18), transparent 70%),
+    radial-gradient(50% 45% at 92% 38%, rgba(79, 120, 232, 0.10), transparent 70%),
+    radial-gradient(60% 50% at 28% 100%, rgba(226, 149, 72, 0.14), transparent 70%),
+    rgba(248, 245, 240, 0.96);
+  /* 0.90 = video jast disel, 0.98 = purn clean */
+  backdrop-filter: blur(50px) saturate(1.15);
+  -webkit-backdrop-filter: blur(50px) saturate(1.15);
+}
+
+[data-theme="light"] body.past-hero .light-mode-blur {
+  opacity: 1;
+}
+
+/* 8) Content cards: soft white panels + fine border + layered shadow */
+[data-theme="light"] .problem-card,
+[data-theme="light"] .timeline-card,
+[data-theme="light"] .review-card,
+[data-theme="light"] .founder-card {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border: 1px solid rgba(60, 40, 20, 0.08) !important;
+  border-radius: 20px !important;
+  padding: 2rem 1.8rem !important;
+  box-shadow: 0 1px 2px rgba(80, 55, 25, 0.04), 0 12px 32px rgba(80, 55, 25, 0.07) !important;
+}
+
+[data-theme="light"] .problem-card:hover,
+[data-theme="light"] .timeline-card:hover,
+[data-theme="light"] .review-card:hover,
+[data-theme="light"] .founder-card:hover {
+  background: #ffffff !important;
+  border-color: rgba(193, 123, 40, 0.45) !important;
+  box-shadow: 0 2px 4px rgba(80, 55, 25, 0.05), 0 20px 44px rgba(80, 55, 25, 0.12) !important;
+}
+
+/* Science cards: colour-coded top accent (hover chya nantar thevla aahe) */
+[data-theme="light"] .timeline-card.card-am {
+  border-top: 3px solid var(--gold-primary) !important;
+}
+
+[data-theme="light"] .timeline-card.card-transition {
+  border-top: 3px solid #7c3aed !important;
+}
+
+[data-theme="light"] .timeline-card.card-pm {
+  border-top: 3px solid var(--blue-night) !important;
+}
+
+/* Ingredients + lifestyle */
+[data-theme="light"] .ingredient-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(60, 40, 20, 0.08);
+  border-radius: 20px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 12px 32px rgba(80, 55, 25, 0.07);
+}
+
+[data-theme="light"] .lifestyle-item {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(60, 40, 20, 0.08);
+  box-shadow: 0 8px 24px rgba(80, 55, 25, 0.06);
+}
+
+[data-theme="light"] .lifestyle-item:hover {
+  background: #ffffff;
+  border-color: var(--gold-primary);
+}
+
+/* 9) Comparison table */
+[data-theme="light"] .comparison-table-wrapper {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(60, 40, 20, 0.08) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 12px 32px rgba(80, 55, 25, 0.07) !important;
+}
+
+[data-theme="light"] .comparison-table th,
+[data-theme="light"] .comparison-table td {
+  border-bottom: 1px solid rgba(60, 40, 20, 0.08) !important;
+}
+
+[data-theme="light"] .comparison-table .col-ampm {
+  background: rgba(193, 123, 40, 0.08) !important;
+  border-bottom: 1px solid rgba(60, 40, 20, 0.08) !important;
+}
+
+[data-theme="light"] .comparison-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* 10) Product cards */
+[data-theme="light"] .product-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(60, 40, 20, 0.08) !important;
+  box-shadow: 0 2px 4px rgba(80, 55, 25, 0.04), 0 16px 40px rgba(80, 55, 25, 0.09);
+}
+
+[data-theme="light"] .product-card:hover {
+  box-shadow: 0 24px 56px rgba(80, 55, 25, 0.16);
+}
+
+[data-theme="light"] .featured-product {
+  background: #ffffff !important;
+  border: 1px solid rgba(193, 123, 40, 0.5) !important;
+  box-shadow: 0 20px 50px rgba(193, 123, 40, 0.20);
+}
+
+[data-theme="light"] .featured-product:hover {
+  box-shadow: 0 28px 60px rgba(193, 123, 40, 0.30);
+}
+
+/* featured card cha gradient glow light madhe subtle */
+[data-theme="light"] .featured-product::before {
+  opacity: 0.14;
+  filter: blur(14px);
+}
+
+[data-theme="light"] .featured-product:hover::before {
+  opacity: 0.22;
+}
+
+[data-theme="light"] .product-image-container {
+  box-shadow: 0 8px 24px rgba(80, 55, 25, 0.18);
+}
+
+/* ==========================================================================
+   DARK THEME HERO: white text on the dark video, solid gold button
+   ========================================================================== */
+
+/* Heading: solid white instead of the shimmer */
+html[data-theme="dark"] .story-card .story-heading {
+  background: none;
+  animation: none;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+}
+
+/* Highlighted words keep their accent colors */
+html[data-theme="dark"] .story-card .story-heading .highlight-gold {
+  color: var(--gold-primary);
+  -webkit-text-fill-color: var(--gold-primary);
+}
+
+html[data-theme="dark"] .story-card .story-heading .highlight-twilight {
+  color: #c084fc;
+  -webkit-text-fill-color: #c084fc;
+}
+
+html[data-theme="dark"] .story-card .story-heading .highlight-blue {
+  color: var(--blue-glow);
+  -webkit-text-fill-color: var(--blue-glow);
+}
+
+html[data-theme="dark"] .story-card .story-heading .highlight-gradient {
+  background: linear-gradient(90deg, var(--gold-primary), var(--blue-glow));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Body, tags, checklist, hint */
+html[data-theme="dark"] .story-card .story-body {
+  color: #f1ece3;
+  opacity: 1;
+}
+
+html[data-theme="dark"] .story-card .nutrient-tag,
+html[data-theme="dark"] .story-card .sys-item {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .story-card .scroll-hint {
+  color: #e4dccf;
+  opacity: 1;
+}
+
+/* Hero button: solid gold, white text */
+html[data-theme="dark"] .story-actions .btn-secondary,
+html[data-theme="dark"] .story-actions .btn-primary {
+  background: linear-gradient(135deg, #c17b28, #a8631a) !important;
+  color: #ffffff !important;
+  border: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 10px 28px rgba(193, 123, 40, 0.32);
+}
+
+html[data-theme="dark"] .story-actions .btn-secondary:hover,
+html[data-theme="dark"] .story-actions .btn-primary:hover {
+  background: linear-gradient(135deg, #d38a33, #b56f1f) !important;
+  box-shadow: 0 16px 36px rgba(193, 123, 40, 0.42);
+}
+
+/* Fix: dark strip at section boundaries.
+   Vignettes no longer stick out above/below, so they can't overlap. */
+.section::before {
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%,
+      rgba(6, 7, 10, 0.38) 0%,
+      rgba(6, 7, 10, 0.62) 100%);
+}
+
+/* ==========================================================================
+   LIGHT THEME: no white panels, editorial look on warm cream
+   ========================================================================== */
+
+/* 1) Problem / Science / Reviews / Founders: no box, thin top line */
+html[data-theme="light"] .page-content :is(.problem-card, .timeline-card, .review-card, .founder-card) {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid rgba(60, 40, 20, 0.18) !important;
+  border-radius: 0 !important;
+  padding: 1.8rem 0 0 !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="light"] .page-content :is(.problem-card, .review-card, .founder-card):hover {
+  background: transparent !important;
+  border-top-color: var(--gold-primary) !important;
+  box-shadow: none !important;
+}
+
+/* Science cards keep their color-coded accent line */
+html[data-theme="light"] .page-content .timeline-card.card-am {
+  border-top: 3px solid #c17b28 !important;
+}
+
+html[data-theme="light"] .page-content .timeline-card.card-transition {
+  border-top: 3px solid #7c3aed !important;
+}
+
+html[data-theme="light"] .page-content .timeline-card.card-pm {
+  border-top: 3px solid #2d4db8 !important;
+}
+
+html[data-theme="light"] .page-content .timeline-card:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 2) Ingredients + lifestyle */
+html[data-theme="light"] .page-content .ingredient-card {
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(60, 40, 20, 0.18);
+  border-radius: 0;
+  padding: 1.8rem 0 0;
+  box-shadow: none;
+}
+
+html[data-theme="light"] .page-content .lifestyle-item {
+  background: transparent;
+  border: 1px solid rgba(60, 40, 20, 0.16);
+  box-shadow: none;
+}
+
+html[data-theme="light"] .page-content .lifestyle-item:hover {
+  background: rgba(193, 123, 40, 0.07);
+  border-color: var(--gold-primary);
+}
+
+/* 3) Comparison table: no white box, gold-tinted highlight column */
+html[data-theme="light"] .page-content .comparison-table-wrapper {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="light"] .page-content .comparison-table th,
+html[data-theme="light"] .page-content .comparison-table td {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(60, 40, 20, 0.14) !important;
+}
+
+html[data-theme="light"] .page-content .comparison-table .col-ampm {
+  background: rgba(193, 123, 40, 0.07) !important;
+}
+
+html[data-theme="light"] .page-content .comparison-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* 4) Product cards: hairline outline, no white fill */
+html[data-theme="light"] .page-content .product-card {
+  background: transparent !important;
+  border: 1px solid rgba(60, 40, 20, 0.16) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html[data-theme="light"] .page-content .product-card:hover {
+  background: rgba(193, 123, 40, 0.04) !important;
+  border-color: rgba(193, 123, 40, 0.55) !important;
+  box-shadow: 0 18px 44px rgba(80, 55, 25, 0.10) !important;
+}
+
+html[data-theme="light"] .page-content .featured-product {
+  background: rgba(193, 123, 40, 0.05) !important;
+  border: 1px solid rgba(193, 123, 40, 0.55) !important;
+  box-shadow: 0 20px 50px rgba(193, 123, 40, 0.16) !important;
+}
+
+/* 5) Richer warm glow on the page background so it doesn't feel flat
+      now that the white cards are gone */
+html[data-theme="light"] .light-mode-blur {
+  background:
+    radial-gradient(60% 50% at 10% 5%, rgba(226, 149, 72, 0.26), transparent 70%),
+    radial-gradient(50% 45% at 95% 35%, rgba(79, 120, 232, 0.14), transparent 70%),
+    radial-gradient(60% 50% at 25% 100%, rgba(226, 149, 72, 0.20), transparent 70%),
+    rgba(248, 245, 240, 0.95);
+}
+
+/* ==========================================================================
+   LIGHT THEME: text only, no white backgrounds on nav / HUD pill / buttons
+   ========================================================================== */
+
+/* 1) Bottom-left AM PHASE pill: no fill, no border, no shadow, just text.
+      On the dark hero video the text is light... */
+html[data-theme="light"] .frame-indicator {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html[data-theme="light"] .frame-indicator .frame-counter {
+  color: #e4dccf;
+}
+
+html[data-theme="light"] .frame-indicator .progress-track {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ...and once you scroll past the hero onto the cream page it turns dark */
+html[data-theme="light"] body.past-hero .frame-indicator .frame-counter {
+  color: #5a4d3f;
+}
+
+html[data-theme="light"] body.past-hero .frame-indicator .progress-track {
+  background: rgba(60, 40, 20, 0.16);
+}
+
+/* 2) Nav bar after the hero: no white bar, only the text.
+      A light blur stays so page text doesn't collide with the menu. */
+html[data-theme="light"] body.past-hero .site-header {
+  background: transparent !important;
+  backdrop-filter: blur(14px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* 3) Cart / theme / menu buttons: outline only, no white circle */
+html[data-theme="light"] .site-header :is(.cart-trigger-btn, .theme-toggle-btn, .hamburger-btn) {
+  background: transparent;
+  border: 1px solid rgba(60, 40, 20, 0.25);
+}
+
+html[data-theme="light"] .site-header :is(.cart-trigger-btn, .theme-toggle-btn, .hamburger-btn):hover {
+  background: rgba(193, 123, 40, 0.12);
+}
+
+/* ==========================================================================
+   LIGHT THEME HERO: transparent nav (white text on the video), no white bar
+   ========================================================================== */
+
+/* 1) Nav bar on the hero: no background */
+html[data-theme="light"] body:not(.past-hero) .site-header {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* 2) Cream fade on the right of the hero: moved to ::before so it can fade
+      out under the nav (the top strip stays dark, so white links are readable) */
+html[data-theme="light"] .sticky-story-viewport {
+  background: none !important;
+}
+
+html[data-theme="light"] .sticky-story-viewport::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(to left,
+      rgba(248, 245, 240, 0.96) 0%,
+      rgba(248, 245, 240, 0.90) 28%,
+      rgba(248, 245, 240, 0.65) 44%,
+      rgba(248, 245, 240, 0.25) 58%,
+      rgba(248, 245, 240, 0) 70%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, transparent 70px, #000 150px);
+  mask-image: linear-gradient(to bottom, transparent 0, transparent 70px, #000 150px);
+}
+
+/* 3) White text / icons in the nav while the hero is on screen */
+html[data-theme="light"] body:not(.past-hero) .logo-subtitle,
+html[data-theme="light"] body:not(.past-hero) .logo-dot {
+  color: #d9d2c5;
+}
+
+html[data-theme="light"] body:not(.past-hero) .site-header :is(.cart-trigger-btn, .theme-toggle-btn, .hamburger-btn) {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+html[data-theme="light"] body:not(.past-hero) .ham-line {
+  background: #ffffff;
+}
+
+/* Desktop only, so the mobile menu drawer (which is cream) keeps dark links */
+@media (min-width: 769px) {
+  html[data-theme="light"] body:not(.past-hero) .nav-link {
+    color: #f1ece3;
+  }
+
+  html[data-theme="light"] body:not(.past-hero) .nav-link:hover {
+    color: #f5b066;
+  }
+}
+
+/* 4) Mobile: the text sits at the bottom, so the fade comes from the bottom */
+@media (max-width: 768px) {
+  html[data-theme="light"] .sticky-story-viewport::before {
+    background: linear-gradient(to top,
+        rgba(248, 245, 240, 0.96) 0%,
+        rgba(248, 245, 240, 0.80) 40%,
+        rgba(248, 245, 240, 0) 72%);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* ==========================================================================
+   FIX: black band on hero nav + blurry smudge under nav on scroll
+   ========================================================================== */
+
+/* 1) Hero (desktop): swap the hard black strip for a long, soft smoky fade.
+      It starts at dark gray and blends into the cream, so it no longer reads as a bar. */
+@media (min-width: 769px) {
+  html[data-theme="light"] .sticky-story-viewport::before {
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0, rgba(0, 0, 0, 0.35) 60px, #000 240px);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0, rgba(0, 0, 0, 0.35) 60px, #000 240px);
+  }
+}
+
+/* A little shadow keeps the white links readable on the lighter part */
+html[data-theme="light"] body:not(.past-hero) .nav-link {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* 2) After the hero: no blur (that was the smudge). Instead the page content
+      fades out into the page color as it reaches the menu, so nothing shows behind it. */
+html[data-theme="light"] body.past-hero .site-header {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html[data-theme="light"] body.past-hero .site-header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -44px;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+      rgba(248, 245, 240, 0.94) 0%,
+      rgba(248, 245, 240, 0.80) 55%,
+      rgba(248, 245, 240, 0) 100%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* 3) Remove the black focus ring that stays on the theme button after a click */
+.theme-toggle-btn:focus:not(:focus-visible),
+.cart-trigger-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ==========================================================================
+   MOBILE NAV FIX
+   ========================================================================== */
+
+/* Header must not use transform / backdrop-filter / will-change: transform,
+   or it becomes the containing block for the fixed drawer.
+   Background + blur move to ::before instead. */
+.site-header,
+.site-header.scrolled {
+  transform: none;
+  -webkit-transform: none;
+  will-change: auto;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  transform: translateZ(0);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.site-header.scrolled::before {
+  background: var(--nav-scrolled-bg);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 768px) {
+  .site-header::before {
+    background: rgba(6, 7, 10, 0.55);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Backdrop must sit BELOW the header (which contains the drawer) */
+.mobile-menu-backdrop {
+  z-index: 1000;
+}
+
+/* Drawer, now from 900px down, because the hamburger already appears at 900px
+   but the drawer styles only started at 768px */
+@media (max-width: 900px) {
+  .hamburger-btn {
+    display: flex;
+    z-index: 1101;
+    /* keep the X visible above the open drawer */
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(82vw, 320px);
+    z-index: 1100;
+    background: rgba(8, 9, 14, 0.97);
+    -webkit-backdrop-filter: blur(28px);
+    backdrop-filter: blur(28px);
+    border-left: 1px solid var(--border-subtle);
+    padding: 6rem 1.8rem 2.5rem;
+    transform: translateX(100%);
+    transition: transform 0.38s var(--ease-spring);
+    overflow-y: auto;
+    pointer-events: none;
+  }
+
+  .nav-links.mobile-open {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    font-size: 1.15rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .mobile-menu-cta {
+    display: inline-flex;
+    margin-top: 2rem;
+    width: 100%;
+    justify-content: center;
+    border-bottom: none;
   }
 }
