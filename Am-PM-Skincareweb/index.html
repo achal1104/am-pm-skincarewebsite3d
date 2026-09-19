@@ -56,15 +56,17 @@
         <span class="logo-subtitle">NUTRITION</span>
       </a>
 
-      <nav class="nav-links">
-        <a href="#hero" class="nav-link">The Ritual</a>
-        <a href="#problem" class="nav-link">The Problem</a>
-        <a href="#difference" class="nav-link">The Difference</a>
-        <a href="#science" class="nav-link">The Science</a>
-        <a href="#system" class="nav-link">The System</a>
-        <a href="#founders" class="nav-link">Our Story</a>
-        <a href="#reviews" class="nav-link">Reviews</a>
-        <a href="#faq" class="nav-link">FAQ</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero" class="nav-link mobile-nav-link">The Ritual</a>
+        <a href="#problem" class="nav-link mobile-nav-link">The Problem</a>
+        <a href="#difference" class="nav-link mobile-nav-link">The Difference</a>
+        <a href="#science" class="nav-link mobile-nav-link">The Science</a>
+        <a href="#system" class="nav-link mobile-nav-link">The System</a>
+        <a href="#founders" class="nav-link mobile-nav-link">Our Story</a>
+        <a href="#reviews" class="nav-link mobile-nav-link">Reviews</a>
+        <a href="#faq" class="nav-link mobile-nav-link">FAQ</a>
+        <!-- Mobile-only CTA inside menu -->
+        <a href="#system" class="btn-primary mobile-menu-cta mobile-nav-link">Get Started</a>
       </nav>
 
       <div class="nav-actions">
@@ -76,10 +78,24 @@
           </svg>
           <span class="cart-badge" id="cart-counter">0</span>
         </button>
-        <a href="#system" class="btn-primary nav-cta">Get Started</a>
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle light/dark mode">
+          <span class="theme-icon theme-icon-dark">🌙</span>
+          <span class="theme-icon theme-icon-light">☀️</span>
+        </button>
+        <a href="#system" class="btn-primary nav-cta desktop-only">Get Started</a>
+        <!-- Hamburger button (mobile only) -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Menu Backdrop -->
+  <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
 
   <!-- Main Content Wrapper (Floats seamlessly over the fixed canvas) -->
   <main class="page-content">

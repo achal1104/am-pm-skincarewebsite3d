@@ -180,16 +180,18 @@ function renderFrame(frameIndex) {
     offsetX = 0;
     offsetY = (cHeight - renderHeight) / 2;
   } else {
-    // Standard desktop / laptop
+    // Standard desktop / laptop — shift slightly left so product is more visible
+    // on the left half when the content card is docked to the right
     renderHeight = cHeight;
     renderWidth = cHeight * imgAspect;
-    offsetX = (cWidth - renderWidth) / 2;
+    // Shift image left by ~8% of canvas width so subject stays on left half
+    offsetX = (cWidth - renderWidth) / 2 - (cWidth * 0.06);
     offsetY = 0;
   }
 
-  ctx.fillStyle = '#050507';
+  ctx.fillStyle = document.documentElement.getAttribute('data-theme') === 'light' ? '#F8F5F0' : '#050507';
   ctx.fillRect(0, 0, cWidth, cHeight);
-  ctx.drawImage(img, offsetX, offsetY, renderWidth, renderHeight);
+  ctx.drawImage(img, Math.round(offsetX), Math.round(offsetY), Math.round(renderWidth), Math.round(renderHeight));
   lastDrawnFrame = frameIndex;
 }
 
@@ -221,13 +223,13 @@ function updateScrollProgress() {
       phaseTag.style.color = 'var(--gold-primary)';
     } else if (targetFrame > 85 && targetFrame <= 165) {
       phaseTag.innerText = 'CIRCADIAN TRANSITION';
-      phaseTag.style.color = '#c084fc';
+      phaseTag.style.color = 'var(--purple)';
     } else if (targetFrame > 165 && targetFrame <= 240) {
       phaseTag.innerText = 'PM PHASE • NIGHT NUTRITION';
       phaseTag.style.color = 'var(--blue-glow)';
     } else {
       phaseTag.innerText = 'THE FULL SYSTEM • 24H SYNERGY';
-      phaseTag.style.color = '#fef08a';
+      phaseTag.style.color = 'var(--yellow-accent)';
     }
   }
 
@@ -459,7 +461,7 @@ function initPricingToggle() {
 
   subscriptionToggle.addEventListener('change', (e) => {
     const isSubscribed = e.target.checked;
-    
+
     if (isSubscribed) {
       toggleLabelSub?.classList.add('active');
       toggleLabelOneTime?.classList.remove('active');
@@ -501,7 +503,7 @@ function initFaq() {
   accordionHeaders.forEach(header => {
     header.addEventListener('click', () => {
       const isExpanded = header.getAttribute('aria-expanded') === 'true';
-      
+
       accordionHeaders.forEach(other => {
         other.setAttribute('aria-expanded', 'false');
       });
@@ -536,6 +538,77 @@ function initNewsletter() {
 }
 
 /**
+ * Mobile Navigation — Hamburger Menu
+ */
+function initMobileNav() {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navLinks = document.getElementById('nav-links');
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (!hamburgerBtn || !navLinks || !backdrop) return;
+
+  function openMenu() {
+    navLinks.classList.add('mobile-open');
+    backdrop.classList.add('visible');
+    hamburgerBtn.classList.add('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden'; // prevent bg scroll
+  }
+
+  function closeMenu() {
+    navLinks.classList.remove('mobile-open');
+    backdrop.classList.remove('visible');
+    hamburgerBtn.classList.remove('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.contains('mobile-open');
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // Close on backdrop click
+  backdrop.addEventListener('click', closeMenu);
+
+  // Close when any nav link is clicked
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+}
+
+/**
+ * Theme Toggle — Dark / Light
+ */
+function initThemeToggle() {
+  const btn = document.getElementById('theme-toggle-btn');
+  const html = document.documentElement;
+
+  // Apply saved theme on load
+  const saved = localStorage.getItem('ampm-theme') || 'dark';
+  html.setAttribute('data-theme', saved);
+
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('ampm-theme', next);
+    lastDrawnFrame = -1;
+    renderFrame(Math.round(currentFrame));
+  });
+}
+
+/**
  * Initialize Everything
  */
 async function init() {
@@ -555,6 +628,8 @@ async function init() {
   initPricingToggle();
   initFaq();
   initNewsletter();
+  initMobileNav();
+  initThemeToggle();
 
   // Preload frames and start render loop
   await preloadFrames();
