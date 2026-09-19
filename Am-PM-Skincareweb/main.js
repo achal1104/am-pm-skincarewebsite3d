@@ -5,7 +5,15 @@
 
 // Configuration
 const TOTAL_FRAMES = 300;
+// After you convert frames to WebP (see instructions), switch to:
+// const FRAME_PATH = (index) => `/frames-lite/ezgif-frame-${String(index).padStart(3, '0')}.webp`;
 const FRAME_PATH = (index) => `/frames/ezgif-frame-${String(index).padStart(3, '0')}.jpg`;
+
+// Fast-loading config
+const CRITICAL_COUNT = 10;   // preloader hides once this many frames are ready
+const CONCURRENCY = 6;       // parallel downloads (prevents mobile networks choking)
+const IS_MOBILE = window.matchMedia('(max-width: 768px)').matches;
+const FRAME_STEP = IS_MOBILE ? 2 : 1; // mobile loads every 2nd frame (150 instead of 300)
 
 // State
 const images = [];
@@ -58,47 +66,76 @@ const toggleLabelSub = document.getElementById('toggle-label-sub');
 let cart = [];
 
 /**
- * Preload all 300 frames with progress reporting
+ * Smart preload:
+ * 1) Load a spread of key frames first (covers the whole scroll range)
+ * 2) Hide the preloader as soon as the first few are ready
+ * 3) Keep loading the remaining frames silently in the background
  */
+function buildLoadOrder() {
+  const all = [];
+  for (let i = 1; i <= TOTAL_FRAMES; i += FRAME_STEP) all.push(i);
+  if (all[all.length - 1] !== TOTAL_FRAMES) all.push(TOTAL_FRAMES);
+
+  const coarse = all.filter((_, idx) => idx % 8 === 0); // evenly spread key frames
+  const coarseSet = new Set(coarse);
+  const rest = all.filter((f) => !coarseSet.has(f));
+  return [...coarse, ...rest];
+}
+
+function loadFrame(i) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.decoding = 'async';
+    img.onload = () => {
+      images[i] = img;
+      // if the user is parked on a frame that was showing a fallback, redraw it
+      if (isLoaded && Math.round(currentFrame) === i) renderFrame(i);
+      resolve(true);
+    };
+    img.onerror = () => resolve(false);
+    img.src = FRAME_PATH(i);
+  });
+}
+
 function preloadFrames() {
   return new Promise((resolve) => {
-    // Prioritize frame 1 to display immediately
-    const firstImg = new Image();
-    firstImg.src = FRAME_PATH(1);
-    firstImg.onload = () => {
-      images[1] = firstImg;
-      renderFrame(1);
+    const order = buildLoadOrder();
+    const criticalTotal = Math.min(CRITICAL_COUNT, order.length);
+    let criticalDone = 0;
+    let next = 0;
+    let dismissed = false;
+
+    const dismiss = () => {
+      if (dismissed) return;
+      dismissed = true;
+      isLoaded = true;
+      if (preloader) preloader.classList.add('hidden');
+      resolve();
     };
 
-    for (let i = 1; i <= TOTAL_FRAMES; i++) {
-      const img = new Image();
-      img.src = FRAME_PATH(i);
-      img.onload = () => {
-        loadedCount++;
-        images[i] = img;
-
-        const percent = Math.round((loadedCount / TOTAL_FRAMES) * 100);
+    const onDone = (idx) => {
+      loadedCount++;
+      if (idx < criticalTotal) {
+        criticalDone++;
+        const percent = Math.round((criticalDone / criticalTotal) * 100);
         if (preloaderBar) preloaderBar.style.width = `${percent}%`;
-        if (preloaderText) preloaderText.innerText = `${percent}% Calibrated (${loadedCount}/${TOTAL_FRAMES})`;
+        if (preloaderText) preloaderText.innerText = `${percent}% Loaded`;
+        if (criticalDone >= criticalTotal) setTimeout(dismiss, 150);
+      }
+    };
 
-        // Dismiss preloader once critical mass is loaded
-        if (loadedCount >= TOTAL_FRAMES || (loadedCount >= 120 && !isLoaded)) {
-          isLoaded = true;
-          setTimeout(() => {
-            if (preloader) preloader.classList.add('hidden');
-            resolve();
-          }, 300);
-        }
-      };
-      img.onerror = () => {
-        loadedCount++;
-        if (loadedCount >= TOTAL_FRAMES && !isLoaded) {
-          isLoaded = true;
-          if (preloader) preloader.classList.add('hidden');
-          resolve();
-        }
-      };
+    async function worker() {
+      while (next < order.length) {
+        const idx = next++;
+        await loadFrame(order[idx]);
+        onDone(idx);
+      }
     }
+
+    for (let w = 0; w < CONCURRENCY; w++) worker();
+
+    // safety net: never keep the user waiting more than 5s on a slow network
+    setTimeout(dismiss, 5000);
   });
 }
 
@@ -245,7 +282,6 @@ function updateHeroStoryCards(scrollY) {
 
   const heroRect = heroSection.getBoundingClientRect();
 
-
   const heroTop = -heroRect.top;
   const heroHeight = heroSection.offsetHeight - window.innerHeight;
 
@@ -286,7 +322,6 @@ function animationLoop() {
     renderFrame(Math.round(currentFrame));
   }
 
-  // Sticky header background
   // Sticky header background + force visibility (fixes mobile scroll-down disappear bug)
   if (navbar) {
     if (window.scrollY > 40) {
@@ -340,7 +375,7 @@ function initCart() {
   // Quick add buttons inside story overlay
   document.querySelectorAll('.quick-add-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const prodType = e.target.getAttribute('data-product');
+      const prodType = e.currentTarget.getAttribute('data-product');
       if (prodType === 'am') {
         addToCart({ id: 'am', name: 'AM Day Nutrition', price: 849, img: '/frames/ezgif-frame-001.jpg' });
       } else if (prodType === 'pm') {
@@ -597,35 +632,13 @@ function initMobileNav() {
 }
 
 /**
- * Theme Toggle — Dark / Light
- */
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  try { localStorage.setItem('ampm-theme', theme); } catch (e) { }
-
-  const btn = document.getElementById('theme-toggle-btn');
-  btn?.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
-
-  // canvas cha background colour theme var depend aahe, mhanun redraw
-  lastDrawnFrame = -1;
-  renderFrame(Math.round(currentFrame));
-}
-
-function initThemeToggle() {
-  let saved = 'dark';
-  try { saved = localStorage.getItem('ampm-theme') || 'dark'; } catch (e) { }
-  applyTheme(saved === 'light' ? 'light' : 'dark');
-
-  document.getElementById('theme-toggle-btn')?.addEventListener('click', () => {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    applyTheme(isLight ? 'dark' : 'light');
-  });
-}
-
-/**
  * Initialize Everything
  */
 async function init() {
+  // Dark-only site. Kept as an attribute so any remaining
+  // html[data-theme="dark"] CSS rules keep matching.
+  document.documentElement.setAttribute('data-theme', 'dark');
+
   window.addEventListener('resize', () => {
     resizeCanvas();
     updateScrollProgress();
@@ -643,9 +656,9 @@ async function init() {
   initFaq();
   initNewsletter();
   initMobileNav();
-  initThemeToggle();
 
-  // Preload frames and start render loop
+  // Preload key frames, hide the preloader fast, and start render loop
+  // (remaining frames continue loading in the background)
   await preloadFrames();
   resizeCanvas();
   updateScrollProgress();
@@ -657,7 +670,7 @@ document.addEventListener('DOMContentLoaded', init);
 /**
  * Scroll Drop-In Animations (cards fall in + golden beans fall behind)
  * PASTE this function into main.js (anywhere above init()), then call
- * initScrollAnimations(); inside init() after initThemeToggle();
+ * initScrollAnimations(); inside init() after initMobileNav();
  */
 function initScrollAnimations() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
